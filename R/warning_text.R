@@ -9,16 +9,16 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'       shinyGovstyle::warning_text(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'       shinyGovBRstyle::warning_text(
 #'         inputId = "warn1",
 #'         text = "You can be fined up to £5,000 if you do not register.")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -26,12 +26,12 @@
 #' }
 
 warning_text <- function(inputId, text){
-  govWarning <- shiny::tags$div(class="govuk-warning-text", id = inputId,
+  govWarning <- shiny::tags$div(class="govbr-warning-text", id = inputId,
     shiny::tags$span(
-      "!", class="govuk-warning-text__icon", `aria-hidden`="true"
+      "!", class="govbr-warning-text__icon", `aria-hidden`="true"
     ),
-    shiny::tags$strong(text, class="govuk-warning-text__text",
-      shiny::tags$span("Warning", class="govuk-warning-text__assistive")
+    shiny::tags$strong(text, class="govbr-warning-text__text",
+      shiny::tags$span("Warning", class="govbr-warning-text__assistive")
     )
   )
   attachDependency(govWarning)

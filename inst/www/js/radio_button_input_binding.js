@@ -7,7 +7,7 @@ var $escape4but = exports4but.$escape = function(val) {
 var radioGroupButtonsBinding2 = new Shiny.InputBinding();
 $.extend(radioGroupButtonsBinding2, {
   find: function(scope) {
-    return $(scope).find('.govuk-radios');
+    return $(scope).find('.govbr-radios');
   },
   getId: function(el) {
     return el.id;
@@ -49,8 +49,8 @@ $.extend(radioGroupButtonsBinding2, {
 
       // This will replace all the options
       if (data.hasOwnProperty('options')) {
-        $el.find('govuk-radios govuk-radios--inline').empty();
-        $el.find('govuk-radios govuk-radios--inline').append(data.options);
+        $el.find('govbr-radios govbr-radios--inline').empty();
+        $el.find('govbr-radios govbr-radios--inline').append(data.options);
       }
 
       if (data.hasOwnProperty('selected'))

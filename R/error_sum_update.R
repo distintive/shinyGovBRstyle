@@ -12,12 +12,12 @@
 #' if (interactive()) {
 #'   ui <- fluidPage(
 #'     shinyjs::useShinyjs(),
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo = "shinyGovstyle/images/moj_logo.png"
+#'       logo = "shinyGovBRstyle/images/dev_logo.png"
 #'     ),
-#'     shinyGovstyle::gov_layout(
+#'     shinyGovBRstyle::gov_layout(
 #'       size = "two-thirds",
 #'       error_summary(
 #'         inputId = "errorId",
@@ -25,8 +25,8 @@
 #'         error_list = c("error item1", "error item2")
 #'       )
 #'     ),
-#'     shinyGovstyle::button_Input("btn1", "Change error summary"),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::button_Input("btn1", "Change error summary"),
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {
@@ -46,7 +46,7 @@ error_summary_update <- function(inputId, error_list) {
 
   new_err_sum <-
       shiny::tags$ul(
-        class = "govuk-list govuk-error-summary__list",
+        class = "govbr-list govbr-error-summary__list",
         Map(function(x) {
           shiny::tags$li(x)
         }, x = error_list))

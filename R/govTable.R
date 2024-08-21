@@ -24,19 +24,19 @@
 #'   example_data <- data.frame(Months, Bikes, Cars)
 #'
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::banner(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", 'This is a new service'),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'     shinyGovstyle::govTable(
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'     shinyGovBRstyle::govTable(
 #'       "tab1", example_data, "Test", "l", num_col = c(2,3),
 #'       width_overwrite = c("one-half", "one-quarter", "one-quarter"))
 #'     ),
 #'
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -57,23 +57,23 @@ govTable <- function(inputId, df, caption, caption_size = "l",
   #Create the actual table
   gov_table <- shiny::tags$table(
     id = inputId,
-    class = "govuk-table",
+    class = "govbr-table",
     shiny::tags$caption(
       class = paste0(
-        "govuk-table__caption govuk-table__caption--", caption_size),
+        "govbr-table__caption govbr-table__caption--", caption_size),
       caption
     ),
     shiny::tags$thead(
-      class = "govuk-table__head",
+      class = "govbr-table__head",
       shiny::tags$tr(
-        class = "govuk-table__row",
+        class = "govbr-table__row",
         Map(function(x) {
-          shiny::tags$th(scope = "col", class = "govuk-table__header", x)
+          shiny::tags$th(scope = "col", class = "govbr-table__header", x)
         }, x = colnames(df))
       )
     ),
     shiny::tags$tbody(
-      class = "govuk-table__body",
+      class = "govbr-table__body",
       main_row_store
     )
   )
@@ -82,7 +82,7 @@ govTable <- function(inputId, df, caption, caption_size = "l",
   for(i in num_col) {
     if (i != 1) {
       gov_table$children[[2]]$children[[1]][[3]][[1]][[i]]$attribs$class <-
-        "govuk-table__header govuk-table__header--numeric"
+        "govbr-table__header govbr-table__header--numeric"
     }
   }
 
@@ -91,7 +91,7 @@ govTable <- function(inputId, df, caption, caption_size = "l",
       gov_table$children[[2]]$children[[1]][[3]][[1]][[i]]$attribs$class <-
         paste0(
           gov_table$children[[2]]$children[[1]][[3]][[1]][[i]]$attribs$class,
-          " govuk-!-width-", width_overwrite[i])
+          " govbr-!-width-", width_overwrite[i])
   }
 
   return(gov_table)
@@ -100,10 +100,10 @@ govTable <- function(inputId, df, caption, caption_size = "l",
 
 createRows <- function(df_row, num_col = NULL) {
   rowHTML <- shiny::tags$tr(
-    class = "govuk-table__row",
-    shiny::tags$th(scope="row", class="govuk-table__header", df_row[1,1]),
+    class = "govbr-table__row",
+    shiny::tags$th(scope="row", class="govbr-table__header", df_row[1,1]),
     Map(function(x) {
-      shiny::tags$td(class = "govuk-table__cell", x)
+      shiny::tags$td(class = "govbr-table__cell", x)
     }, df_row[1,-1])
   )
   #Not sure I can think of better way to add numeric class then do it post
@@ -111,7 +111,7 @@ createRows <- function(df_row, num_col = NULL) {
   for(i in num_col) {
     if (i != 1) {
       rowHTML$children[[2]][[i-1]]$attribs$class <-
-        "govuk-table__cell govuk-table__cell--numeric"
+        "govbr-table__cell govbr-table__cell--numeric"
     }
   }
   return(rowHTML)

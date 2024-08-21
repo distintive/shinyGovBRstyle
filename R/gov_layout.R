@@ -14,18 +14,18 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "full",
-#'       shinyGovstyle::panel_output(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "full",
+#'       shinyGovBRstyle::panel_output(
 #'         inputId = "panel1",
 #'         main_text = "Application Complete",
 #'         sub_text = "Thank you for submitting your application.
 #'         Your reference is xvsiq")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -35,10 +35,10 @@
 gov_layout <- function(..., inputID = "main", size="full"){
   govLayout <- shiny::tags$div(
     id = inputID,
-    class="govuk-width-container  govuk-main-wrapper",
+    class="govbr-width-container  govbr-main-wrapper",
     shiny::tags$div(
       id = paste0(inputID,"_sub"),
-      class=paste0("govuk-grid-column-",size), ...)
+      class=paste0("govbr-grid-column-",size), ...)
   )
   attachDependency(govLayout)
 }

@@ -21,18 +21,18 @@ information in a special format.
 \examples{
 if (interactive()) {
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::gov_layout(size = "two-thirds",
-      shinyGovstyle::insert_text(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+      shinyGovBRstyle::insert_text(
         inputId = "note",
         text = "It can take up to 8 weeks to register a lasting power of
                 attorney if there are no mistakes in the application."
       )
     ),
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}

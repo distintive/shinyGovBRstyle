@@ -16,49 +16,49 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_main_layout(
-#'       shinyGovstyle::gov_row(
-#'         shinyGovstyle::gov_box(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_main_layout(
+#'       shinyGovBRstyle::gov_row(
+#'         shinyGovBRstyle::gov_box(
 #'           size = "full",
-#'           shinyGovstyle::gov_text("govuk-grid-column-full")
+#'           shinyGovBRstyle::gov_text("govbr-grid-column-full")
 #'         )
 #'       ),
-#'       shinyGovstyle::gov_row(
-#'         shinyGovstyle::gov_box(
+#'       shinyGovBRstyle::gov_row(
+#'         shinyGovBRstyle::gov_box(
 #'           size = "one-half",
-#'           shinyGovstyle::gov_text("govuk-grid-column-one-half")
+#'           shinyGovBRstyle::gov_text("govbr-grid-column-one-half")
 #'         ),
-#'         shinyGovstyle::gov_box(
+#'         shinyGovBRstyle::gov_box(
 #'           size = "one-half",
-#'           shinyGovstyle::gov_text("govuk-grid-column-one-half")
+#'           shinyGovBRstyle::gov_text("govbr-grid-column-one-half")
 #'         )
 #'       ),
-#'       shinyGovstyle::gov_row(
-#'         shinyGovstyle::gov_box(
+#'       shinyGovBRstyle::gov_row(
+#'         shinyGovBRstyle::gov_box(
 #'           size = "one-third",
-#'           shinyGovstyle::gov_text("govuk-grid-column-one-third")
+#'           shinyGovBRstyle::gov_text("govbr-grid-column-one-third")
 #'         ),
-#'         shinyGovstyle::gov_box(
+#'         shinyGovBRstyle::gov_box(
 #'           size = "two-third",
-#'           shinyGovstyle::gov_text("govuk-grid-column-two-third")
+#'           shinyGovBRstyle::gov_text("govbr-grid-column-two-third")
 #'         )
 #'       ),
-#'       shinyGovstyle::gov_row(
-#'         shinyGovstyle::gov_box(
+#'       shinyGovBRstyle::gov_row(
+#'         shinyGovBRstyle::gov_box(
 #'           size = "one-quarter",
-#'           shinyGovstyle::gov_text("govuk-grid-column-one-quarter")
+#'           shinyGovBRstyle::gov_text("govbr-grid-column-one-quarter")
 #'         ),
-#'         shinyGovstyle::gov_box(
+#'         shinyGovBRstyle::gov_box(
 #'           size = "three-quarters",
-#'           shinyGovstyle::gov_text("govuk-grid-column-three-quarters")
+#'           shinyGovBRstyle::gov_text("govbr-grid-column-three-quarters")
 #'         )
 #'       )
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -71,9 +71,9 @@ NULL
 gov_main_layout <- function(..., inputID = "main") {
   govMain <- shiny::tags$div(
     id = inputID,
-    class = "govuk-width-container",
+    class = "govbr-width-container",
     shiny::tags$main(
-      class = "govuk-main-wrapper",
+      class = "govbr-main-wrapper",
       ...
     )
   )
@@ -84,7 +84,7 @@ gov_main_layout <- function(..., inputID = "main") {
 #' @export
 gov_row <- function(...){
   govRow <- shiny::tags$div(
-    class = "govuk-grid-row",
+    class = "govbr-grid-row",
     ...
   )
   attachDependency(govRow)
@@ -94,7 +94,7 @@ gov_row <- function(...){
 #' @export
 gov_box <- function(..., size = "full"){
   govBox <- shiny::tags$div(
-    class = paste0("govuk-grid-column-", size),
+    class = paste0("govbr-grid-column-", size),
     ...
   )
   attachDependency(govBox)
@@ -104,7 +104,7 @@ gov_box <- function(..., size = "full"){
 #' @export
 gov_text <- function(...){
   govText <- shiny::tags$p(
-    class = "govuk-body",
+    class = "govbr-body",
     ...
   )
 }

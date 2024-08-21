@@ -11,17 +11,17 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
 #'       label_hint(
 #'         inputId = "label1",
 #'         label = "This is a label",
 #'         hint_input = "This is a hint")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -29,9 +29,9 @@
 #' }
 
 label_hint <- function(inputId, label, hint_input = NULL){
-  govLabel <- shiny::tags$div(class="govuk-form-group", id = inputId,
-    shiny::tags$label(shiny::HTML(label), class="govuk-label"),
-    shiny::tags$div(hint_input, class="govuk-hint")
+  govLabel <- shiny::tags$div(class="govbr-form-group", id = inputId,
+    shiny::tags$label(shiny::HTML(label), class="govbr-label"),
+    shiny::tags$div(hint_input, class="govbr-hint")
   )
   attachDependency(govLabel)
 }

@@ -21,7 +21,7 @@ if (interactive()) {
     header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
+      logo="shinyGovBRstyle/images/dev_logo.png"),
     shiny::navlistPanel(
       "",
       id="nav",
@@ -39,7 +39,7 @@ if (interactive()) {
        shiny::tabPanel(
          "Tab2",
          value = "panel2")),
-   shinyGovstyle::footer(full = TRUE)
+   shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {

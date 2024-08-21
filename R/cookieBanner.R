@@ -10,15 +10,15 @@
 #' @examples
 #' if (interactive()) {
 #' ui <- fluidPage(
-#'   shinyGovstyle::header(
+#'   shinyGovBRstyle::header(
 #'     main_text = "Example",
 #'     secondary_text = "User Examples",
-#'     logo="shinyGovstyle/images/moj_logo.png"),
+#'     logo="shinyGovBRstyle/images/dev_logo.png"),
 #'   #Needs shinyjs to work
 #'   shinyjs::useShinyjs(),
-#'   shinyGovstyle::cookieBanner("The best thing"),
-#'   shinyGovstyle::gov_layout(size = "two-thirds"),
-#'   shinyGovstyle::footer(full = TRUE)
+#'   shinyGovBRstyle::cookieBanner("The best thing"),
+#'   shinyGovBRstyle::gov_layout(size = "two-thirds"),
+#'   shinyGovBRstyle::footer(full = TRUE)
 #' )
 #'
 #' server <- function(input, output, session) {
@@ -57,7 +57,7 @@ cookieBanner <- function(service_name) {
   govCookieLink <- shiny::tags$button(
     "View cookies",
     id = "cookieLink",
-    class = paste0("govuk-link", " action-button"),
+    class = paste0("govbr-link", " action-button"),
     `data-val` = value)
 
   attachDependency(govCookieLink)
@@ -65,28 +65,28 @@ cookieBanner <- function(service_name) {
   cookieBanner_Input <-
     shiny::tags$div(
       id = "cookieDiv",
-      class = "govuk-cookie-banner",
+      class = "govbr-cookie-banner",
       `data-nosnippet role` = "region",
       `aria-label` = paste("Cookies on", service_name),
       shiny::tags$div(
         id = "cookieMain",
-        class= "govuk-cookie-banner__message govuk-width-container",
+        class= "govbr-cookie-banner__message govbr-width-container",
         shiny::tags$div(
-          class = "govuk-grid-row",
+          class = "govbr-grid-row",
           shiny::tags$div(
-            class = "govuk-grid-column-two-thirds",
+            class = "govbr-grid-column-two-thirds",
             shiny::tags$h2(
-              class = "govuk-cookie-banner__heading govuk-heading-m",
+              class = "govbr-cookie-banner__heading govbr-heading-m",
               paste("Cookies on", service_name)
             ),
             shiny::tags$div(
-              class="govuk-cookie-banner__content",
+              class="govbr-cookie-banner__content",
               shiny::tags$p(
-                class = "govuk-body",
+                class = "govbr-body",
                 "We use some essential cookies to make this service work."
               ),
               shiny::tags$p(
-                class = "govuk-body",
+                class = "govbr-body",
                 "We\u0027d also like to use analytics cookies so we can understand
                 how you use the service and make improvements."
               )
@@ -94,7 +94,7 @@ cookieBanner <- function(service_name) {
         )
       ),
       shiny::tags$div(
-        class="govuk-button-group",
+        class="govbr-button-group",
         button_Input("cookieAccept", "Accept analytics cookies"),
         button_Input("cookieReject", "Reject analytics cookies"),
         govCookieLink
@@ -103,15 +103,15 @@ cookieBanner <- function(service_name) {
     shinyjs::hidden(
       shiny::tags$div(
         id = "cookieAcceptDiv",
-        class = "govuk-cookie-banner__message govuk-width-container",
+        class = "govbr-cookie-banner__message govbr-width-container",
         shiny::tags$div(
-          class = "govuk-grid-row",
+          class = "govbr-grid-row",
           shiny::tags$div(
-            class = "govuk-grid-column-two-thirds",
+            class = "govbr-grid-column-two-thirds",
             shiny::tags$div(
-              class = "govuk-cookie-banner__content",
+              class = "govbr-cookie-banner__content",
               shiny::tags$p(
-                class = "govuk-body",
+                class = "govbr-body",
                 "You\u0027ve accepted additional cookies. You can change your
                 cookie settings at any time."
               )
@@ -119,7 +119,7 @@ cookieBanner <- function(service_name) {
           )
         ),
         shiny::tags$div(
-          class = "govuk-button-group",
+          class = "govbr-button-group",
           button_Input("hideAccept", "Hide this message")
         )
       )
@@ -127,15 +127,15 @@ cookieBanner <- function(service_name) {
     shinyjs::hidden(
       shiny::tags$div(
         id = "cookieRejectDiv",
-        class = "govuk-cookie-banner__message govuk-width-container",
+        class = "govbr-cookie-banner__message govbr-width-container",
         shiny::tags$div(
-          class = "govuk-grid-row",
+          class = "govbr-grid-row",
           shiny::tags$div(
-            class = "govuk-grid-column-two-thirds",
+            class = "govbr-grid-column-two-thirds",
             shiny::tags$div(
-              class = "govuk-cookie-banner__content",
+              class = "govbr-cookie-banner__content",
               shiny::tags$p(
-                class = "govuk-body",
+                class = "govbr-body",
                 "You\u0027ve rejected additional cookies. You can change your
                 cookie settings at any time."
               )
@@ -143,7 +143,7 @@ cookieBanner <- function(service_name) {
           )
         ),
         shiny::tags$div(
-          class = "govuk-button-group",
+          class = "govbr-button-group",
           button_Input("hideReject", "Hide this message")
         )
       )

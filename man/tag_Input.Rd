@@ -23,14 +23,14 @@ This function creates a tag
 \examples{
 if (interactive()) {
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::gov_layout(size = "two-thirds",
-      shinyGovstyle::tag_Input("tag1", "COMPLETE"),
-      shinyGovstyle::tag_Input("tag2", "INCOMPLETE", "red")),
-    shinyGovstyle::footer(full = TRUE)
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+      shinyGovBRstyle::tag_Input("tag1", "COMPLETE"),
+      shinyGovBRstyle::tag_Input("tag2", "INCOMPLETE", "red")),
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}

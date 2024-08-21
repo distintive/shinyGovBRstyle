@@ -23,13 +23,13 @@ This function inserts a accordion
 if (interactive()) {
 
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::banner(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::banner(
       inputId = "banner", type = "beta", 'This is a new service'),
-    shinyGovstyle::gov_layout(size = "two-thirds",
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
     accordion(
       "acc1",
       c("Writing well for the web",
@@ -43,7 +43,7 @@ if (interactive()) {
         "This is the content for How people read."
        ))),
 
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}

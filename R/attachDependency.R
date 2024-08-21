@@ -1,7 +1,7 @@
-#' Attach shinyGovstyle dependancies
+#' Attach shinyGovBRstyle dependencies
 #'
 #' @param tag An object which has (or should have) HTML dependencies.
-#' @param widget Name of a widget for particular dependancies
+#' @param widget Name of a widget for particular dependencies
 #'
 #' @noRd
 #' @importFrom utils packageVersion
@@ -9,12 +9,12 @@
 
 attachDependency <- function(tag, widget = NULL) {
 
-  version <- as.character(packageVersion("shinyGovstyle")[[1]])
+  version <- as.character(packageVersion("shinyGovBRstyle")[[1]])
 
   dep <- htmltools::htmlDependency(
     name = "stylecss", version = version,
-    src = c(href="shinyGovstyle/css"),
-    stylesheet = "govuk-frontend-norem.css"
+    src = c(href="shinyGovBRstyle/css"),
+    stylesheet = "govbr-frontend-test.css"
   )
 
   if (!is.null(widget)) {
@@ -24,7 +24,7 @@ attachDependency <- function(tag, widget = NULL) {
         htmltools::htmlDependency(
           name = "radio_button_Input",
           version = version,
-          src = c(href="shinyGovstyle/js"),
+          src = c(href="shinyGovBRstyle/js"),
           script = "radio_button_input_binding.js"
         )
       )
@@ -35,7 +35,7 @@ attachDependency <- function(tag, widget = NULL) {
         htmltools::htmlDependency(
           name = "date_Input",
           version = version,
-          src = c(href="shinyGovstyle/js"),
+          src = c(href="shinyGovBRstyle/js"),
           script = "date_input_binding.js"
         )
       )
@@ -46,7 +46,7 @@ attachDependency <- function(tag, widget = NULL) {
         htmltools::htmlDependency(
           name = "accordion",
           version = version,
-          src = c(href="shinyGovstyle/js"),
+          src = c(href="shinyGovBRstyle/js"),
           script = "accordion.js"
         )
       )
@@ -57,7 +57,7 @@ attachDependency <- function(tag, widget = NULL) {
         htmltools::htmlDependency(
           name = "govTab",
           version = version,
-          src = c(href="shinyGovstyle/js"),
+          src = c(href="shinyGovBRstyle/js"),
           script = "govTab.js"
         )
       )

@@ -26,13 +26,13 @@
 #'     "07700 900457 <br> sarah.phillips@example.com")
 #'
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'       shinyGovstyle::gov_summary("sumID", headers, info, action = FALSE)),
-#'     shinyGovstyle::footer(full = TRUE)
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'       shinyGovBRstyle::gov_summary("sumID", headers, info, action = FALSE)),
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -44,9 +44,9 @@
 gov_summary <- function(inputId, headers, info, action = FALSE, border = TRUE){
 
   if (border){
-    border_class = "govuk-summary-list"
+    border_class = "govbr-summary-list"
   } else {
-    border_class = "govuk-summary-list govuk-summary-list--no-border"
+    border_class = "govbr-summary-list govbr-summary-list--no-border"
   }
 
   shiny::tags$dl(
@@ -54,22 +54,22 @@ gov_summary <- function(inputId, headers, info, action = FALSE, border = TRUE){
     id = inputId,
     Map(function(x, y, z){
       shiny::tags$div(
-        class = "govuk-summary-list__row",
+        class = "govbr-summary-list__row",
         shiny::tags$dt(
-          class = "govuk-summary-list__key",
+          class = "govbr-summary-list__key",
           x
         ),
         shiny::tags$dd(
-          class = "govuk-summary-list__value",
+          class = "govbr-summary-list__value",
           shiny::HTML(y)
         ),
         if (action) {
         shiny::tags$dd(
-          class = "govuk-summary-list__actions",
+          class = "govbr-summary-list__actions",
           shiny::tags$button(
             "Change",
             id = z,
-            class = "govuk-link action-button",
+            class = "govbr-link action-button",
             `data-val` = shiny::restoreInput(id = z, default = NULL)
           )
         )}

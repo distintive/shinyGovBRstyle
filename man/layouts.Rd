@@ -38,49 +38,49 @@ a box within the row.  The gov_text is a container for text bodies.
 \examples{
 if (interactive()) {
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::gov_main_layout(
-      shinyGovstyle::gov_row(
-        shinyGovstyle::gov_box(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::gov_main_layout(
+      shinyGovBRstyle::gov_row(
+        shinyGovBRstyle::gov_box(
           size = "full",
-          shinyGovstyle::gov_text("govuk-grid-column-full")
+          shinyGovBRstyle::gov_text("govbr-grid-column-full")
         )
       ),
-      shinyGovstyle::gov_row(
-        shinyGovstyle::gov_box(
+      shinyGovBRstyle::gov_row(
+        shinyGovBRstyle::gov_box(
           size = "one-half",
-          shinyGovstyle::gov_text("govuk-grid-column-one-half")
+          shinyGovBRstyle::gov_text("govbr-grid-column-one-half")
         ),
-        shinyGovstyle::gov_box(
+        shinyGovBRstyle::gov_box(
           size = "one-half",
-          shinyGovstyle::gov_text("govuk-grid-column-one-half")
+          shinyGovBRstyle::gov_text("govbr-grid-column-one-half")
         )
       ),
-      shinyGovstyle::gov_row(
-        shinyGovstyle::gov_box(
+      shinyGovBRstyle::gov_row(
+        shinyGovBRstyle::gov_box(
           size = "one-third",
-          shinyGovstyle::gov_text("govuk-grid-column-one-third")
+          shinyGovBRstyle::gov_text("govbr-grid-column-one-third")
         ),
-        shinyGovstyle::gov_box(
+        shinyGovBRstyle::gov_box(
           size = "two-third",
-          shinyGovstyle::gov_text("govuk-grid-column-two-third")
+          shinyGovBRstyle::gov_text("govbr-grid-column-two-third")
         )
       ),
-      shinyGovstyle::gov_row(
-        shinyGovstyle::gov_box(
+      shinyGovBRstyle::gov_row(
+        shinyGovBRstyle::gov_box(
           size = "one-quarter",
-          shinyGovstyle::gov_text("govuk-grid-column-one-quarter")
+          shinyGovBRstyle::gov_text("govbr-grid-column-one-quarter")
         ),
-        shinyGovstyle::gov_box(
+        shinyGovBRstyle::gov_box(
           size = "three-quarters",
-          shinyGovstyle::gov_text("govuk-grid-column-three-quarters")
+          shinyGovBRstyle::gov_text("govbr-grid-column-three-quarters")
         )
       )
     ),
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}

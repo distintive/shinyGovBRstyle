@@ -12,11 +12,11 @@
 #' if (interactive()) {
 #'
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::banner(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", 'This is a new service')
 #'   )
 #'
@@ -27,13 +27,13 @@
 
 banner <-function(inputId, type, label){
   govBanner <- shiny::tags$div(
-    class="govuk-phase-banner govuk-width-container govuk-main-wrapper",
+    class="govbr-phase-banner govbr-width-container govbr-main-wrapper",
     id = inputId,
-    shiny::tags$p(class="govuk-phase-banner__content",
+    shiny::tags$p(class="govbr-phase-banner__content",
       shiny::tags$strong(
-        class="govuk-tag govuk-phase-banner__content__tag ", type
+        class="govbr-tag govbr-phase-banner__content__tag ", type
       ),
-      shiny::tags$span(class="govuk-phase-banner__text", shiny::HTML(label))
+      shiny::tags$span(class="govbr-phase-banner__text", shiny::HTML(label))
     )
   )
   attachDependency(govBanner)

@@ -11,7 +11,7 @@ var date_binding = new Shiny.InputBinding();
 $.extend(date_binding, {
 
   find: function(scope) {
-    return $(scope).find(".govuk-date-input");
+    return $(scope).find(".govbr-date-input");
   },
 
   getId: function(el) {

@@ -14,8 +14,8 @@
 #'
 #'   ui <- shiny::fluidPage(
 #'   shinyjs::useShinyjs(),
-#'   shinyGovstyle::header(
-#'     "Justice", "", logo="shinyGovstyle/images/moj_logo.png"),
+#'   shinyGovBRstyle::header(
+#'     "Justice", "", logo="shinyGovBRstyle/images/dev_logo.png"),
 #'   gov_layout(size = "full",
 #'            text_area_Input(
 #'              inputId = "text_area",

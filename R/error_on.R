@@ -15,22 +15,22 @@
 #'   ui <- fluidPage(
 #'     # Required for error handling function
 #'     shinyjs::useShinyjs(),
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::banner(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", 'This is a new service'),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
 #'       # Error text box
-#'       shinyGovstyle::text_Input(
+#'       shinyGovBRstyle::text_Input(
 #'         inputId = "eventId",
 #'         label = "Event Name",
 #'         error = TRUE),
 #'       # Button to trigger error
-#'       shinyGovstyle::button_Input(inputId = "submit", label = "Submit")
+#'       shinyGovBRstyle::button_Input(inputId = "submit", label = "Submit")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'
@@ -38,9 +38,9 @@
 #'     #Trigger error on blank submit of eventId2
 #'     observeEvent(input$submit, {
 #'       if (input$eventId != ""){
-#'         shinyGovstyle::error_off(inputId = "eventId")
+#'         shinyGovBRstyle::error_off(inputId = "eventId")
 #'       } else {
-#'         shinyGovstyle::error_on(
+#'         shinyGovBRstyle::error_on(
 #'           inputId = "eventId",
 #'           error_message = "Please complete")
 #'       }
@@ -52,13 +52,13 @@
 #' }
 
 error_on <- function(inputId, error_message = NULL){
-  shinyjs::addClass(paste0(inputId, "div"), "govuk-form-group--error")
+  shinyjs::addClass(paste0(inputId, "div"), "govbr-form-group--error")
   if (!is.null(error_message)){
     shinyjs::html(paste0(inputId, "error"), error_message)
   }
   shinyjs::show(paste0(inputId, "error"))
   shinyjs::addClass(selector = paste0("#", inputId,"div :input"),
-                    class = "govuk-input--error")
+                    class = "govbr-input--error")
   shinyjs::addClass(selector = paste0("#", inputId,"file_div"),
-                    class = "govuk-input--error")
+                    class = "govbr-input--error")
 }

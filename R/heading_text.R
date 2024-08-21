@@ -9,14 +9,14 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'       shinyGovstyle::heading_text("This is great text", "m")
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'       shinyGovBRstyle::heading_text("This is great text", "m")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -25,6 +25,6 @@
 
 heading_text <- function(text_input, size = "xl"){
   govHeading <- shiny::tags$h1(shiny::HTML(text_input),
-                               class=paste0("govuk-heading-", size))
+                               class=paste0("govbr-heading-", size))
   attachDependency(govHeading)
 }

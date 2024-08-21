@@ -20,15 +20,15 @@ This function create a gov style footer for your page
 if (interactive()) {
 
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::banner(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::banner(
       inputId = "banner", type = "beta", 'This is a new service'),
     tags$br(),
     tags$br(),
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}

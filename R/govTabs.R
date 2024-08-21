@@ -22,13 +22,13 @@
 #'   data <- data.frame(tabs, Case_manager, Cases_open, Cases_closed)
 #'
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'       shinyGovstyle::govTabs(data, "tabs")),
-#'     shinyGovstyle::footer(full = TRUE)
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'       shinyGovBRstyle::govTabs(data, "tabs")),
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -42,7 +42,7 @@ govTabs <- function(inputId, df, group_col) {
 
   #Select the first tab as the selected one
   tab_headers$children[[1]][[1]]$attribs$class <-
-    "govuk-tabs__list-item govuk-tabs__list-item--selected"
+    "govbr-tabs__list-item govbr-tabs__list-item--selected"
 
   main_temp_hold <- NULL
   #This needs to make up the tables on each tab
@@ -65,13 +65,13 @@ govTabs <- function(inputId, df, group_col) {
 
   #Put the lime with coconut and create the final thing
   main_tab_div <- shiny::tags$div(class = "js-enabled",
-    shiny::tags$h2(class = "govuk-tabs__title", "Contents"),
+    shiny::tags$h2(class = "govbr-tabs__title", "Contents"),
     tab_headers,
     main_temp_hold)
 
   #unhide first tab
   main_tab_div$children[[3]][[1]][[1]][[1]][[2]][[2]]$class <-
-    "govuk-tabs__panel"
+    "govbr-tabs__panel"
 
   attachDependency(main_tab_div, "govTab")
 
@@ -80,27 +80,27 @@ govTabs <- function(inputId, df, group_col) {
 
 create_tab_table <- function(df, rows, tab, inputId){
   shiny::tags$div(
-    class = "govuk-tabs__panel govuk-tabs__panel--hidden",
+    class = "govbr-tabs__panel govbr-tabs__panel--hidden",
     id = tolower(gsub(" ", "-", tab)),
     name = paste0(tolower(gsub(" ", "-", tab)), "-", inputId, "-table"),
-    shiny::tags$h2(class = "govuk-heading-l", tab),
+    shiny::tags$h2(class = "govbr-heading-l", tab),
     shiny::tags$table(
-      class = "govuk-table",
+      class = "govbr-table",
       shiny::tags$thead(
-        class = "govuk-table__head",
+        class = "govbr-table__head",
         shiny::tags$tr(
-          class = "govuk-table__row",
+          class = "govbr-table__row",
           Map(function(x){
             shiny::tags$th(
               scope = "col",
-              class = "govuk-table__header",
+              class = "govbr-table__header",
               x
             )
           }, x = colnames(df))
         )
       ),
       shiny::tags$tbody(
-        class = "govuk-table__body",
+        class = "govbr-table__body",
         rows
       )
     )
@@ -109,24 +109,24 @@ create_tab_table <- function(df, rows, tab, inputId){
 
 create_tab_row <- function(df_row){
   rowHTML <- shiny::tags$tr(
-    class = "govuk-table__row",
+    class = "govbr-table__row",
     Map(function(x) {
-      shiny::tags$td(class = "govuk-table__cell", x)
+      shiny::tags$td(class = "govbr-table__cell", x)
     }, x = df_row)
   )
 }
 
 create_tabs <- function(tabs_names, inputId) {
   shiny::tags$ul(
-    class = "govuk-tabs__list",
+    class = "govbr-tabs__list",
     id = paste0(inputId, "tab"),
     Map(function(x) {
       shiny::tags$li(
         name = paste0(tolower(gsub(" ", "-", x)), "-t"),
         id = paste0(tolower(gsub(" ", "-", x)), "-test"),
-        class = "govuk-tabs__list-item",
+        class = "govbr-tabs__list-item",
         shiny::tags$a(
-          class = "govuk-tabs__tab",
+          class = "govbr-tabs__tab",
           name = paste0(tolower(gsub(" ", "-", x)), "-l"),
           id = paste0(tolower(gsub(" ", "-", x)), "-l-test"),
           href=paste0("#", tolower(gsub(" ", "-", x))),

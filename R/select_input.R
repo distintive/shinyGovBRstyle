@@ -11,11 +11,11 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "full",
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "full",
 #'       select_Input(
 #'         inputId = "sorter",
 #'         label = "Sort by",
@@ -26,7 +26,7 @@
 #'         select_value = c("published", "updated", "view", "comments")),
 #'         tags$br()
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -34,9 +34,9 @@
 #' }
 
 select_Input <- function(inputId, label, select_text, select_value){
-  govSelect <- shiny::tags$div(class="govuk-form-group",
-    shiny::tags$label(shiny::HTML(label), class="govuk-label"),
-    shiny::tags$select(id = inputId, class="govuk-select",
+  govSelect <- shiny::tags$div(class="govbr-form-group",
+    shiny::tags$label(shiny::HTML(label), class="govbr-label"),
+    shiny::tags$select(id = inputId, class="govbr-select",
       Map(function(x,y){
         shiny::tags$option(value = y, x)
         }, x = select_text, y = select_value

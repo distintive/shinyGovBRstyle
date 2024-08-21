@@ -22,18 +22,18 @@ This function inserts a panel.  Normally used for confirmation screens
 \examples{
 if (interactive()) {
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::gov_layout(size = "full",
-      shinyGovstyle::panel_output(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::gov_layout(size = "full",
+      shinyGovBRstyle::panel_output(
         inputId = "panel1",
         main_text = "Application Complete",
         sub_text = "Thank you for submitting your application.
                     Your reference is xvsiq")
     ),
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}

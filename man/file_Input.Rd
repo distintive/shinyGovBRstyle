@@ -54,33 +54,33 @@ if (interactive()) {
   ui <- fluidPage(
     # Required for error handling function
     shinyjs::useShinyjs(),
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::banner(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::banner(
     inputId = "banner", type = "beta", 'This is a new service'),
-    shinyGovstyle::gov_layout(size = "two-thirds",
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
       # Simple file input
-      shinyGovstyle::file_Input(inputId = "file1", label = "Upload a file"),
+      shinyGovBRstyle::file_Input(inputId = "file1", label = "Upload a file"),
       # Error file
-      shinyGovstyle::file_Input(
+      shinyGovBRstyle::file_Input(
         inputId = "file2",
         label = "Upload a file",
         error = TRUE),
       # Button to trigger error
-      shinyGovstyle::button_Input(inputId = "submit", label = "Submit")
+      shinyGovBRstyle::button_Input(inputId = "submit", label = "Submit")
     ),
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {
     #'Trigger error on blank submit of file2
     observeEvent(input$submit, {
       if (is.null(input$file2)){
-        shinyGovstyle::error_on(inputId = "file2")
+        shinyGovBRstyle::error_on(inputId = "file2")
       } else {
-        shinyGovstyle::error_off(
+        shinyGovBRstyle::error_off(
           inputId = "file2")
       }
     })

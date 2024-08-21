@@ -20,24 +20,24 @@
 text_area_Input <- function(inputId, label, hint_label=NULL, row_no=5,
                             error = FALSE, error_message = NULL,
                             word_limit=NULL){
-  govTextarea <- shiny::tags$div(class="govuk-form-group govuk-character-count",
+  govTextarea <- shiny::tags$div(class="govbr-form-group govbr-character-count",
                                  id=paste0(inputId,"div"),
-    shiny::tags$label(shiny::HTML(label), class="govuk-label"),
-    shiny::tags$div(hint_label ,class="govuk-hint"),
+    shiny::tags$label(shiny::HTML(label), class="govbr-label"),
+    shiny::tags$div(hint_label ,class="govbr-hint"),
     if (error == TRUE){
       shinyjs::hidden(
         shiny::tags$p(error_message,
-                  class="govuk-error-message",
+                  class="govbr-error-message",
                   id= paste0(inputId, "error"),
         shiny::tags$span("Error:",
-                  class="govuk-visually-hidden")
+                  class="govbr-visually-hidden")
         )
       )
     },
-    shiny::tags$textarea(id=inputId, class="govuk-textarea", rows=row_no),
+    shiny::tags$textarea(id=inputId, class="govbr-textarea", rows=row_no),
     if (!is.null(word_limit)){
       shiny::tags$div(
-        class="govuk-hint govuk-character-count__message",
+        class="govbr-hint govbr-character-count__message",
       shiny::tags$span(
         "You have used"),
       shiny::tags$span(

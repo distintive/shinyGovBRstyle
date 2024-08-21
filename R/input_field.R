@@ -18,33 +18,33 @@
 #'   ui <- fluidPage(
 #'     # Required for error handling function
 #'     shinyjs::useShinyjs(),
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::banner(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", 'This is a new service'),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'       shinyGovstyle::input_field(
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'       shinyGovBRstyle::input_field(
 #'         legend ="List of three text boxes in a field",
 #'         labels = c("Field 1", "Field 2", "Field 3"),
 #'         inputIds = c("field1", "field2", "field3"),
 #'         widths = c(30,20,10),
 #'         error = TRUE),
 #'      # Button to trigger error
-#'      shinyGovstyle::button_Input(inputId = "submit", label = "Submit")
+#'      shinyGovBRstyle::button_Input(inputId = "submit", label = "Submit")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {
 #'     # Trigger error on blank submit of field2
 #'     observeEvent(input$submit, {
 #'       if (input$field2 == ""){
-#'         shinyGovstyle::error_on(inputId = "field2",
+#'         shinyGovBRstyle::error_on(inputId = "field2",
 #'                                 error_message = "Please complete")
 #'       } else {
-#'         shinyGovstyle::error_off(
+#'         shinyGovBRstyle::error_off(
 #'           inputId = "field2")
 #'       }
 #'     })
@@ -57,26 +57,26 @@ input_field <- function(legend, labels, inputIds, widths=NULL, types = "text",
   if (is.null(widths)){
     widths <- rep_len(0,length(inputIds))
   }
-  govInputField <- shiny::tags$fieldset(class="govuk-fieldset",
+  govInputField <- shiny::tags$fieldset(class="govbr-fieldset",
     shiny::tags$legend(
-      legend, class="govuk-fieldset__legend govuk-fieldset__legend--xl"
+      legend, class="govbr-fieldset__legend govbr-fieldset__legend--xl"
     ),
     Map(function(x, y, z, a){
       if (z == 0){
-        width_class <- "govuk-input"
+        width_class <- "govbr-input"
       }
       else{
-        width_class <- paste0("govuk-input govuk-input--width-", z)
+        width_class <- paste0("govbr-input govbr-input--width-", z)
       }
-      shiny::tags$div(class="govuk-form-group", id=paste0(y,"div"),
-        shiny::tags$label(shiny::HTML(x), class="govuk-label"),
+      shiny::tags$div(class="govbr-form-group", id=paste0(y,"div"),
+        shiny::tags$label(shiny::HTML(x), class="govbr-label"),
         if (error){
           shinyjs::hidden(
             shiny::tags$p(error_message,
-                      class="govuk-error-message",
+                      class="govbr-error-message",
                       id= paste0(y, "error"),
                       shiny::tags$span("Error:",
-                                class="govuk-visually-hidden")
+                                class="govbr-visually-hidden")
             )
           )
         },

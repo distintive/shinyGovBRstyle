@@ -45,21 +45,21 @@ if (interactive()) {
   ui <- fluidPage(
     # Required for error handling function
     shinyjs::useShinyjs(),
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::banner(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::banner(
       inputId = "banner", type = "beta", 'This is a new service'),
-    shinyGovstyle::gov_layout(size = "two-thirds",
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
       # Simple checkbox
-      shinyGovstyle::checkbox_Input(
+      shinyGovBRstyle::checkbox_Input(
         inputId = "check1",
         cb_labels = c("Option 1", "Option 2", "Option 3"),
         checkboxIds = c("op1", "op2", "op3"),
         label = "Choice option"),
        # Error checkbox
-      shinyGovstyle::checkbox_Input(
+      shinyGovBRstyle::checkbox_Input(
         inputId = "check2",
         cb_labels = c("Option 1", "Option 2", "Option 3"),
         checkboxIds = c("op1", "op2", "op3"),
@@ -68,18 +68,18 @@ if (interactive()) {
         error = TRUE,
         error_message = "Select one"),
       # Button to trigger error
-      shinyGovstyle::button_Input(inputId = "submit", label = "Submit")
+      shinyGovBRstyle::button_Input(inputId = "submit", label = "Submit")
     ),
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {
     #'Trigger error on blank submit of eventId2
     observeEvent(input$submit, {
       if (is.null(input$check2)){
-        shinyGovstyle::error_on(inputId = "check2")
+        shinyGovBRstyle::error_on(inputId = "check2")
       } else {
-        shinyGovstyle::error_off(inputId = "check2")
+        shinyGovBRstyle::error_off(inputId = "check2")
       }
     })
   }

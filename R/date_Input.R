@@ -19,36 +19,36 @@
 #'   ui <- fluidPage(
 #'     # Required for error handling function.
 #'     shinyjs::useShinyjs(),
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::banner(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", 'This is a new service'),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
 #'        # Simple date input
-#'       shinyGovstyle::date_Input(
+#'       shinyGovBRstyle::date_Input(
 #'         inputId = "dob_input",
 #'         label = "Please enter your birthday"),
 #'        # Error date input
-#'        shinyGovstyle::date_Input(
+#'        shinyGovBRstyle::date_Input(
 #'          inputId = "dob_input2",
 #'          label = "Please enter your birthday",
 #'          hint_label = "For example, 12 11 2007",
 #'          error = TRUE),
 #'        # Button to trigger error
-#'        shinyGovstyle::button_Input(inputId = "submit", label = "Submit")
+#'        shinyGovBRstyle::button_Input(inputId = "submit", label = "Submit")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {
 #'     #'Trigger error on blank submit of dob_input2
 #'     observeEvent(input$submit, {
 #'       if (input$dob_input2 == "//"){
-#'         shinyGovstyle::error_on(inputId = "dob_input2")
+#'         shinyGovBRstyle::error_on(inputId = "dob_input2")
 #'       } else {
-#'         shinyGovstyle::error_off(
+#'         shinyGovBRstyle::error_off(
 #'           inputId = "dob_input2")
 #'       }
 #'     })
@@ -60,48 +60,48 @@ date_Input <- function(inputId, label, hint_label = NULL,
                        error = FALSE, error_message = NULL,
                        day = NULL, month = NULL, year = NULL){
   value <- shiny::restoreInput(id = inputId, default = FALSE)
-  govDate <- shiny::tags$div(class="govuk-form-group", id=paste0(inputId,"div"),
-    shiny::tags$fieldset(class="govuk-fieldset",
-      shiny::tags$label(shiny::HTML(label), class="govuk-label"),
+  govDate <- shiny::tags$div(class="govbr-form-group", id=paste0(inputId,"div"),
+    shiny::tags$fieldset(class="govbr-fieldset",
+      shiny::tags$label(shiny::HTML(label), class="govbr-label"),
       if (error == TRUE){
         shinyjs::hidden(
           shiny::tags$p(
             error_message,
             id = paste0(inputId,"error"),
-            class = "govuk-error-message",
-            shiny::tags$span("Error:", class = "govuk-visually-hidden")
+            class = "govbr-error-message",
+            shiny::tags$span("Error:", class = "govbr-visually-hidden")
           )
         )
       },
-      shiny::tags$div(hint_label, class="govuk-hint"),
-        shiny::tags$div(class="govuk-date-input", id = inputId,
-          shiny::tags$div(class="govuk-date-input__item",
-            shiny::tags$div(class="govuk-form-group",
+      shiny::tags$div(hint_label, class="govbr-hint"),
+        shiny::tags$div(class="govbr-date-input", id = inputId,
+          shiny::tags$div(class="govbr-date-input__item",
+            shiny::tags$div(class="govbr-form-group",
               shiny::tags$label(
-                "Day", class="govuk-label govuk-date-input__label"),
+                "Day", class="govbr-label govbr-date-input__label"),
               shiny::tags$input(
-                class=paste("govuk-input govuk-date-input__input", "
-                            govuk-input--width-2"),
+                class=paste("govbr-input govbr-date-input__input", "
+                            govbr-input--width-2"),
                 id=paste0(inputId,"_day"), name=inputId,
                 type="number", pattern="[0-9]*", value = day)
             )
           ),
-        shiny::tags$div(class="govuk-date-input__item",
-          shiny::tags$div(class="govuk-form-group",
+        shiny::tags$div(class="govbr-date-input__item",
+          shiny::tags$div(class="govbr-form-group",
             shiny::tags$label(
-              "Month", class="govuk-label govuk-date-input__label"),
-            shiny::tags$input(class=paste("govuk-input govuk-date-input__input",
-                                          "govuk-input--width-2"),
+              "Month", class="govbr-label govbr-date-input__label"),
+            shiny::tags$input(class=paste("govbr-input govbr-date-input__input",
+                                          "govbr-input--width-2"),
                        id=paste0(inputId,"_month"), name=inputId,
                        type="number", pattern="[0-9]*", value = month)
             )
         ),
-        shiny::tags$div(class="govuk-date-input__item",
-          shiny::tags$div(class="govuk-form-group",
+        shiny::tags$div(class="govbr-date-input__item",
+          shiny::tags$div(class="govbr-form-group",
             shiny::tags$label(
-              "Year", class="govuk-label govuk-date-input__label"),
-            shiny::tags$input(class=paste("govuk-input govuk-date-input__input",
-                                          "govuk-input--width-4"),
+              "Year", class="govbr-label govbr-date-input__label"),
+            shiny::tags$input(class=paste("govbr-input govbr-date-input__input",
+                                          "govbr-input--width-4"),
                        id=paste0(inputId,"_year"), name=inputId,
                        type="number", pattern="[0-9]*", value = year)
           )

@@ -11,14 +11,14 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'       shinyGovstyle::tag_Input("tag1", "COMPLETE"),
-#'       shinyGovstyle::tag_Input("tag2", "INCOMPLETE", "red")),
-#'     shinyGovstyle::footer(full = TRUE)
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'       shinyGovBRstyle::tag_Input("tag1", "COMPLETE"),
+#'       shinyGovBRstyle::tag_Input("tag2", "INCOMPLETE", "red")),
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -28,9 +28,9 @@
 tag_Input <- function(inputId, text, colour = "navy") {
 
 
-  class_colour <- "govuk-tag"
+  class_colour <- "govbr-tag"
   if (colour != "navy") {
-    class_colour <- paste0("govuk-tag govuk-tag--", colour)
+    class_colour <- paste0("govbr-tag govbr-tag--", colour)
   }
 
   govTag <- shiny::tags$strong(

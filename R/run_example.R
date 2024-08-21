@@ -14,11 +14,11 @@ run_example <- function(){
       title="ShinyGovstyle",
       cookieBanner("Run Example"),
       header("MOJ", "ShinyGovstyle Example",
-             logo="shinyGovstyle/images/moj_logo-1.png", logo_width = 66),
+             logo="shinyGovBRstyle/images/dev_logo-1.png", logo_width = 66),
       banner(
         "banner",
         "beta",
-        'This is a new service \u002D your <a class="govuk-link" href="#">
+        'This is a new service \u002D your <a class="govbr-link" href="#">
         feedback</a> will help us to improve it.'),
 
       #Need this to make the error and word count work

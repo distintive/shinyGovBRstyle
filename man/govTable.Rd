@@ -46,19 +46,19 @@ if (interactive()) {
   example_data <- data.frame(Months, Bikes, Cars)
 
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::banner(
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::banner(
       inputId = "banner", type = "beta", 'This is a new service'),
-    shinyGovstyle::gov_layout(size = "two-thirds",
-    shinyGovstyle::govTable(
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+    shinyGovBRstyle::govTable(
       "tab1", example_data, "Test", "l", num_col = c(2,3),
       width_overwrite = c("one-half", "one-quarter", "one-quarter"))
     ),
 
-    shinyGovstyle::footer(full = TRUE)
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}

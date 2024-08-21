@@ -11,17 +11,17 @@
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::gov_layout(size = "two-thirds",
-#'       shinyGovstyle::details(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::gov_layout(size = "two-thirds",
+#'       shinyGovBRstyle::details(
 #'         inputId = "help_div",
 #'         label = "Help with form",
 #'         help_text = "To complete the form you need to fill it in...")
 #'     ),
-#'     shinyGovstyle::footer(full = TRUE)
+#'     shinyGovBRstyle::footer(full = TRUE)
 #'   )
 #'
 #'   server <- function(input, output, session) {}
@@ -29,12 +29,12 @@
 #' }
 
 details <-function(inputId, label, help_text){
-  govDetails <- shiny::tags$details(class = "govuk-details", id = inputId,
-    shiny::tags$summary(class = "govuk-details__summary",
-      shiny::tags$span(class = "govuk-details__summary-text",
+  govDetails <- shiny::tags$details(class = "govbr-details", id = inputId,
+    shiny::tags$summary(class = "govbr-details__summary",
+      shiny::tags$span(class = "govbr-details__summary-text",
                        shiny::HTML(label))
     ),
-    shiny::tags$div(class = "govuk-details__text", help_text)
+    shiny::tags$div(class = "govbr-details__text", help_text)
   )
   attachDependency(govDetails)
 }

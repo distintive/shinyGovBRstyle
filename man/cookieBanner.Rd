@@ -20,15 +20,15 @@ structure.
 \examples{
 if (interactive()) {
 ui <- fluidPage(
-  shinyGovstyle::header(
+  shinyGovBRstyle::header(
     main_text = "Example",
     secondary_text = "User Examples",
-    logo="shinyGovstyle/images/moj_logo.png"),
+    logo="shinyGovBRstyle/images/dev_logo.png"),
   #Needs shinyjs to work
   shinyjs::useShinyjs(),
-  shinyGovstyle::cookieBanner("The best thing"),
-  shinyGovstyle::gov_layout(size = "two-thirds"),
-  shinyGovstyle::footer(full = TRUE)
+  shinyGovBRstyle::cookieBanner("The best thing"),
+  shinyGovBRstyle::gov_layout(size = "two-thirds"),
+  shinyGovBRstyle::footer(full = TRUE)
 )
 
 server <- function(input, output, session) {

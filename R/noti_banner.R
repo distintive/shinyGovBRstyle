@@ -13,11 +13,11 @@
 #' if (interactive()) {
 #'
 #'   ui <- fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
-#'     shinyGovstyle::noti_banner(
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'     shinyGovBRstyle::noti_banner(
 #'       inputId = "banner", title_txt = "Important", body_txt = "Example text")
 #'   )
 #'
@@ -30,22 +30,22 @@ noti_banner <- function(inputId, title_txt = "Important", body_txt = NULL,
                         type = "standard"){
 
   if (type == "success") {
-   type_class <- "govuk-notification-banner govuk-notification-banner--success"
+   type_class <- "govbr-notification-banner govbr-notification-banner--success"
    role_type <- "alert"
   } else {
-    type_class <- "govuk-notification-banner"
+    type_class <- "govbr-notification-banner"
     role_type = "region"
   }
 
   shiny::tags$div(class = type_class, role = role_type,
-           `aria-labelledby` = "govuk-notification-banner-title",
-           `data-module` = "govuk-notification-banner",
-    shiny::tags$div(class = "govuk-notification-banner__header",
-             shiny::tags$h2(class = "govuk-notification-banner__title",
+           `aria-labelledby` = "govbr-notification-banner-title",
+           `data-module` = "govbr-notification-banner",
+    shiny::tags$div(class = "govbr-notification-banner__header",
+             shiny::tags$h2(class = "govbr-notification-banner__title",
                      id = inputId, title_txt)
     ),
-    shiny::tags$div(class="govuk-notification-banner__content",
-      shiny::tags$p(class="govuk-notification-banner__heading", shiny::HTML(body_txt))
+    shiny::tags$div(class="govbr-notification-banner__content",
+      shiny::tags$p(class="govbr-notification-banner__heading", shiny::HTML(body_txt))
 
     )
   )
