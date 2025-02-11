@@ -1,13 +1,13 @@
 #' Subcontents links function
 #' This function is used internally within contents_link to create links to headings within pages.
 #' @param subcontents_text_list vector of link text for subcontents
-#' @param subcontents_id_list vector of link ids for subcontents. pass NAs for automatic matching to id in shinygovstyle::heading_text
+#' @param subcontents_id_list vector of link ids for subcontents. pass NAs for automatic matching to id in shinygovBRstyle::heading_text
 #' @return a ol html shiny object
 #' @keywords internal
 #' @examples
 #' if (interactive()) {
 #'   ui <- shiny::fluidPage(
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
 #'       logo = "shinyGovstyle/images/moj_logo.png"
@@ -46,7 +46,7 @@ subcontents_links <- function(subcontents_text_list,
 
   # create sidelink
   create_sidelink <- function(link_text, link_id) {
-    # match id created in shinygovstyle::heading_text if custom id not specifcied
+    # match id created in shinygovBRstyle::heading_text if custom id not specifcied
     if (is.na(link_id)) {
       link_id <- clean_heading_text(link_text)
     }
@@ -73,7 +73,7 @@ subcontents_links <- function(subcontents_text_list,
 #' @param link_text vector of link text for contents
 #' @param input_id contents button id
 #' @param subcontents_text_list vector of link text for subcontents
-#' @param subcontents_id_list vector of link ids for subcontents. if missing automatically matches to id in shinygovstyle::heading_text
+#' @param subcontents_id_list vector of link ids for subcontents. if missing automatically matches to id in shinygovBRstyle::heading_text
 #' @return an action button html shiny object
 #' @export
 #' @examples
@@ -198,7 +198,7 @@ subcontents_links <- function(subcontents_text_list,
 #'                               heading_text("govTable", size = "s"),
 #'                               heading_text("govTabs", size = "s"),
 #'                               heading_text("accordions", size = "s"),
-#'                               shinyGovstyle::  accordion(
+#'                               shinyGovBRstyle::  accordion(
 #'                                 "acc1",
 #'                                 c("Writing well for the web",
 #'                                   "Writing well for specialists",

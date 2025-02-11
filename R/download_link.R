@@ -92,7 +92,7 @@ download_link <- function(
   }
 
   # Check against curated data set for link text we should banish into room 101
-  if (tolower(link_text) %in% shinyGovstyle::bad_link_text$bad_link_text) {
+  if (tolower(link_text) %in% shinyGovBRstyle::bad_link_text$bad_link_text) {
     stop(
       paste0(
         link_text,

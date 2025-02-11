@@ -11,7 +11,7 @@
 #'   ui <- fluidPage(
 #'     cookieBanner("Run Example"),
 #'     skip_to_main(),
-#'     shinyGovstyle::header(
+#'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
 #'       logo="shinyGovstyle/images/moj_logo.png"
@@ -44,7 +44,7 @@
 #'            size = "two-thirds",
 #'            heading_text("Your main content", size = "l"),
 #'            heading_text("accordions", size = "s"),
-#'            shinyGovstyle::  accordion(
+#'            shinyGovBRstyle::  accordion(
 #'              "acc1",
 #'              c("Writing well for the web",
 #'                "Writing well for specialists",

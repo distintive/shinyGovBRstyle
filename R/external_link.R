@@ -123,7 +123,7 @@ external_link <- function(href, link_text, add_warning = TRUE) {
   }
 
   # Check against curated data set for link text we should banish into room 101
-  if (tolower(link_text) %in% shinyGovstyle::bad_link_text$bad_link_text) {
+  if (tolower(link_text) %in% shinyGovBRstyle::bad_link_text$bad_link_text) {
     stop(
       paste0(
         link_text,
@@ -171,7 +171,7 @@ external_link <- function(href, link_text, add_warning = TRUE) {
   # Attach CSS from inst/www/css/visually-hidden.css
   dependency <- htmltools::htmlDependency(
     name = "sr-only",
-    version = as.character(utils::packageVersion("shinyGovstyle")[[1]]),
+    version = as.character(utils::packageVersion("shinyGovBRstyle")[[1]]),
     src = c(href = "shinyGovstyle/css"),
     stylesheet = "sr-only.css"
   )
