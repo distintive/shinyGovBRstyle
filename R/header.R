@@ -63,7 +63,7 @@ header <- function(main_text,
     logo_src <- logo
   }
 
-  print(str(logo_src))
+
 
   govHeader <- shiny::tags$header(class = "govbr-header", role = "banner",
     shinyjs::inlineCSS(paste0(

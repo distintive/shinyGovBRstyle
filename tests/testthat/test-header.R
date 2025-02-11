@@ -136,3 +136,4 @@ test_that("errors are as expected", {
     "Please use secondary_alt_text to provide alternative text for the secondary link you used."
   )
 })
+

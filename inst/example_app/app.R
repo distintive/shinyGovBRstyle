@@ -19,10 +19,10 @@ data <- data.frame(tabs, Case_manager, Cases_open, Cases_closed)
 
 shiny::shinyApp(
   ui = shiny::fluidPage(
-    title = "ShinyGovstyle",
-    cookieBanner("shinyGovBRstyle showcase"),
+    title = "ShinyGovBRstyle",
+    shinyGovBRstyle::cookieBanner("shinyGovBRstyle showcase"),
     shinyGovBRstyle::skip_to_main(),
-    header("MoJ", "shinyGovBRstyle showcase",
+    shinyGovBRstyle::header("MoJ", "shinyGovBRstyle showcase",
       logo = "shinyGovBRstyle/images/moj_logo-1.png", logo_width = 66,
       logo_alt_text = "Ministry of Justice logo"
     ),
