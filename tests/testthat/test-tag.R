@@ -1,6 +1,6 @@
 test_that("tag works", {
 
-  tag_check <- shinyGovstyle::tag_Input("tag1", "Complete")
+  tag_check <- shinyGovBRstyle::tag_Input("tag1", "Complete")
   expect_identical(
     tag_check$children[[1]],
     "Complete"
@@ -16,7 +16,7 @@ test_that("tag works", {
 
 test_that("tag colour works", {
 
-  tag_check2 <- shinyGovstyle::tag_Input("tag1", "Complete", "yellow")
+  tag_check2 <- shinyGovBRstyle::tag_Input("tag1", "Complete", "yellow")
 
   expect_identical(
     tag_check2$attribs$class,

@@ -1,6 +1,6 @@
 test_that("noti banner works", {
 
-  noti_check <- shinyGovstyle::noti_banner(
+  noti_check <- shinyGovBRstyle::noti_banner(
     inputId = "banner", title_txt = "Important", body_txt = "Example text")
 
   expect_identical(
@@ -17,7 +17,7 @@ test_that("noti banner works", {
 
 test_that("noti success banner works", {
 
-  noti_check <- shinyGovstyle::noti_banner(
+  noti_check <- shinyGovBRstyle::noti_banner(
     inputId = "banner", title_txt = "Important", body_txt = "Example text",
     type = "success")
 
