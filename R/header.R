@@ -87,6 +87,7 @@ header <- function(main_text,
           } else {
             shiny::tags$img(
               src = logo,
+              alt_text = logo_alt_text,
               class = "govbr-header__logotype-govfederal-fallback-image"
             )
           },
@@ -99,6 +100,7 @@ header <- function(main_text,
       shiny::tags$div(class = "govbr-header__content",
         shiny::tags$a(
           href = secondary_link, secondary_text,
+          `aria-label` = secondary_alt_text,
           class = "govbr-header__link govbr-header__link--service-name"
         )
       )
