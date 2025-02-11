@@ -3,3 +3,6 @@
 .RData
 .DS_Store
 node_modules/*
+docs/
+# {shinytest2}: Ignore new debug snapshots for `$expect_values()`
+*_.new.png

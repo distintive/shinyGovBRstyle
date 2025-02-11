@@ -54,6 +54,7 @@ accordion <- function(inputId, titles, descriptions){
           class = "govbr-accordion__show-all",
           `aria-expanded` = "false",
           shiny::tags$span(
+            id="show-all-chevron",
             class=paste(
               "govbr-accordion-nav__chevron",
               "govbr-accordion-nav__chevron--down"),
@@ -65,6 +66,13 @@ accordion <- function(inputId, titles, descriptions){
         )
       ),
       Map(function(x, y, z) {
+
+        if(z < 10){
+          z_str <- paste0("0", z)
+        } else {
+          z_str <- paste0(z)
+        }
+
         shiny::tags$div(
           class="govbr-accordion__section",
           shiny::tags$div(
@@ -73,8 +81,8 @@ accordion <- function(inputId, titles, descriptions){
               class="govbr-accordion__section-header",
               shiny::tags$button(
                 class = "govbr-accordion__section-button",
-                id = paste0("accordion-default-heading-", z),
-                name = paste0("accordion-default-heading-", z),
+                id = paste0("accordion-default-heading-", z_str),
+                name = paste0("accordion-default-heading-", z_str),
                 shiny::tags$span(
                   class = "govbr-accordion__section-heading-text",
                   shiny::tags$span(
@@ -112,7 +120,7 @@ accordion <- function(inputId, titles, descriptions){
           shiny::tags$div(
             id = "accordion-default-content-1",
             class="govbr-accordion__section-content",
-            `aria-labelledby` = paste0("accordion-default-heading-", z),
+            `aria-labelledby` = paste0("accordion-default-heading-", z_str),
             shiny::tags$p(
               class = "govbr-body",
               y

@@ -3,6 +3,9 @@
 <!-- badges: start -->
 
 [![CRAN status](https://www.r-pkg.org/badges/version/shinyGovstyle)](https://cran.r-project.org/package=shinyGovstyle)
+[![R-CMD-check](https://github.com/moj-analytical-services/shinyGovstyle/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/moj-analytical-services/shinyGovstyle/actions/workflows/R-CMD-check.yaml)
+[![](https://cranlogs.r-pkg.org/badges/shinyGovstyle)](https://cran.r-project.org/package=shinyGovstyle)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
 <!-- badges: end -->
 
@@ -11,16 +14,20 @@
 
 ## Overview
 
-This package provides some custom widgets to style your app like gov.uk.  There are a variety of widgets available, including select, radio, checkboxes as well as styling for headers and footers.
+This package provides custom widgets to style R Shiny apps using the GOV.UK design system. The components can be previewed in our [example showcase app](https://department-for-education.shinyapps.io/shinygovstyle-example-app/).
 
+To view details and advice on how to use the GOV.UK components please visit https://design-system.service.gov.uk/components/, most components should be available to use through this package.
 
-To view details of gov.uk components please visit https://design-system.service.gov.uk/.  Most components from https://design-system.service.gov.uk/components/ are available to use through this package.
+### Installation
 
-
-
-Installation :
+You can install the latest stable version from CRAN
 ```r
 install.packages("shinyGovstyle")
+```
+
+If you want to make use of the development version then install directly from GitHub.
+```r
+remotes::install_github("dfe-analytical-services/shinyGovstyle")
 ```
 
 This is also available on conda
@@ -28,22 +35,33 @@ This is also available on conda
 conda install r-shinygovstyle
 ```
 
-If you want to make use of the development then
-```r
-remotes::install_github("moj-analytical-services/shinyGovstyle")
-```
-
-To use error and word count elements you will need to load useShinyjs from shinyjs in the UI:
+To use error and word count elements you will need to load useShinyjs from shinyjs in your ui.R file
 ```r
   shinyjs::useShinyjs()
 ```
 
+### Contributing
 
-## Components available :
+Ideas, bug reports, and requests for new components should be [raised as GitHub issue](https://github.com/moj-analytical-services/shinyGovstyle/issues/new). It's often worth checking the existing [issues log](https://github.com/moj-analytical-services/shinyGovstyle/issues) incase there is already an existing discussion you can conrtibute to.
 
+More details on contributing can be found in the [CONTRIBUTING.md](.github/CONTRIBUTING.md) file.
+
+This package is also released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+
+### Available components
+
+The package contains an [example showcase app](https://department-for-education.shinyapps.io/shinygovstyle-example-app/) you can view or run yourself, showcasing available components. The code for the example app is in the `inst/example_app/` folder. You can easily run the app from the console using:
+
+```r
+shinyGovstyle::run_example()
+```
+
+Full list of available components:
 
   - [Gov style layout](#gov-style-layout)
   - [Banner](#banner)
+  - [Contents links](#contents-links)
+  - [Header text](#header-text)
   - [Radio button](#radio-button)
   - [Checkbox](#checkbox)
   - [Button](#button)
@@ -54,6 +72,7 @@ To use error and word count elements you will need to load useShinyjs from shiny
   - [Text area input](#text-area-input)
   - [Warning](#warning)
   - [Insert text](#insert-text)
+  - [Value box](#value-box)
   - [Details](#details)
   - [Panel](#panel)
   - [Notification Banner](#notification-banner)
@@ -62,11 +81,13 @@ To use error and word count elements you will need to load useShinyjs from shiny
   - [Tabs](#tabs)
   - [Summary List](#summary-list)
   - [Cookie Banner](#cookie-banner)
+  - [Skip to main](#skip-to-main)
   - [Tags](#tags)
-  - [Error](#error)
-  - [Example Version](#example-version)
+  - [Errors](#errors)
+  - [External links](#external-links)
+  - [Downloads](#downloads)
 
-### Gov style layout
+#### Gov style layout
 
 Create a gov style look to the page with a header, footer, font and layout: <br>
 ![gov-style-layout](man/figures/page_layout.png)
@@ -89,7 +110,28 @@ server <- function(input, output, session) {}
 ```
 Note: You can only use gov.uk font on service.gov.uk (see https://design-system.service.gov.uk/styles/typography/)
 
-### Banner
+If you want a plain footer you can do this by setting `full = FALSE`. For example:
+
+```r
+ui <- fluidPage(
+  shinyGovstyle::header("Justice", "Prototype", logo="shinyGovstyle/images/moj_logo.png"),
+  gov_layout(size = "full",
+        tags$br(),
+        tags$br(),
+        tags$br(),
+        tags$br(),
+        tags$br()
+      ),
+  footer(FALSE)
+)
+
+```
+
+Will look like:
+
+![plain-footer](man/figures/plain_footer.png)
+
+#### Banner
 
 Add a banner to the header to state in beta or alpha : <br>
 ![banner](man/figures/banner.png)
@@ -111,19 +153,178 @@ ui <- fluidPage(
 server <- function(input, output, session) {}
 ```
 
-### Radio button
+#### Contents links
+
+Create contents and subcontents links to sidebar to navigate page. 
+
+![](man/figures/contents_link.png)
+
+Important: `contents_link()` requires the following UI structure to enable the js to work as it relies on the IDs for each section to then point a users focus to. This can also be found in `run_example()`:
+
+```
+shiny::fluidpage(
+  shinygovstyle::header(
+    main_text = "example",
+    secondary_text = "user examples",
+    logo = "shinygovstyle/images/moj_logo.png"
+  ),
+  gov_row(
+    shiny::column(
+      width = 3,
+      id = "nav", # DO NOT REMOVE ID
+      shiny::tags$div(
+        id = "govuk-contents-box", # DO NOT REMOVE ID 
+       class = "govuk-contents-box",  # DO NOT REMOVE CLASS
+        shiny::tags$h2("contents"), 
+        
+        # CONTENTS LINKS GO HERE
+        )
+      ),
+      shiny::column(
+        width = 9,
+        id = "main-col", # DO NOT REMOVE ID
+        shiny::tabsetpanel(
+        type = "hidden",
+        id = "tab-container", # DO NOT REMOVE ID 
+                           
+        # TAB PANELS GO HERE 
+        )
+      )
+  )
+)
+```
+
+You can create a content links without subcontents links: 
+
+```
+contents_link(
+  link_text = "Cookies",
+  input_id = "cookies_button") 
+```
+
+Or with subcontents links: 
+
+```
+contents_link(
+  link_text = "Feedback types",
+  input_id = "feedback_types_button",
+  subcontents_text_list =  c("tag_Input", "details"))
+```      
+
+If you use `subcontents_text_list` without specifying `subcontents_id_list` then the subcontents links will automatically link to `shinyGovstyle::heading_text()` elements where the header label matches the `subcontents_text_list` label. 
+
+Use `subcontents_id_list` to link a subcontents link to a `shinyGovstyle::heading_text()` with a custom `id` argument. The order needs to match that of `subcontents_text_list`. 
+
+Add as a `NA` to your vector any subcontents links where you still want to use the automatic link id for. 
+
+```
+contents_link(
+  link_text = "Tables, tabs and accordions",
+  input_id = "tables_tabs_and_accordions_button",
+  subcontents_text_list = c("govTable", "govTabs", "button_Input"),
+  subcontents_id_list = c(NA, NA, "button_input_tables_tabs_accordions")
+)
+```
+
+Contents links will need a `shiny::observeEvent()` in the server to switch between tabset panels. 
+
+```
+ui <- shiny::fluidPage(
+  shinyGovstyle::header(
+    main_text = "Example",
+    secondary_text = "User Examples",
+    logo = "shinyGovstyle/images/moj_logo.png"
+  ),
+  gov_row(
+    shiny::column(
+      width = 3,
+      id = "nav", # DO NOT REMOVE ID 
+      
+      shiny::tags$div( # DO NOT REMOVE DIV
+        shiny::tags$h2("Contents"),
+        contents_link(
+          "Tables, tabs and accordions",
+          "tables_tabs_and_accordions_button",
+        ),
+        contents_link("Feedback types", "feedback_types_button"),
+      )
+    ),
+    shiny::column(
+      width = 9,
+      id = "main_col", # DO NOT REMOVE ID 
+      shiny::tabsetPanel(
+        type = "hidden",
+        id = "tab-container", # DO NOT REMOVE ID 
+        
+        shiny::tabPanel(
+          "Tables, tabs and accordions",
+          value = "tables_tabs_and_accordions",
+          gov_layout(size = "Tables, tabs and accordions", 
+                     heading_text("Tables, tabs and accordions", size = "l"))
+        ),
+        
+        shiny::tabPanel(
+          "Feedback Types",
+          value = "feedback_types",
+          gov_layout(size = "two-thirds", 
+                     heading_text("Feedback types", size = "l"))
+        ),
+      )
+      
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  shiny::observeEvent(input$tables_tabs_and_accordions_button, {
+    shiny::updateTabsetPanel(session, "tab-container", selected = "tables_tabs_and_accordions")
+  })
+  
+  shiny::observeEvent(input$feedback_types_button, {
+    shiny::updateTabsetPanel(session, "tab-container", selected = "feedback_types")
+  })
+  
+}
+shiny::shinyApp(ui = ui, server = server)
+}
+```
+
+Subcontents links work automatically and do not need to a `shiny::observeEvent()` in the server.
+
+#### Heading text
+
+Use heading text to create headings. 
+
+![](man/figures/header_text.png)
+
+You can adjust the text size by setting `size` to 'xl', 'l', 'm', or 's'. `size` defaults to 'xl'. 
+
+```
+heading_text(text_input = "I am the default extra large text", size = "xl"),
+heading_text(text_input = "I am large text", size = "l"),
+heading_text(text_input = "I am medium text", size = "m"),
+heading_text(text_input = "I am small text", size = "s")
+```
+
+You can use `id` to create a custom id to link with `subcontents_id_list` from `shinyGovstyle::contents_link`. This can be helpful when you have identically named headings.
+
+```
+heading_text(text_input = "I am the default extra large text", id = "custom_id")
+```
+
+#### Radio button
 
 Create a gov style radio button : <br>
 ![radio_button](man/figures/radio_button_Input.png)
 
 ```r
 radio_button_Input(inputId = "name_changed", label = "Have you changed your name?",
-                   choices = c("Yes", "No"), inline = TRUE,
+                   choices= c("Yes", "No"), inline = TRUE,
                    hint_label = "This includes changing your last name or spelling your name differently.")
 ```
 
 
-### Checkbox
+#### Checkbox
 
 Turn checkboxes into gov style ones : <br>
 ![checkbox](man/figures/checkbox.png)
@@ -139,7 +340,7 @@ checkbox_Input(
 
 Note that you currently access the values separately through the inputIds you supply or all values through the main inputID.
 
-### Button
+#### Button
 
 Gov style button with different styles :
 ![button](man/figures/buttons.png)
@@ -151,7 +352,7 @@ shinyGovstyle::button_Input(inputId = "btn1", label = "secondary", type = "secon
 shinyGovstyle::button_Input(inputId = "btn1", label = "warning", type = "warning")
 ```
 
-### Select
+#### Select
 
 Gov style drop down select  :
 ![select](man/figures/select.png)
@@ -164,9 +365,9 @@ shinyGovstyle::select_Input(
   select_value = c("published", "updated", "view", "comments"))
 ```
 
-### Date
+#### Date
 
-Gov style date input  :
+Gov style date input
 ![date](man/figures/date.png)
 
 ```r
@@ -178,9 +379,9 @@ date_Input(
 Note that you currently access the individual values by adding an affix of _day, _month and _year or the full date in dd/mm/yy by using the inputID.
 
 
-### File input
+#### File input
 
-Gov style file input component  :
+Gov style file input component
 ![file_input](man/figures/file.png)
 
 ```r
@@ -188,18 +389,18 @@ file_Input(inputId = "file1", label = "Upload a file")
 ```
 
 
-### Text input
+#### Text input
 
-Gov style text input component  :
+Gov style text input component
 ![text_input](man/figures/text.png)
 
 ```r
 text_Input(inputId = "txt1", label = "Event name")
 ```
 
-### Text area input
+#### Text area input
 
-Gov style text area input component  :
+Gov style text area input component
 ![text_area](man/figures/text_area.png)
 
 ```r
@@ -235,18 +436,18 @@ server <- function(input, output, session) {
 }
 ```
 
-### Warning
+#### Warning
 
-Gov style warning component  :
+Gov style warning component
 ![text_area](man/figures/warning.png)
 
 ```r
 warning_text(inputId = "warn", text = "You can be fined up to £5,000 if you do not register.")
 ```
 
-### Insert text
+#### Insert text
 
-Gov style insert text component  :
+Gov style insert text component
 ![text_area](man/figures/insert.png)
 
 ```r
@@ -255,10 +456,24 @@ insert_text(inputId = "insertId",
                     if there are no mistakes in the application.")
 ```
 
+#### Value box
 
-### Details
+Gov style value box component
+![value_box](man/figures/value_box.png)
 
-Gov style details component  :
+```r
+value_text(
+  inputId = "valueId",
+  value = "1,000,000",
+  text = "This is the latest value for the selected inputs.",
+  colour = "purple"
+)
+```
+
+
+#### Details
+
+Gov style details component
 ![details](man/figures/details.png)
 
 ```r
@@ -271,9 +486,9 @@ Gov style details component  :
 
 ```
 
-### Panel
+#### Panel
 
-Gov style panel component  :
+Gov style panel component
 ![panel](man/figures/panel.png)
 
 ```r
@@ -283,9 +498,9 @@ panel_output(
   sub_text = "Your reference number <br> <strong>HDJ2123F</strong>")
 ```
 
-### Notification Banner
+#### Notification Banner
 
-Gov style panel component  :
+Gov style panel component
 ![Notification Banner](man/figures/noti_banner.png)
 
 ```r
@@ -297,9 +512,9 @@ noti_banner(
 )
 ```
 
-### Accordion
+#### Accordion
 
-Gov style accordion component :
+Gov style accordion component
 ![Accordion](man/figures/accordion.png)
 
 ```r
@@ -317,9 +532,9 @@ accordion(
        ))
 ```
 
-### Table
+#### Table
 
-Gov style table component :
+Gov style table component
 ![Table](man/figures/table.png)
 
 ```r
@@ -332,10 +547,11 @@ shinyGovstyle::govTable(
       "tab1", example_data, "Test", "l", num_col = c(2,3),
       width_overwrite = c("one-half", "one-quarter", "one-quarter"))
 ```
+Note: widths specified in width_overwrite must add up to 1.
 
-### Tabs
+#### Tabs
 
-Gov style tabs component :
+Gov style tabs component
 ![Tabs](man/figures/tabs.png)
 
 ```r
@@ -363,9 +579,9 @@ Gov style tabs component :
   shinyApp(ui = ui, server = server)
 ```
 
-### Summary List
+#### Summary List
 
-Gov style summary list :
+Gov style summary list
 ![Summary List](man/figures/summary.png)
 
 ```r
@@ -391,9 +607,9 @@ Gov style summary list :
   shinyApp(ui = ui, server = server)
 ```
 
-### Cookie Banner
+#### Cookie Banner
 
-Gov style cookie banner :
+Gov style cookie banner
 ![Cookie Banner](man/figures/cookie.png)
 
 ```r
@@ -439,19 +655,88 @@ server <- function(input, output, session) {
 shinyApp(ui = ui, server = server)
 ```
 
-### Tags
+#### Skip to main
 
-Add a gov style tag component :
+Add an accessible 'Skip to main content' link which is typically used by keyboard-only users to bypass content and navigate directly to the main content of a page. It is only visible to users 'tabbing' over the feature, otherwise it is hidden: 
+
+![](man/figures/skip-to-main-visible.png)
+
+Important: your main column will need an id of "main_col" for this to work
+
+This feature is generally positioned after the cookie banner and below the header. See example below: 
+
+```r
+ui <- fluidPage(
+  cookieBanner("Run Example"),
+  skip_to_main(),
+  shinyGovstyle::header(
+    main_text = "Example",
+    secondary_text = "User Examples",
+    logo="shinyGovstyle/images/moj_logo.png"
+  ),
+  shinyjs::useShinyjs(),  # shinyjs is needed to manage visibility of elements
+  gov_row(
+    shiny::column(
+      width = 3,
+      id = "nav",
+      
+      # Contents box
+      shiny::tags$div(
+        id = "govuk-contents-box", #DO NOT REMOVE ID
+        class = "govuk-contents-box",  #DO NOT REMOVE CLASS
+        shiny::tags$h2("Contents"),
+        p("Your contents links go here"),
+      )
+    ),
+    
+    shiny::column(
+      width = 9,
+      id = "main_col",
+      shiny::tabsetPanel(
+        type = "hidden",
+        id = "tab-container", # DO NOT REMOVE ID
+        shiny::tabPanel(
+          "Your main content",
+          value = "your_main_content",
+          gov_layout(
+            size = "two-thirds",
+            heading_text("Your main content", size = "l"),
+            p("Your main content goes here")
+            
+          )
+        )
+      )
+    )
+    
+  )
+)
+server <- function(input, output, session){
+}
+shinyApp(ui = ui, server = server)
+```
+
+#### Tags
+
+Add a gov style tag component
 ![tags](man/figures/tags.png)
 
 ```r
-shinyGovstyle::tag_Input("tag1", "COMPLETE"),
-shinyGovstyle::tag_Input("tag2", "INCOMPLETE", "red")
+tag_Input(inputId = "tag1", text = "Default"),
+tag_Input(inputId = "tag2", text = "Grey", colour = "grey"),
+tag_Input(inputId = "tag3", text = "Green", colour = "green"),
+tag_Input(inputId = "tag4", text = "Turquoise", colour = "turquoise"),
+tag_Input(inputId = "tag5", text = "Blue", colour = "blue"),
+tag_Input(inputId = "tag6", text = "Light-blue", colour = "light-blue"),
+tag_Input(inputId = "tag7", text = "Purple", colour = "purple"),
+tag_Input(inputId = "tag8", text = "Pink", colour = "pink"),
+tag_Input(inputId = "tag9", text = "Red", colour = "red"),
+tag_Input(inputId = "tag10", text = "Orange", colour = "orange"),
+tag_Input(inputId = "tag11", text = "Yellow", colour = "yellow")
 ```
 
-### Error
+#### Errors
 
-Add errors to components when not filled in correctly.  Most components have an option to add  :
+Add errors to components when not filled in correctly. Most input components have this as an option to add
 ![error](man/figures/error.png)
 
 ```r
@@ -485,12 +770,56 @@ server <- function(input, output, session) {
   )
 }
 ```
-### Example Version
 
-You can run an example dashboard.  This is very rough and will be improved.
-![example](man/figures/example.png)
+#### External links
+
+Safely make links to external sites open in new tabs by using the `external_link()` function:
 
 ```r
-run_example()
+shinyGovstyle::external_link("https://shiny.posit.co/", "R Shiny")
 ```
 
+#### Downloads
+
+Downloads should be clearly sign-posted with both file type and file size. To 
+help standardise this in a GDS style, use download_link() following the example 
+below:
+
+```r
+  ui <- shiny::fluidPage(
+    gov_text("Choose a data set to download."),
+    select_Input(
+      "dataset",
+      "Data set",
+      select_text = c("Car road tests", "New York air quality"),
+      select_value = c("mtcars", "airquality")
+    ),
+    gov_text(
+      download_link(
+        "download_data",
+        "Download selected data set",
+        file_size = "4 KB"
+      )
+    )
+  )
+
+  server <- function(input, output) {
+    # The requested data set
+    data <- reactive({
+      get(input$dataset)
+    })
+
+    output$download_data <- downloadHandler(
+      filename = function() {
+        # Use the selected dataset as the suggested file name
+        paste0(input$dataset, ".csv")
+      },
+      content = function(file) {
+        # Write the dataset to the `file` that will be downloaded
+        write.csv(data(), file)
+      }
+    )
+  }
+
+  shiny::shinyApp(ui, server)
+```

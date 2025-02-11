@@ -1,21 +1,36 @@
 #' Footer Function
 #'
 #' This function create a gov style footer for your page
+#'
+#' You can add actionLinks as links in the footer through using the links_list
+#' argument.
+#'
+#' Links in the footer should be used sparingly and are usually for supporting
+#' information pages such as the accessibility statement, privacy notice,
+#' cookies information or link to a statement of voluntary adoption of the
+#' statistics code of practice.
+#'
+#' Generally when using footer links you will be controlling a hidden tabset
+#' so to the end user it looks like it is a new page.
+#'
 #' @param full Whenever you want to have blank footer or official gov version.
 #' Defaults to \code{FALSE}
+#' @param links A vector of actionLinks to be added to the footer, inputIDs
+#' are auto-generated and are the snake case version of the link text, e.g.
+#' "Accessibility Statement" will have an inputID of accessibility_statement
 #' @return a footer html shiny object
 #' @keywords footer
 #' @export
 #' @examples
 #' if (interactive()) {
-#'
 #'   ui <- fluidPage(
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
 #'       logo="shinyGovBRstyle/images/dev_logo.png"),
 #'     shinyGovBRstyle::banner(
-#'       inputId = "banner", type = "beta", 'This is a new service'),
+#'       inputId = "banner", type = "beta", 'Este é um novo serviço'
+#'     ),
 #'     tags$br(),
 #'     tags$br(),
 #'     shinyGovBRstyle::footer(full = TRUE)
@@ -25,28 +40,126 @@
 #'
 #'   shinyApp(ui = ui, server = server)
 #' }
+#'
+#' # Add links
+#' footer(links = c("Accessibility statement", "Cookies"))
+#'
+#' # Full app with link controlling a hidden tab
+#' if (interactive()) {
+#'   ui <- fluidPage(
+#'     shinyGovstyle::header(
+#'       main_text = "Example",
+#'       secondary_text = "User Examples",
+#'       logo = "shinyGovstyle/images/moj_logo.png"
+#'     ),
+#'     shinyGovstyle::banner(
+#'       inputId = "banner", type = "beta", "This is a new service"
+#'     ),
+#'     shiny::tabsetPanel(
+#'       type = "hidden",
+#'       id = "tabs",
+#'       shiny::tabPanel(
+#'         "Main content",
+#'         value = "main",
+#'         heading_text("Hello world!")
+#'       ),
+#'       shiny::tabPanel(
+#'         "Cookies",
+#'         value = "cookies",
+#'         heading_text("Cookies")
+#'       )
+#'     ),
+#'     shinyGovstyle::footer(
+#'       full = TRUE,
+#'       links = c("Accessibility statement", "Cookies")
+#'     )
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     shiny::observeEvent(input$cookies, {
+#'       shiny::updateTabsetPanel(session, "tabs", selected = "cookies")
+#'     })
+#'   }
+#'
+#'   shinyApp(ui = ui, server = server)
+#' }
+footer <- function(full = FALSE, links = NULL) {
+  # Validation on the links input
+  if (!is.null(links)) {
+    if (!is.vector(links)) {
+      stop("links must be a vector")
+    }
 
-footer <- function(full = FALSE){
-  govFooter <- shiny::tags$footer(class = "govbr-footer ",
+
+                ))
+
+=======
+    footer_link <- function(link_text) {
+      shiny::tags$li(
+        class = "govuk-footer__inline-list-item",
+        shiny::actionLink(
+          class = "govuk-link govuk-footer__link",
+          inputId = tolower(gsub(" ", "_", link_text)),
+          label = link_text
+        )
+      )
+    }
+  }
+
+  # The HTML div to be returned
+  govFooter <- shiny::tags$footer(
+    class = "govuk-footer ",
     role = "contentinfo",
-    shiny::div(class = "govbr-width-container ",
-      shiny::div(class = "govbr-footer__meta",
-        if (full==FALSE){
+    shiny::div(
+      class = "govuk-width-container ",
+      shiny::div(
+        class = "govuk-footer__meta",
+        if (full == FALSE) {
           shiny::div(
-            class = "govbr-footer__meta-item govbr-footer__meta-item--grow")
-        }
-        else {
+            class = "govuk-footer__meta-item govuk-footer__meta-item--grow",
+            if (!is.null(links)) {
+              shiny::div(
+                # Set a visually hidden title for accessibility
+                shiny::h2(
+                  class = "govuk-visually-hidden",
+                  "Support links"
+                ),
+                shiny::tags$ul(
+                  class = "govuk-footer__inline-list",
+
+                  # Generate as many links as needed
+                  lapply(links, footer_link)
+                )
+              )
+            }
+          )
+        } else {
           shiny::tagList(
-          shiny::div(
-            class = "govbr-footer__meta-item govbr-footer__meta-item--grow",
-            shiny::tag("svg", list(
-              role = "presentation",
-              focusable = "false",
-              class = "govbr-footer__licence-logo",
-              xmlns = "http://www.w3.org/2000/svg",
-              viewbox = "0 0 483.2 195.7",
-              height = "17",
-              width = "41",
+            shiny::div(
+              class = "govuk-footer__meta-item govuk-footer__meta-item--grow",
+              if (!is.null(links)) {
+                shiny::div(
+                  # Set a visually hidden title for accessibility
+                  shiny::h2(
+                    class = "govuk-visually-hidden",
+                    "Support links"
+                  ),
+                  shiny::tags$ul(
+                    class = "govuk-footer__inline-list",
+
+                    # Generate as many links as needed
+                    lapply(links, footer_link)
+                  )
+                )
+              },
+              shiny::tag("svg", list(
+                role = "presentation",
+                focusable = "false",
+                class = "govuk-footer__licence-logo",
+                xmlns = "http://www.w3.org/2000/svg",
+                viewbox = "0 0 483.2 195.7",
+                height = "17",
+                width = "41",
               shiny::tag("path", list(fill = "currentColor",
                   d = paste0("M 200.31,0.00
            C 200.31,0.00 200.31,6.49 200.31,6.49
@@ -295,30 +408,33 @@ footer <- function(full = FALSE){
              45.74,43.06 49.67,45.07 49.67,45.07
              47.98,48.05 44.93,50.01 41.35,50.01
              35.77,50.01 31.90,46.47 31.90,40.19
-             31.90,34.01 36.01,30.36 41.17,30.36 Z")
-              )))
-                ),
-              shiny::tags$span(class = "govbr-footer__licence-description",
+             31.90,34.01 36.01,30.36 41.17,30.36 Z"
+                  )
+                ))
+              )),
+              shiny::tags$span(
+                class = "govbr-footer__licence-description",
                 "Todo o conteúdo é disponível sob a licença",
-                shiny::tags$a(class = "govbr-footer__link",
+                shiny::tags$a(
+                  class = "govbr-footer__link",
                   href = "https://creativecommons.org/licenses/by/4.0/deed.pt-br",
                   rel = "license",
-                  "Creative Commons Atribuição 4.0"),
-                  ", exceto quando informado de outra forma.")),
+                  "Creative Commons Atribuição 4.0"
+		  ),
+                  ", exceto quando informado de outra forma."
+                 )),
                 shiny::tags$div(class = "govbr-footer__meta-item",
                   shiny::tags$a(
                     class = "govbr-footer__link govbr-footer__copyright-logo",
                     href = "https://creativecommons.org/licenses/by/4.0/deed.pt-br",
                     "\u00A9 Governo do Brasil"
                   )
-
-                ))
-
+              )
+            )
+          )
         }
       )
     )
   )
   attachDependency(govFooter)
 }
-
-
