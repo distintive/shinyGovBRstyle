@@ -1,10 +1,10 @@
-# shinyGovstyle <img src="man/figures/logo.png" align="right" height="139" style="padding-left: 1rem;" />
+# shinyGovBRstyle <img src="man/figures/logo.png" align="right" height="139" style="padding-left: 1rem;" />
 
 <!-- badges: start -->
 
-[![CRAN status](https://www.r-pkg.org/badges/version/shinyGovstyle)](https://cran.r-project.org/package=shinyGovstyle)
-[![R-CMD-check](https://github.com/moj-analytical-services/shinyGovstyle/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/moj-analytical-services/shinyGovstyle/actions/workflows/R-CMD-check.yaml)
-[![](https://cranlogs.r-pkg.org/badges/shinyGovstyle)](https://cran.r-project.org/package=shinyGovstyle)
+[![CRAN status](https://www.r-pkg.org/badges/version/shinyGovBRstyle)](https://cran.r-project.org/package=shinyGovBRstyle)
+[![R-CMD-check](https://github.com/distintive/shinyGovBRstyle/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/distintive/shinyGovBRstyle/actions/workflows/R-CMD-check.yaml)
+[![](https://cranlogs.r-pkg.org/badges/shinyGovBRstyle)](https://cran.r-project.org/package=shinyGovBRstyle)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
 <!-- badges: end -->
@@ -14,25 +14,25 @@
 
 ## Overview
 
-This package provides custom widgets to style R Shiny apps using the GOV.UK design system. The components can be previewed in our [example showcase app](https://department-for-education.shinyapps.io/shinygovstyle-example-app/).
+This package provides custom widgets to style R Shiny apps using the gov.br design system. The components can be previewed in our [example showcase app](https://department-for-education.shinyapps.io/shinyGovBRstyle-example-app/).
 
-To view details and advice on how to use the GOV.UK components please visit https://design-system.service.gov.uk/components/, most components should be available to use through this package.
+To view details and advice on how to use the gov.br components please visit https://design-system.service.gov.br/components/, most components should be available to use through this package.
 
 ### Installation
 
 You can install the latest stable version from CRAN
 ```r
-install.packages("shinyGovstyle")
+install.packages("shinyGovBRstyle")
 ```
 
 If you want to make use of the development version then install directly from GitHub.
 ```r
-remotes::install_github("dfe-analytical-services/shinyGovstyle")
+remotes::install_github("dfe-analytical-services/shinyGovBRstyle")
 ```
 
 This is also available on conda
 ```
-conda install r-shinygovstyle
+conda install r-shinyGovBRstyle
 ```
 
 To use error and word count elements you will need to load useShinyjs from shinyjs in your ui.R file
@@ -42,7 +42,7 @@ To use error and word count elements you will need to load useShinyjs from shiny
 
 ### Contributing
 
-Ideas, bug reports, and requests for new components should be [raised as GitHub issue](https://github.com/moj-analytical-services/shinyGovstyle/issues/new). It's often worth checking the existing [issues log](https://github.com/moj-analytical-services/shinyGovstyle/issues) incase there is already an existing discussion you can conrtibute to.
+Ideas, bug reports, and requests for new components should be [raised as GitHub issue](https://github.com/moj-analytical-services/shinyGovBRstyle/issues/new). It's often worth checking the existing [issues log](https://github.com/moj-analytical-services/shinyGovBRstyle/issues) incase there is already an existing discussion you can conrtibute to.
 
 More details on contributing can be found in the [CONTRIBUTING.md](.github/CONTRIBUTING.md) file.
 
@@ -50,10 +50,10 @@ This package is also released with a [Contributor Code of Conduct](.github/CODE_
 
 ### Available components
 
-The package contains an [example showcase app](https://department-for-education.shinyapps.io/shinygovstyle-example-app/) you can view or run yourself, showcasing available components. The code for the example app is in the `inst/example_app/` folder. You can easily run the app from the console using:
+The package contains an [example showcase app](https://department-for-education.shinyapps.io/shinyGovBRstyle-example-app/) you can view or run yourself, showcasing available components. The code for the example app is in the `inst/example_app/` folder. You can easily run the app from the console using:
 
 ```r
-shinyGovstyle::run_example()
+shinyGovBRstyle::run_example()
 ```
 
 Full list of available components:
@@ -95,7 +95,7 @@ Create a gov style look to the page with a header, footer, font and layout: <br>
 ```r
 ui <- fluidPage(
   #font(),
-  shinyGovstyle::header("Justice", "Prototype", logo="shinyGovstyle/images/moj_logo.png"),
+  shinyGovBRstyle::header("Justice", "Prototype", logo="shinyGovBRstyle/images/moj_logo.png"),
   gov_layout(size = "full",
         tags$br(),
         tags$br(),
@@ -108,13 +108,13 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {}
 ```
-Note: You can only use gov.uk font on service.gov.uk (see https://design-system.service.gov.uk/styles/typography/)
+Note: You can only use gov.br font on service.gov.br (see https://design-system.service.gov.br/styles/typography/)
 
 If you want a plain footer you can do this by setting `full = FALSE`. For example:
 
 ```r
 ui <- fluidPage(
-  shinyGovstyle::header("Justice", "Prototype", logo="shinyGovstyle/images/moj_logo.png"),
+  shinyGovBRstyle::header("Justice", "Prototype", logo="shinyGovBRstyle/images/moj_logo.png"),
   gov_layout(size = "full",
         tags$br(),
         tags$br(),
@@ -138,7 +138,7 @@ Add a banner to the header to state in beta or alpha : <br>
 
 ```r
 ui <- fluidPage(
-  shinyGovstyle::header("Justice", "Prototype", logo="shinyGovstyle/images/moj_logo.png"),
+  shinyGovBRstyle::header("Justice", "Prototype", logo="shinyGovBRstyle/images/moj_logo.png"),
   banner("banner", "beta", 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'),
   gov_layout(size = "full",
         tags$br(),
@@ -163,10 +163,10 @@ Important: `contents_link()` requires the following UI structure to enable the j
 
 ```
 shiny::fluidpage(
-  shinygovstyle::header(
+  shinyGovBRstyle::header(
     main_text = "example",
     secondary_text = "user examples",
-    logo = "shinygovstyle/images/moj_logo.png"
+    logo = "shinyGovBRstyle/images/moj_logo.png"
   ),
   gov_row(
     shiny::column(
@@ -211,9 +211,9 @@ contents_link(
   subcontents_text_list =  c("tag_Input", "details"))
 ```      
 
-If you use `subcontents_text_list` without specifying `subcontents_id_list` then the subcontents links will automatically link to `shinyGovstyle::heading_text()` elements where the header label matches the `subcontents_text_list` label. 
+If you use `subcontents_text_list` without specifying `subcontents_id_list` then the subcontents links will automatically link to `shinyGovBRstyle::heading_text()` elements where the header label matches the `subcontents_text_list` label. 
 
-Use `subcontents_id_list` to link a subcontents link to a `shinyGovstyle::heading_text()` with a custom `id` argument. The order needs to match that of `subcontents_text_list`. 
+Use `subcontents_id_list` to link a subcontents link to a `shinyGovBRstyle::heading_text()` with a custom `id` argument. The order needs to match that of `subcontents_text_list`. 
 
 Add as a `NA` to your vector any subcontents links where you still want to use the automatic link id for. 
 
@@ -230,10 +230,10 @@ Contents links will need a `shiny::observeEvent()` in the server to switch betwe
 
 ```
 ui <- shiny::fluidPage(
-  shinyGovstyle::header(
+  shinyGovBRstyle::header(
     main_text = "Example",
     secondary_text = "User Examples",
-    logo = "shinyGovstyle/images/moj_logo.png"
+    logo = "shinyGovBRstyle/images/moj_logo.png"
   ),
   gov_row(
     shiny::column(
@@ -306,7 +306,7 @@ heading_text(text_input = "I am medium text", size = "m"),
 heading_text(text_input = "I am small text", size = "s")
 ```
 
-You can use `id` to create a custom id to link with `subcontents_id_list` from `shinyGovstyle::contents_link`. This can be helpful when you have identically named headings.
+You can use `id` to create a custom id to link with `subcontents_id_list` from `shinyGovBRstyle::contents_link`. This can be helpful when you have identically named headings.
 
 ```
 heading_text(text_input = "I am the default extra large text", id = "custom_id")
@@ -346,10 +346,10 @@ Gov style button with different styles :
 ![button](man/figures/buttons.png)
 
 ```r
-shinyGovstyle::button_Input(inputId = "btn1", label = "default"),
-shinyGovstyle::button_Input(inputId = "btn1", label = "start", type = "start"),
-shinyGovstyle::button_Input(inputId = "btn1", label = "secondary", type = "secondary"),
-shinyGovstyle::button_Input(inputId = "btn1", label = "warning", type = "warning")
+shinyGovBRstyle::button_Input(inputId = "btn1", label = "default"),
+shinyGovBRstyle::button_Input(inputId = "btn1", label = "start", type = "start"),
+shinyGovBRstyle::button_Input(inputId = "btn1", label = "secondary", type = "secondary"),
+shinyGovBRstyle::button_Input(inputId = "btn1", label = "warning", type = "warning")
 ```
 
 #### Select
@@ -358,7 +358,7 @@ Gov style drop down select  :
 ![select](man/figures/select.png)
 
 ```r
-shinyGovstyle::select_Input(
+shinyGovBRstyle::select_Input(
   inputId = "sorter", 
   label = "Sort by",
   select_text = c("Recently published", "Recently updated", "Most views", "Most comments"),
@@ -416,7 +416,7 @@ You can also add a word count to the options, which requires an additional argum
 ```r
 ui <- fluidPage(
   shinyjs::useShinyjs(),
-  shinyGovstyle::header("Justice", "", logo="shinyGovstyle/images/moj_logo.png"),
+  shinyGovBRstyle::header("Justice", "", logo="shinyGovBRstyle/images/moj_logo.png"),
   gov_layout(size = "full",
         text_area_Input(
           inputId = "text_area",
@@ -543,7 +543,7 @@ Bikes <- c("£85", "£75", "£165")
 Cars <- c("£95", "£55", "£125")
 example_data <- data.frame(Months, Bikes, Cars)
 
-shinyGovstyle::govTable(
+shinyGovBRstyle::govTable(
       "tab1", example_data, "Test", "l", num_col = c(2,3),
       width_overwrite = c("one-half", "one-quarter", "one-quarter"))
 ```
@@ -566,13 +566,13 @@ Gov style tabs component
   data <- data.frame(tabs, Case_manager, Cases_open, Cases_closed)
 
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::gov_layout(size = "two-thirds",
-      shinyGovstyle::govTabs("tabsID", data, "tabs")),
-    shinyGovstyle::footer(full = TRUE)
+      logo="shinyGovBRstyle/images/moj_logo.png"),
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+      shinyGovBRstyle::govTabs("tabsID", data, "tabs")),
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}
@@ -594,13 +594,13 @@ Gov style summary list
     "07700 900457 <br> sarah.phillips@example.com")
 
   ui <- fluidPage(
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"),
-    shinyGovstyle::gov_layout(size = "two-thirds",
-      shinyGovstyle::gov_summary("sumID", headers, info, action = TRUE)),
-    shinyGovstyle::footer(full = TRUE)
+      logo="shinyGovBRstyle/images/moj_logo.png"),
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+      shinyGovBRstyle::gov_summary("sumID", headers, info, action = TRUE)),
+    shinyGovBRstyle::footer(full = TRUE)
   )
 
   server <- function(input, output, session) {}
@@ -614,15 +614,15 @@ Gov style cookie banner
 
 ```r
 ui <- fluidPage(
-  shinyGovstyle::header(
+  shinyGovBRstyle::header(
     main_text = "Example",
     secondary_text = "User Examples",
-    logo="shinyGovstyle/images/moj_logo.png"),
+    logo="shinyGovBRstyle/images/moj_logo.png"),
   #Needs shinyjs to work
   shinyjs::useShinyjs(),
-  shinyGovstyle::cookieBanner("The best thing"),
-  shinyGovstyle::gov_layout(size = "two-thirds"),
-  shinyGovstyle::footer(full = TRUE)
+  shinyGovBRstyle::cookieBanner("The best thing"),
+  shinyGovBRstyle::gov_layout(size = "two-thirds"),
+  shinyGovBRstyle::footer(full = TRUE)
 )
 
 server <- function(input, output, session) {
@@ -669,10 +669,10 @@ This feature is generally positioned after the cookie banner and below the heade
 ui <- fluidPage(
   cookieBanner("Run Example"),
   skip_to_main(),
-  shinyGovstyle::header(
+  shinyGovBRstyle::header(
     main_text = "Example",
     secondary_text = "User Examples",
-    logo="shinyGovstyle/images/moj_logo.png"
+    logo="shinyGovBRstyle/images/moj_logo.png"
   ),
   shinyjs::useShinyjs(),  # shinyjs is needed to manage visibility of elements
   gov_row(
@@ -742,7 +742,7 @@ Add errors to components when not filled in correctly. Most input components hav
 ```r
 ui <- fluidPage(
   shinyjs::useShinyjs(),
-  shinyGovstyle::header("Justice", "", logo="shinyGovstyle/images/moj_logo.png"),
+  shinyGovBRstyle::header("Justice", "", logo="shinyGovBRstyle/images/moj_logo.png"),
   gov_layout(size = "full",
         text_area_Input(
           "text_area",
@@ -776,7 +776,7 @@ server <- function(input, output, session) {
 Safely make links to external sites open in new tabs by using the `external_link()` function:
 
 ```r
-shinyGovstyle::external_link("https://shiny.posit.co/", "R Shiny")
+shinyGovBRstyle::external_link("https://shiny.posit.co/", "R Shiny")
 ```
 
 #### Downloads
