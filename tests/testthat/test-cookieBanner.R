@@ -11,7 +11,7 @@ test_that("cookie banner works", {
 
   expect_identical(
     cookieCheckChild$children[[1]]$children[[1]]$children[[1]]$children[[1]],
-    "Cookies on The best thing"
+    "Cookies ligados The best thing"
   )
 
   expect_identical(

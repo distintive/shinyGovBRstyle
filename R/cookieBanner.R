@@ -67,7 +67,7 @@ cookieBanner <- function(service_name) {
       id = "cookieDiv",
       class = "govbr-cookie-banner",
       `data-nosnippet role` = "region",
-      `aria-label` = paste("Cookies em", service_name),
+      `aria-label` = paste("Cookies ligados", service_name),
       shiny::tags$div(
         id = "cookieMain",
         class= "govbr-cookie-banner__message govbr-width-container",
@@ -77,7 +77,7 @@ cookieBanner <- function(service_name) {
             class = "govbr-grid-column-two-thirds",
             shiny::tags$h2(
               class = "govbr-cookie-banner__heading govbr-heading-m",
-              paste("Cookies em", service_name)
+              paste("Cookies ligados", service_name)
             ),
             shiny::tags$div(
               class="govbr-cookie-banner__content",
@@ -87,7 +87,7 @@ cookieBanner <- function(service_name) {
               ),
               shiny::tags$p(
                 class = "govbr-body",
-                "Tamb\u00e9m gostar\u00edamos de utilizar alguns cookies 
+                "Tamb\u00e9m gostar\u00edamos de utilizar alguns cookies
                 anal\u00edticos para\n entender como voc\u00ea usa o servi\u00e7o e\n
                  melhor\u00e1-lo."
               )
