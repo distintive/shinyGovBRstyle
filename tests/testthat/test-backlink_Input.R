@@ -3,7 +3,7 @@ test_that("backlink works", {
 
   expect_identical(
     backlink_check$children[[1]][[2]],
-    "Back"
+    "Voltar"
   )
 
 })
