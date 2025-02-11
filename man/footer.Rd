@@ -40,7 +40,8 @@ if (interactive()) {
       secondary_text = "User Examples",
       logo="shinyGovBRstyle/images/dev_logo.png"),
     shinyGovBRstyle::banner(
-      inputId = "banner", type = "beta", 'This is a new service'),
+      inputId = "banner", type = "beta", 'Este é um novo serviço'
+    ),
     tags$br(),
     tags$br(),
     shinyGovBRstyle::footer(full = TRUE)

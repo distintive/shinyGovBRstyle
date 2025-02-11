@@ -4,7 +4,7 @@
 \alias{backlink_Input}
 \title{Back Link Function}
 \usage{
-backlink_Input(inputId, label = "Back")
+backlink_Input(inputId, label = "Voltar")
 }
 \arguments{
 \item{inputId}{The input slot that will be used to access the value.}

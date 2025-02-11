@@ -1,6 +1,6 @@
 Package: shinyGovBRstyle
 Title: Custom GovBR Style Inputs for Shiny
-Version: 0.0.8
+Version: 0.0.9
 Authors@R: person(
   given = "Rodrigo", 
   family = "Borges", 

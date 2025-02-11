@@ -43,12 +43,12 @@
 #'   shinyApp(ui = ui, server = server)
 #' }
 
-backlink_Input <- function(inputId, label = "Back") {
+backlink_Input <- function(inputId, label = "Voltar") {
 
   value <- shiny::restoreInput(id = inputId, default = NULL)
   govBacklink <- shiny::actionLink(label = label,
                    inputId = inputId,
-                   class = paste0("govbr-back-link",
+                   class = paste0("govbr-back-link"),
                    `data-val` = value)
   attachDependency(govBacklink)
 

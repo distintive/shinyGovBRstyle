@@ -19,7 +19,7 @@ https://department-for-education.shinyapps.io/shinygovstyle-example-app/
 }
 \examples{
 if (interactive()) {
-  run_example()
+run_example()
 }
 }
 \keyword{example}
