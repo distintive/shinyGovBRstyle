@@ -411,12 +411,12 @@ footer <- function(full = FALSE, links = NULL) {
               )),
               shiny::tags$span(
                 class = "govbr-footer__licence-description",
-                "Todo o conteúdo é disponível sob a licença",
+                "Todo o conte\u00fado est\u00e1 dispon\u00edvel sob a licen\u00e7a",
                 shiny::tags$a(
                   class = "govbr-footer__link",
                   href = "https://creativecommons.org/licenses/by/4.0/deed.pt-br",
                   rel = "license",
-                  "Creative Commons Atribuição 4.0"
+                  "Creative Commons Atribui\u00e7\u00e3o 4.0"
 		  ),
                   ", exceto quando informado de outra forma."
                  )),

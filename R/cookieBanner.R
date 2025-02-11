@@ -67,7 +67,7 @@ cookieBanner <- function(service_name) {
       id = "cookieDiv",
       class = "govbr-cookie-banner",
       `data-nosnippet role` = "region",
-      `aria-label` = paste("Cookies on", service_name),
+      `aria-label` = paste("Cookies em", service_name),
       shiny::tags$div(
         id = "cookieMain",
         class= "govbr-cookie-banner__message govbr-width-container",
@@ -77,26 +77,27 @@ cookieBanner <- function(service_name) {
             class = "govbr-grid-column-two-thirds",
             shiny::tags$h2(
               class = "govbr-cookie-banner__heading govbr-heading-m",
-              paste("Cookies on", service_name)
+              paste("Cookies em", service_name)
             ),
             shiny::tags$div(
               class="govbr-cookie-banner__content",
               shiny::tags$p(
                 class = "govbr-body",
-                "Para fazer o serviço funcionar, utilizamos alguns cookies essenciais."
+                "Para fazer o servi\\u00e7o funcionar, utilizamos alguns cookies essenciais."
               ),
               shiny::tags$p(
                 class = "govbr-body",
-                "Também gostaríamos de utilizar alguns cookies analíticos para
-                entender como você usa o serviço e melhorá-lo."
+                "Tamb\u00e9m gostar\u00edamos de utilizar alguns cookies 
+                anal\u00edticos para\n entender como voc\u00ea usa o servi\u00e7o e\n
+                 melhor\u00e1-lo."
               )
             )
         )
       ),
       shiny::tags$div(
         class="govbr-button-group",
-        button_Input("cookieAccept", "Aceitar cookies analíticos"),
-        button_Input("cookieReject", "Rejeitar cookies analíticos"),
+        button_Input("cookieAccept", "Aceitar cookies anal\u00edticos"),
+        button_Input("cookieReject", "Rejeitar cookies anal\u00edticos"),
         govCookieLink
       )
     ),
@@ -112,8 +113,8 @@ cookieBanner <- function(service_name) {
               class = "govbr-cookie-banner__content",
               shiny::tags$p(
                 class = "govbr-body",
-                "Você aceitou cookies adicionais. Pode trocar suas
-                configurações de cookies quando quiser."
+                "Voc\u00ea aceitou cookies adicionais. Pode trocar suas
+                configura\u00e7\u00f5es de cookies quando quiser."
               )
             )
           )
@@ -136,8 +137,8 @@ cookieBanner <- function(service_name) {
               class = "govbr-cookie-banner__content",
               shiny::tags$p(
                 class = "govbr-body",
-                "Você rejeitou cookies adicionais. Pode trocar suas
-                configurações de cookies quando quiser."
+                "Voc\u00ea rejeitou cookies adicionais. Pode trocar suas
+                configura\u00e7\u00f5es de cookies quando quiser."
               )
             )
           )
