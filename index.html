@@ -55,7 +55,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="shinygovstyle-">shinyGovstyle <a class="anchor" aria-label="anchor" href="#shinygovstyle-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="shinygovbrstyle-">shinyGovBRstyle <a class="anchor" aria-label="anchor" href="#shinygovbrstyle-"></a>
 </h1>
 </div>
 <!-- badges: start -->
@@ -67,19 +67,19 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>This package provides custom widgets to style R Shiny apps using the GOV.UK design system. The components can be previewed in our <a href="https://department-for-education.shinyapps.io/shinygovstyle-example-app/" class="external-link">example showcase app</a>.</p>
-<p>To view details and advice on how to use the GOV.UK components please visit <a href="https://design-system.service.gov.uk/components/" class="external-link uri">https://design-system.service.gov.uk/components/</a>, most components should be available to use through this package.</p>
+<p>This package provides custom widgets to style R Shiny apps using the gov.br design system. The components can be previewed in our <a href="https://department-for-education.shinyapps.io/shinyGovBRstyle-example-app/" class="external-link">example showcase app</a>.</p>
+<p>To view details and advice on how to use the gov.br components please visit <a href="https://design-system.service.gov.br/components/" class="external-link uri">https://design-system.service.gov.br/components/</a>, most components should be available to use through this package.</p>
 <div class="section level3">
 <h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h3>
 <p>You can install the latest stable version from CRAN</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"shinyGovstyle"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"shinyGovBRstyle"</span><span class="op">)</span></span></code></pre></div>
 <p>If you want to make use of the development version then install directly from GitHub.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"dfe-analytical-services/shinyGovstyle"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"dfe-analytical-services/shinyGovBRstyle"</span><span class="op">)</span></span></code></pre></div>
 <p>This is also available on conda</p>
-<pre><code>conda install r-shinygovstyle</code></pre>
+<pre><code>conda install r-shinyGovBRstyle</code></pre>
 <p>To use error and word count elements you will need to load useShinyjs from shinyjs in your ui.R file</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="fu">shinyjs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shinyjs/man/useShinyjs.html" class="external-link">useShinyjs</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -87,16 +87,16 @@
 <div class="section level3">
 <h3 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
 </h3>
-<p>Ideas, bug reports, and requests for new components should be <a href="https://github.com/moj-analytical-services/shinyGovstyle/issues/new" class="external-link">raised as GitHub issue</a>. It’s often worth checking the existing <a href="https://github.com/moj-analytical-services/shinyGovstyle/issues" class="external-link">issues log</a> incase there is already an existing discussion you can conrtibute to.</p>
+<p>Ideas, bug reports, and requests for new components should be <a href="https://github.com/moj-analytical-services/shinyGovBRstyle/issues/new" class="external-link">raised as GitHub issue</a>. It’s often worth checking the existing <a href="https://github.com/moj-analytical-services/shinyGovBRstyle/issues" class="external-link">issues log</a> incase there is already an existing discussion you can conrtibute to.</p>
 <p>More details on contributing can be found in the <a href="CONTRIBUTING.html">CONTRIBUTING.md</a> file.</p>
 <p>This package is also released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div class="section level3">
 <h3 id="available-components">Available components<a class="anchor" aria-label="anchor" href="#available-components"></a>
 </h3>
-<p>The package contains an <a href="https://department-for-education.shinyapps.io/shinygovstyle-example-app/" class="external-link">example showcase app</a> you can view or run yourself, showcasing available components. The code for the example app is in the <code>inst/example_app/</code> folder. You can easily run the app from the console using:</p>
+<p>The package contains an <a href="https://department-for-education.shinyapps.io/shinyGovBRstyle-example-app/" class="external-link">example showcase app</a> you can view or run yourself, showcasing available components. The code for the example app is in the <code>inst/example_app/</code> folder. You can easily run the app from the console using:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">run_example</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/run_example.html">run_example</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Full list of available components:</p>
 <ul>
 <li><a href="#gov-style-layout">Gov style layout</a></li>
@@ -135,7 +135,7 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
 <span>  <span class="co">#font(),</span></span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">"Prototype"</span>, logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">"Prototype"</span>, logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"full"</span>,</span>
 <span>        <span class="va">tags</span><span class="op">$</span><span class="fu">br</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>        <span class="va">tags</span><span class="op">$</span><span class="fu">br</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -147,11 +147,11 @@
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></code></pre></div>
-<p>Note: You can only use gov.uk font on service.gov.uk (see <a href="https://design-system.service.gov.uk/styles/typography/" class="external-link uri">https://design-system.service.gov.uk/styles/typography/</a>)</p>
+<p>Note: You can only use gov.br font on service.gov.br (see <a href="https://design-system.service.gov.br/styles/typography/" class="external-link uri">https://design-system.service.gov.br/styles/typography/</a>)</p>
 <p>If you want a plain footer you can do this by setting <code>full = FALSE</code>. For example:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">"Prototype"</span>, logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">"Prototype"</span>, logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"full"</span>,</span>
 <span>        <span class="va">tags</span><span class="op">$</span><span class="fu">br</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>        <span class="va">tags</span><span class="op">$</span><span class="fu">br</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -172,7 +172,7 @@
 <p>Add a banner to the header to state in beta or alpha : <br><img src="reference/figures/banner.png" alt="banner"></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">"Prototype"</span>, logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">"Prototype"</span>, logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/banner.html">banner</a></span><span class="op">(</span><span class="st">"banner"</span>, <span class="st">"beta"</span>, <span class="st">'This is a new service – your &lt;a class="govuk-link" href="#"&gt;feedback&lt;/a&gt; will help us to improve it.'</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"full"</span>,</span>
 <span>        <span class="va">tags</span><span class="op">$</span><span class="fu">br</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -193,10 +193,10 @@
 <p><img src="reference/figures/contents_link.png"></p>
 <p>Important: <code><a href="reference/contents_link.html">contents_link()</a></code> requires the following UI structure to enable the js to work as it relies on the IDs for each section to then point a users focus to. This can also be found in <code><a href="reference/run_example.html">run_example()</a></code>:</p>
 <pre><code><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu">fluidpage</span><span class="op">(</span></span>
-<span>  <span class="fu">shinygovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span></span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span></span>
 <span>    main_text <span class="op">=</span> <span class="st">"example"</span>,</span>
 <span>    secondary_text <span class="op">=</span> <span class="st">"user examples"</span>,</span>
-<span>    logo <span class="op">=</span> <span class="st">"shinygovstyle/images/moj_logo.png"</span></span>
+<span>    logo <span class="op">=</span> <span class="st">"shinyGovBRstyle/images/moj_logo.png"</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/layouts.html">gov_row</a></span><span class="op">(</span></span>
 <span>    <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/column.html" class="external-link">column</a></span><span class="op">(</span></span>
@@ -231,8 +231,8 @@
 <span>  link_text <span class="op">=</span> <span class="st">"Feedback types"</span>,</span>
 <span>  input_id <span class="op">=</span> <span class="st">"feedback_types_button"</span>,</span>
 <span>  subcontents_text_list <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"tag_Input"</span>, <span class="st">"details"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
-<p>If you use <code>subcontents_text_list</code> without specifying <code>subcontents_id_list</code> then the subcontents links will automatically link to <code>shinyGovstyle::heading_text()</code> elements where the header label matches the <code>subcontents_text_list</code> label.</p>
-<p>Use <code>subcontents_id_list</code> to link a subcontents link to a <code>shinyGovstyle::heading_text()</code> with a custom <code>id</code> argument. The order needs to match that of <code>subcontents_text_list</code>.</p>
+<p>If you use <code>subcontents_text_list</code> without specifying <code>subcontents_id_list</code> then the subcontents links will automatically link to <code><a href="reference/heading_text.html">shinyGovBRstyle::heading_text()</a></code> elements where the header label matches the <code>subcontents_text_list</code> label.</p>
+<p>Use <code>subcontents_id_list</code> to link a subcontents link to a <code><a href="reference/heading_text.html">shinyGovBRstyle::heading_text()</a></code> with a custom <code>id</code> argument. The order needs to match that of <code>subcontents_text_list</code>.</p>
 <p>Add as a <code>NA</code> to your vector any subcontents links where you still want to use the automatic link id for.</p>
 <pre><code><span><span class="fu"><a href="reference/contents_link.html">contents_link</a></span><span class="op">(</span></span>
 <span>  link_text <span class="op">=</span> <span class="st">"Tables, tabs and accordions"</span>,</span>
@@ -242,10 +242,10 @@
 <span><span class="op">)</span></span></code></pre>
 <p>Contents links will need a <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html" class="external-link">shiny::observeEvent()</a></code> in the server to switch between tabset panels.</p>
 <pre><code>ui &lt;- shiny::fluidPage(
-  shinyGovstyle::header(
+  shinyGovBRstyle::header(
     main_text = "Example",
     secondary_text = "User Examples",
-    logo = "shinyGovstyle/images/moj_logo.png"
+    logo = "shinyGovBRstyle/images/moj_logo.png"
   ),
   gov_row(
     shiny::column(
@@ -311,7 +311,7 @@ shiny::shinyApp(ui = ui, server = server)
 heading_text(text_input = "I am large text", size = "l"),
 heading_text(text_input = "I am medium text", size = "m"),
 heading_text(text_input = "I am small text", size = "s")</code></pre>
-<p>You can use <code>id</code> to create a custom id to link with <code>subcontents_id_list</code> from <code>shinyGovstyle::contents_link</code>. This can be helpful when you have identically named headings.</p>
+<p>You can use <code>id</code> to create a custom id to link with <code>subcontents_id_list</code> from <code><a href="reference/contents_link.html">shinyGovBRstyle::contents_link</a></code>. This can be helpful when you have identically named headings.</p>
 <pre><code><span><span class="fu"><a href="reference/heading_text.html">heading_text</a></span><span class="op">(</span>text_input <span class="op">=</span> <span class="st">"I am the default extra large text"</span>, id <span class="op">=</span> <span class="st">"custom_id"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level4">
@@ -340,17 +340,17 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <h4 id="button">Button<a class="anchor" aria-label="anchor" href="#button"></a>
 </h4>
 <p>Gov style button with different styles : <img src="reference/figures/buttons.png" alt="button"></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>shinyGovstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"default"</span>),</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>shinyGovstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"start"</span>, <span class="at">type =</span> <span class="st">"start"</span>),</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>shinyGovstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"secondary"</span>, <span class="at">type =</span> <span class="st">"secondary"</span>),</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>shinyGovstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"warning"</span>, <span class="at">type =</span> <span class="st">"warning"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>shinyGovBRstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"default"</span>),</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>shinyGovBRstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"start"</span>, <span class="at">type =</span> <span class="st">"start"</span>),</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>shinyGovBRstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"secondary"</span>, <span class="at">type =</span> <span class="st">"secondary"</span>),</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>shinyGovBRstyle<span class="sc">::</span><span class="fu">button_Input</span>(<span class="at">inputId =</span> <span class="st">"btn1"</span>, <span class="at">label =</span> <span class="st">"warning"</span>, <span class="at">type =</span> <span class="st">"warning"</span>)</span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="select">Select<a class="anchor" aria-label="anchor" href="#select"></a>
 </h4>
 <p>Gov style drop down select : <img src="reference/figures/select.png" alt="select"></p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">select_Input</span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/select_Input.html">select_Input</a></span><span class="op">(</span></span>
 <span>  inputId <span class="op">=</span> <span class="st">"sorter"</span>, </span>
 <span>  label <span class="op">=</span> <span class="st">"Sort by"</span>,</span>
 <span>  select_text <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Recently published"</span>, <span class="st">"Recently updated"</span>, <span class="st">"Most views"</span>, <span class="st">"Most comments"</span><span class="op">)</span>,</span>
@@ -394,7 +394,7 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
 <span>  <span class="fu">shinyjs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shinyjs/man/useShinyjs.html" class="external-link">useShinyjs</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">""</span>, logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">""</span>, logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"full"</span>,</span>
 <span>        <span class="fu"><a href="reference/text_area_Input.html">text_area_Input</a></span><span class="op">(</span></span>
 <span>          inputId <span class="op">=</span> <span class="st">"text_area"</span>,</span>
@@ -502,7 +502,7 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <span><span class="va">Cars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"£95"</span>, <span class="st">"£55"</span>, <span class="st">"£125"</span><span class="op">)</span></span>
 <span><span class="va">example_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">Months</span>, <span class="va">Bikes</span>, <span class="va">Cars</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">govTable</span><span class="op">(</span></span>
+<span><span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/govTable.html">govTable</a></span><span class="op">(</span></span>
 <span>      <span class="st">"tab1"</span>, <span class="va">example_data</span>, <span class="st">"Test"</span>, <span class="st">"l"</span>, num_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>,</span>
 <span>      width_overwrite <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"one-half"</span>, <span class="st">"one-quarter"</span>, <span class="st">"one-quarter"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Note: widths specified in width_overwrite must add up to 1.</p>
@@ -523,13 +523,13 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <span>  <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">tabs</span>, <span class="va">Case_manager</span>, <span class="va">Cases_open</span>, <span class="va">Cases_closed</span><span class="op">)</span></span>
 <span></span>
 <span>  <span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
-<span>    <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span></span>
+<span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span></span>
 <span>      main_text <span class="op">=</span> <span class="st">"Example"</span>,</span>
 <span>      secondary_text <span class="op">=</span> <span class="st">"User Examples"</span>,</span>
-<span>      logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
-<span>    <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">gov_layout</span><span class="op">(</span>size <span class="op">=</span> <span class="st">"two-thirds"</span>,</span>
-<span>      <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">govTabs</span><span class="op">(</span><span class="st">"tabsID"</span>, <span class="va">data</span>, <span class="st">"tabs"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>    <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">footer</span><span class="op">(</span>full <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>      logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"two-thirds"</span>,</span>
+<span>      <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/govTabs.html">govTabs</a></span><span class="op">(</span><span class="st">"tabsID"</span>, <span class="va">data</span>, <span class="st">"tabs"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/footer.html">footer</a></span><span class="op">(</span>full <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
 <span>  <span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
@@ -549,13 +549,13 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <span>    <span class="st">"07700 900457 &lt;br&gt; sarah.phillips@example.com"</span><span class="op">)</span></span>
 <span></span>
 <span>  <span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
-<span>    <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span></span>
+<span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span></span>
 <span>      main_text <span class="op">=</span> <span class="st">"Example"</span>,</span>
 <span>      secondary_text <span class="op">=</span> <span class="st">"User Examples"</span>,</span>
-<span>      logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
-<span>    <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">gov_layout</span><span class="op">(</span>size <span class="op">=</span> <span class="st">"two-thirds"</span>,</span>
-<span>      <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">gov_summary</span><span class="op">(</span><span class="st">"sumID"</span>, <span class="va">headers</span>, <span class="va">info</span>, action <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>    <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">footer</span><span class="op">(</span>full <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>      logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"two-thirds"</span>,</span>
+<span>      <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/gov_summary.html">gov_summary</a></span><span class="op">(</span><span class="st">"sumID"</span>, <span class="va">headers</span>, <span class="va">info</span>, action <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/footer.html">footer</a></span><span class="op">(</span>full <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
 <span>  <span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span>
@@ -567,15 +567,15 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <p>Gov style cookie banner <img src="reference/figures/cookie.png" alt="Cookie Banner"></p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span></span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span></span>
 <span>    main_text <span class="op">=</span> <span class="st">"Example"</span>,</span>
 <span>    secondary_text <span class="op">=</span> <span class="st">"User Examples"</span>,</span>
-<span>    logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>    logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
 <span>  <span class="co">#Needs shinyjs to work</span></span>
 <span>  <span class="fu">shinyjs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shinyjs/man/useShinyjs.html" class="external-link">useShinyjs</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">cookieBanner</span><span class="op">(</span><span class="st">"The best thing"</span><span class="op">)</span>,</span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">gov_layout</span><span class="op">(</span>size <span class="op">=</span> <span class="st">"two-thirds"</span><span class="op">)</span>,</span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">footer</span><span class="op">(</span>full <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/cookieBanner.html">cookieBanner</a></span><span class="op">(</span><span class="st">"The best thing"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"two-thirds"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/footer.html">footer</a></span><span class="op">(</span>full <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
@@ -618,10 +618,10 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
 <span>  <span class="fu"><a href="reference/cookieBanner.html">cookieBanner</a></span><span class="op">(</span><span class="st">"Run Example"</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/skip_to_main.html">skip_to_main</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span></span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span></span>
 <span>    main_text <span class="op">=</span> <span class="st">"Example"</span>,</span>
 <span>    secondary_text <span class="op">=</span> <span class="st">"User Examples"</span>,</span>
-<span>    logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span></span>
+<span>    logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  <span class="fu">shinyjs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shinyjs/man/useShinyjs.html" class="external-link">useShinyjs</a></span><span class="op">(</span><span class="op">)</span>,  <span class="co"># shinyjs is needed to manage visibility of elements</span></span>
 <span>  <span class="fu"><a href="reference/layouts.html">gov_row</a></span><span class="op">(</span></span>
@@ -686,7 +686,7 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
 <span>  <span class="fu">shinyjs</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shinyjs/man/useShinyjs.html" class="external-link">useShinyjs</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  <span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">header</span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">""</span>, logo<span class="op">=</span><span class="st">"shinyGovstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">""</span>, logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"full"</span>,</span>
 <span>        <span class="fu"><a href="reference/text_area_Input.html">text_area_Input</a></span><span class="op">(</span></span>
 <span>          <span class="st">"text_area"</span>,</span>
@@ -719,7 +719,7 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 </h4>
 <p>Safely make links to external sites open in new tabs by using the <code><a href="reference/external_link.html">external_link()</a></code> function:</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">shinyGovstyle</span><span class="fu">::</span><span class="fu">external_link</span><span class="op">(</span><span class="st">"https://shiny.posit.co/"</span>, <span class="st">"R Shiny"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/external_link.html">external_link</a></span><span class="op">(</span><span class="st">"https://shiny.posit.co/"</span>, <span class="st">"R Shiny"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="downloads">Downloads<a class="anchor" aria-label="anchor" href="#downloads"></a>
@@ -807,9 +807,9 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=shinyGovstyle" class="external-link"><img src="https://www.r-pkg.org/badges/version/shinyGovstyle" alt="CRAN status"></a></li>
-<li><a href="https://github.com/moj-analytical-services/shinyGovstyle/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/moj-analytical-services/shinyGovstyle/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://cran.r-project.org/package=shinyGovstyle" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/shinyGovstyle"></a></li>
+<li><a href="https://cran.r-project.org/package=shinyGovBRstyle" class="external-link"><img src="https://www.r-pkg.org/badges/version/shinyGovBRstyle" alt="CRAN status"></a></li>
+<li><a href="https://github.com/distintive/shinyGovBRstyle/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/distintive/shinyGovBRstyle/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://cran.r-project.org/package=shinyGovBRstyle" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/shinyGovBRstyle"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 </ul>
 </div>
