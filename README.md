@@ -9,14 +9,14 @@
 
 <!-- badges: end -->
 
-> Apply Gov styled components and formats in shiny
+> Apply GovBR styled components and formats in shiny
 
 
 ## Overview
 
 This package provides custom widgets to style R Shiny apps using the gov.br design system. The components can be previewed in our [example showcase app](https://department-for-education.shinyapps.io/shinyGovBRstyle-example-app/).
 
-To view details and advice on how to use the gov.br components please visit https://design-system.service.gov.br/components/, most components should be available to use through this package.
+To view details and advice on how to use the gov.br components please visit https://www.gov.br/ds/components/visao-geral, most components should be available to use through this package.
 
 ### Installation
 
@@ -27,7 +27,7 @@ install.packages("shinyGovBRstyle")
 
 If you want to make use of the development version then install directly from GitHub.
 ```r
-remotes::install_github("dfe-analytical-services/shinyGovBRstyle")
+remotes::install_github("distintive/shinyGovBRstyle")
 ```
 
 This is also available on conda
@@ -42,7 +42,7 @@ To use error and word count elements you will need to load useShinyjs from shiny
 
 ### Contributing
 
-Ideas, bug reports, and requests for new components should be [raised as GitHub issue](https://github.com/moj-analytical-services/shinyGovBRstyle/issues/new). It's often worth checking the existing [issues log](https://github.com/moj-analytical-services/shinyGovBRstyle/issues) incase there is already an existing discussion you can conrtibute to.
+Ideas, bug reports, and requests for new components should be [raised as GitHub issue](https://github.com/distintive/shinyGovBRstyle/issues/new). It's often worth checking the existing [issues log](https://github.com/distintive/shinyGovBRstyle/issues) incase there is already an existing discussion you can conrtibute to.
 
 More details on contributing can be found in the [CONTRIBUTING.md](.github/CONTRIBUTING.md) file.
 
@@ -50,7 +50,7 @@ This package is also released with a [Contributor Code of Conduct](.github/CODE_
 
 ### Available components
 
-The package contains an [example showcase app](https://department-for-education.shinyapps.io/shinyGovBRstyle-example-app/) you can view or run yourself, showcasing available components. The code for the example app is in the `inst/example_app/` folder. You can easily run the app from the console using:
+The package contains an [example showcase app](https://shinygovbr.distintive.com.br/) you can view or run yourself, showcasing available components. The code for the example app is in the `inst/example_app/` folder. You can easily run the app from the console using:
 
 ```r
 shinyGovBRstyle::run_example()
