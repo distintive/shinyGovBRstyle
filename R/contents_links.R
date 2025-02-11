@@ -10,7 +10,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo = "shinyGovstyle/images/moj_logo.png"
+#'       logo = "shinyGovBRstyle/images/moj_logo.png"
 #'     ),
 #'     shiny::column(
 #'       width = 3,
@@ -82,7 +82,7 @@ subcontents_links <- function(subcontents_text_list,
 #'      title="ShinyGovstyle",
 #'        cookieBanner("Run Example"),
 #'        header("MOJ", "ShinyGovstyle Example",
-#'               logo="shinyGovstyle/images/moj_logo-1.png", logo_width = 66),
+#'               logo="shinyGovBRstyle/images/moj_logo-1.png", logo_width = 66),
 #'        banner(
 #'          "banner",
 #'          "Beta",

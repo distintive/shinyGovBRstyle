@@ -152,8 +152,8 @@ download_link <- function(
   # Attach CSS from inst/www/css/visually-hidden.css
   dependency <- htmltools::htmlDependency(
     name = "sr-only",
-    version = as.character(utils::packageVersion("shinyGovstyle")[[1]]),
-    src = c(href = "shinyGovstyle/css"),
+    version = as.character(utils::packageVersion("shinyGovBRstyle")[[1]]),
+    src = c(href = "shinyGovBRstyle/css"),
     stylesheet = "sr-only.css"
   )
 

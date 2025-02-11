@@ -1,6 +1,6 @@
-# shinyGovstyle (development version)
+# shinyGovBRstyle (development version)
 
-# shinyGovstyle 0.1.0
+# shinyGovBRstyle 0.1.0
 
 * Update the css to v5.4.0 and made fixes associated with that.
 * No longer requires rem remover step to update for future changes
@@ -10,7 +10,7 @@
 * Added the contents_links() function as a helper for getting the styling and behaviour for left navigation
 
 
-# shinyGovstyle 0.0.8
+# shinyGovBRstyle 0.0.8
 
 * Update the css to v4.0.0 and made fixes associated with that.
 * One of the major changes in the css is a change in look for the accordion.
@@ -22,7 +22,7 @@ give better control over the layouts.
 update (`error_summary_update`)
 
 
-# shinyGovstyle 0.0.7
+# shinyGovBRstyle 0.0.7
 
 * Improved the header so that you can adjust the logo size to suit
 * Fix some errors that appeared in the footer
@@ -38,7 +38,7 @@ update (`error_summary_update`)
 * Added accordion through the `accordion` function.
 * Added tables through the `govTable` function.
 
-# shinyGovstyle 0.0.6
+# shinyGovBRstyle 0.0.6
 
 * Fix minor bugs from the issues list including data default and radio default
 * Added units test

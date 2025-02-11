@@ -1,6 +1,6 @@
 # Deployed at https://department-for-education.shinyapps.io/shinygovstyle-example-app/
 
-library(shinyGovstyle)
+library(shinyGovBRstyle)
 
 Months <- c("January", "February", "March")
 Bikes <- c(85, 75, 165)
@@ -20,16 +20,16 @@ data <- data.frame(tabs, Case_manager, Cases_open, Cases_closed)
 shiny::shinyApp(
   ui = shiny::fluidPage(
     title = "ShinyGovstyle",
-    cookieBanner("shinyGovstyle showcase"),
-    shinyGovstyle::skip_to_main(),
-    header("MoJ", "shinyGovstyle showcase",
-      logo = "shinyGovstyle/images/moj_logo-1.png", logo_width = 66,
+    cookieBanner("shinyGovBRstyle showcase"),
+    shinyGovBRstyle::skip_to_main(),
+    header("MoJ", "shinyGovBRstyle showcase",
+      logo = "shinyGovBRstyle/images/moj_logo-1.png", logo_width = 66,
       logo_alt_text = "Ministry of Justice logo"
     ),
     banner(
       "banner",
       "Beta",
-      'This is a new service \u002D your <a class="govbr-link" href="https://github.com/dfe-analytical-services/shinyGovstyle/issues/new/choose">
+      'This is a new service \u002D your <a class="govbr-link" href="https://github.com/dfe-analytical-services/shinyGovBRstyle/issues/new/choose">
         feedback</a> will help us to improve it.'
     ),
 
@@ -38,15 +38,15 @@ shiny::shinyApp(
 
     # Notice at top of page ----
     br(),
-    shinyGovstyle::gov_row(
-      shinyGovstyle::gov_box(
+    shinyGovBRstyle::gov_row(
+      shinyGovBRstyle::gov_box(
         size = "full",
-        shinyGovstyle::gov_text(
+        shinyGovBRstyle::gov_text(
           style = "margin-bottom: -10px;",
-          "This example app showcases the components available in the latest development version of the shinyGovstyle
+          "This example app showcases the components available in the latest development version of the shinyGovBRstyle
                     package. The source code for the app can be found on the ",
-          shinyGovstyle::external_link(
-            href = "https://github.com/dfe-analytical-services/shinyGovstyle/blob/master/inst/example_app/app.R",
+          shinyGovBRstyle::external_link(
+            href = "https://github.com/dfe-analytical-services/shinyGovBRstyle/blob/master/inst/example_app/app.R",
             link_text = "master GitHub branch"
           ),
           "."
@@ -237,25 +237,25 @@ shiny::shinyApp(
               heading_text("external_link", size = "s"),
               gov_text(
                 "You can add external links with automatic formatting such as to our ",
-                shinyGovstyle::external_link(
-                  href = "https://github.com/dfe-analytical-services/shinyGovstyle",
+                shinyGovBRstyle::external_link(
+                  href = "https://github.com/dfe-analytical-services/shinyGovBRstyle",
                   link_text = "GitHub repository",
                 ),
                 "."
               ),
-              shinyGovstyle::gov_text(
+              shinyGovBRstyle::gov_text(
                 "You can also add external links that don't have the warning in brackets
                 but do have the warning for screen readers, such as this link to our ",
-                shinyGovstyle::external_link(
-                  href = "https://dfe-analytical-services.github.io/shinyGovstyle/",
+                shinyGovBRstyle::external_link(
+                  href = "https://dfe-analytical-services.github.io/shinyGovBRstyle/",
                   link_text = "package documentation site",
                   add_warning = FALSE
                 ),
                 "."
               ),
               heading_text("download_link", size = "s"),
-              shinyGovstyle::gov_text(
-                shinyGovstyle::download_link(
+              shinyGovBRstyle::gov_text(
+                shinyGovBRstyle::download_link(
                   "download_data",
                   "Download a demo data set",
                   file_type = "CSV",
@@ -276,17 +276,17 @@ shiny::shinyApp(
               label_hint("label3", "These are some examples of using tabs and
                        tables"),
               heading_text("govTable", size = "s"),
-              shinyGovstyle::govTable(
+              shinyGovBRstyle::govTable(
                 "tab1", example_data, "Test", "l",
                 num_col = c(2, 3),
                 width_overwrite = c("one-half", "one-quarter", "one-quarter")
               ),
               heading_text("govTabs", size = "s"),
-              shinyGovstyle::govTabs("tabsID", data, "tabs"),
+              shinyGovBRstyle::govTabs("tabsID", data, "tabs"),
               shiny::tags$br(),
               shiny::tags$br(),
               heading_text("accordions", size = "s"),
-              shinyGovstyle::accordion(
+              shinyGovBRstyle::accordion(
                 "acc1",
                 c(
                   "Writing well for the web",
@@ -315,17 +315,17 @@ shiny::shinyApp(
               label_hint("label-feedback", "These are some examples of the types of user
                    feedback inputs that you can use"),
               heading_text("tag_Input", size = "s"),
-              shinyGovstyle::tag_Input("tag1", "Default"),
-              shinyGovstyle::tag_Input("tag2", "Grey", "grey"),
-              shinyGovstyle::tag_Input("tag3", "Green", "green"),
-              shinyGovstyle::tag_Input("tag4", "Turquoise", "turquoise"),
-              shinyGovstyle::tag_Input("tag5", "Blue", "blue"),
-              shinyGovstyle::tag_Input("tag6", "Light-blue", "light-blue"),
-              shinyGovstyle::tag_Input("tag7", "Purple", "purple"),
-              shinyGovstyle::tag_Input("tag8", "Pink", "pink"),
-              shinyGovstyle::tag_Input("tag9", "Red", "red"),
-              shinyGovstyle::tag_Input("tag10", "Orange", "orange"),
-              shinyGovstyle::tag_Input("tag11", "Yellow", "yellow"),
+              shinyGovBRstyle::tag_Input("tag1", "Default"),
+              shinyGovBRstyle::tag_Input("tag2", "Grey", "grey"),
+              shinyGovBRstyle::tag_Input("tag3", "Green", "green"),
+              shinyGovBRstyle::tag_Input("tag4", "Turquoise", "turquoise"),
+              shinyGovBRstyle::tag_Input("tag5", "Blue", "blue"),
+              shinyGovBRstyle::tag_Input("tag6", "Light-blue", "light-blue"),
+              shinyGovBRstyle::tag_Input("tag7", "Purple", "purple"),
+              shinyGovBRstyle::tag_Input("tag8", "Pink", "pink"),
+              shinyGovBRstyle::tag_Input("tag9", "Red", "red"),
+              shinyGovBRstyle::tag_Input("tag10", "Orange", "orange"),
+              shinyGovBRstyle::tag_Input("tag11", "Yellow", "yellow"),
               shiny::tags$br(), shiny::tags$br(),
               heading_text("details", size = "s"),
               details(
@@ -380,7 +380,7 @@ shiny::shinyApp(
                 type = "standard"
               ),
               heading_text("gov_summary", size = "s"),
-              shinyGovstyle::gov_summary(
+              shinyGovBRstyle::gov_summary(
                 "sumID",
                 c("Name", "Date of birth", "Contact information", "Contact details"),
                 c(
@@ -409,7 +409,7 @@ shiny::shinyApp(
       )
     ), # end of gov row
 
-    shinyGovstyle::footer(TRUE, links = c("Cookies"))
+    shinyGovBRstyle::footer(TRUE, links = c("Cookies"))
   ), # end of fluid page
 
   server = function(input, output, session) {

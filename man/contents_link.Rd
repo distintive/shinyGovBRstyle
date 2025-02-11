@@ -13,7 +13,7 @@ contents_link(link_text, input_id, subcontents_text_list, subcontents_id_list)
 
 \item{subcontents_text_list}{vector of link text for subcontents}
 
-\item{subcontents_id_list}{vector of link ids for subcontents. if missing automatically matches to id in shinygovstyle::heading_text}
+\item{subcontents_id_list}{vector of link ids for subcontents. if missing automatically matches to id in shinygovBRstyle::heading_text}
 }
 \value{
 an action button html shiny object
@@ -27,7 +27,7 @@ if (interactive()) {
      title="ShinyGovstyle",
        cookieBanner("Run Example"),
        header("MOJ", "ShinyGovstyle Example",
-              logo="shinyGovstyle/images/moj_logo-1.png", logo_width = 66),
+              logo="shinyGovBRstyle/images/moj_logo-1.png", logo_width = 66),
        banner(
          "banner",
          "Beta",
@@ -143,7 +143,7 @@ if (interactive()) {
                               heading_text("govTable", size = "s"),
                               heading_text("govTabs", size = "s"),
                               heading_text("accordions", size = "s"),
-                              shinyGovstyle::  accordion(
+                              shinyGovBRstyle::  accordion(
                                 "acc1",
                                 c("Writing well for the web",
                                   "Writing well for specialists",

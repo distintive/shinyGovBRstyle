@@ -172,7 +172,7 @@ external_link <- function(href, link_text, add_warning = TRUE) {
   dependency <- htmltools::htmlDependency(
     name = "sr-only",
     version = as.character(utils::packageVersion("shinyGovBRstyle")[[1]]),
-    src = c(href = "shinyGovstyle/css"),
+    src = c(href = "shinyGovBRstyle/css"),
     stylesheet = "sr-only.css"
   )
 

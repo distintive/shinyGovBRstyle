@@ -14,7 +14,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"
+#'       logo="shinyGovBRstyle/images/moj_logo.png"
 #'     ),
 #'     shinyjs::useShinyjs(),  # shinyjs is needed to manage visibility of elements
 #'     gov_row(

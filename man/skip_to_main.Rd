@@ -20,10 +20,10 @@ Important: your main column will need an id of "main_col" for this to work
   ui <- fluidPage(
     cookieBanner("Run Example"),
     skip_to_main(),
-    shinyGovstyle::header(
+    shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovstyle/images/moj_logo.png"
+      logo="shinyGovBRstyle/images/moj_logo.png"
     ),
     shinyjs::useShinyjs(),  # shinyjs is needed to manage visibility of elements
     gov_row(
@@ -53,7 +53,7 @@ Important: your main column will need an id of "main_col" for this to work
            size = "two-thirds",
            heading_text("Your main content", size = "l"),
            heading_text("accordions", size = "s"),
-           shinyGovstyle::  accordion(
+           shinyGovBRstyle::  accordion(
              "acc1",
              c("Writing well for the web",
                "Writing well for specialists",

@@ -35,7 +35,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovstyle/images/moj_logo.png"),
+#'       logo="shinyGovBRstyle/images/moj_logo.png"),
 #'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", 'This is a new service'),
 #'     shinyGovBRstyle::gov_layout(size = "two-thirds",
