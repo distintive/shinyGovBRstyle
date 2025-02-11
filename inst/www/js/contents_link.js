@@ -1,9 +1,9 @@
 
 // contents links JS
-$(document).on('click', '.govuk-contents__link', function(e) {
+$(document).on('click', '.govbr-contents__link', function(e) {
 
   // get subcontents sections
-  var subsections = document.getElementsByClassName("govuk-subcontents");
+  var subsections = document.getElementsByClassName("govbr-subcontents");
 
   // close all other subsections except in the section of the link you are clicking
   for (var i = 0; i < subsections.length; i++) {
@@ -26,15 +26,15 @@ $(document).on('click', '.govuk-contents__link', function(e) {
 $(document).scroll(function () {
 
   // Get the navbar
-  var nav_contents = document.getElementById("govuk-contents-box");
+  var nav_contents = document.getElementById("govbr-contents-box");
 
 
   // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you    leave the scroll position
   if (window.pageYOffset >= document.getElementById("nav").offsetTop) {
-     nav_contents.classList.add("govuk-contents-box_sticky")
+     nav_contents.classList.add("govbr-contents-box_sticky")
 
     } else {
-    nav_contents.classList.remove("govuk-contents-box_sticky");
+    nav_contents.classList.remove("govbr-contents-box_sticky");
   }
 
 
@@ -43,7 +43,7 @@ $(document).scroll(function () {
 // Avoid the different widths caused by changing between fixed and static divs?
 function set_contents_box_width(){
    var new_width = $('#nav').width();
-  $('#govuk-contents-box').width(new_width);
+  $('#govbr-contents-box').width(new_width);
 }
 
 $(document).scroll(function () {
@@ -56,7 +56,7 @@ $(window).resize(function () {
 
 
 // Scroll to top of main col
-$(document).on('click', '.govuk-contents__link', function(e) {
+$(document).on('click', '.govbr-contents__link', function(e) {
 
  document.getElementById("main_col").scrollIntoView()
 

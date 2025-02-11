@@ -29,7 +29,7 @@ shiny::shinyApp(
     banner(
       "banner",
       "Beta",
-      'This is a new service \u002D your <a class="govuk-link" href="https://github.com/dfe-analytical-services/shinyGovstyle/issues/new/choose">
+      'This is a new service \u002D your <a class="govbr-link" href="https://github.com/dfe-analytical-services/shinyGovstyle/issues/new/choose">
         feedback</a> will help us to improve it.'
     ),
 
@@ -63,8 +63,8 @@ shiny::shinyApp(
 
         # Contents box
         shiny::tags$div(
-          id = "govuk-contents-box", # DO NOT REMOVE ID
-          class = "govuk-contents-box", # DO NOT REMOVE CLASS
+          id = "govbr-contents-box", # DO NOT REMOVE ID
+          class = "govbr-contents-box", # DO NOT REMOVE CLASS
 
           shiny::tags$h2("Contents"),
 
