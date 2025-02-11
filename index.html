@@ -173,7 +173,7 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
 <span>  <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="reference/header.html">header</a></span><span class="op">(</span><span class="st">"Justice"</span>, <span class="st">"Prototype"</span>, logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo.png"</span><span class="op">)</span>,</span>
-<span>  <span class="fu"><a href="reference/banner.html">banner</a></span><span class="op">(</span><span class="st">"banner"</span>, <span class="st">"beta"</span>, <span class="st">'This is a new service – your &lt;a class="govuk-link" href="#"&gt;feedback&lt;/a&gt; will help us to improve it.'</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="reference/banner.html">banner</a></span><span class="op">(</span><span class="st">"banner"</span>, <span class="st">"beta"</span>, <span class="st">'This is a new service – your &lt;a class="govbr-link" href="#"&gt;feedback&lt;/a&gt; will help us to improve it.'</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"full"</span>,</span>
 <span>        <span class="va">tags</span><span class="op">$</span><span class="fu">br</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>        <span class="va">tags</span><span class="op">$</span><span class="fu">br</span><span class="op">(</span><span class="op">)</span>,</span>
@@ -203,8 +203,8 @@
 <span>      width <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>      id <span class="op">=</span> <span class="st">"nav"</span>, <span class="co"># DO NOT REMOVE ID</span></span>
 <span>      <span class="fu">shiny</span><span class="fu">::</span><span class="va"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">tags</a></span><span class="op">$</span><span class="fu">div</span><span class="op">(</span></span>
-<span>        id <span class="op">=</span> <span class="st">"govuk-contents-box"</span>, <span class="co"># DO NOT REMOVE ID</span></span>
-<span>       class <span class="op">=</span> <span class="st">"govuk-contents-box"</span>,  <span class="co"># DO NOT REMOVE CLASS</span></span>
+<span>        id <span class="op">=</span> <span class="st">"govbr-contents-box"</span>, <span class="co"># DO NOT REMOVE ID</span></span>
+<span>       class <span class="op">=</span> <span class="st">"govbr-contents-box"</span>,  <span class="co"># DO NOT REMOVE CLASS</span></span>
 <span>        <span class="fu">shiny</span><span class="fu">::</span><span class="va"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">tags</a></span><span class="op">$</span><span class="fu">h2</span><span class="op">(</span><span class="st">"contents"</span><span class="op">)</span>,</span>
 <span></span>
 <span>        <span class="co"># CONTENTS LINKS GO HERE</span></span>
@@ -631,8 +631,8 @@ heading_text(text_input = "I am small text", size = "s")</code></pre>
 <span>      </span>
 <span>      <span class="co"># Contents box</span></span>
 <span>      <span class="fu">shiny</span><span class="fu">::</span><span class="va"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">tags</a></span><span class="op">$</span><span class="fu">div</span><span class="op">(</span></span>
-<span>        id <span class="op">=</span> <span class="st">"govuk-contents-box"</span>, <span class="co">#DO NOT REMOVE ID</span></span>
-<span>        class <span class="op">=</span> <span class="st">"govuk-contents-box"</span>,  <span class="co">#DO NOT REMOVE CLASS</span></span>
+<span>        id <span class="op">=</span> <span class="st">"govbr-contents-box"</span>, <span class="co">#DO NOT REMOVE ID</span></span>
+<span>        class <span class="op">=</span> <span class="st">"govbr-contents-box"</span>,  <span class="co">#DO NOT REMOVE CLASS</span></span>
 <span>        <span class="fu">shiny</span><span class="fu">::</span><span class="va"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">tags</a></span><span class="op">$</span><span class="fu">h2</span><span class="op">(</span><span class="st">"Contents"</span><span class="op">)</span>,</span>
 <span>        <span class="fu">p</span><span class="op">(</span><span class="st">"Your contents links go here"</span><span class="op">)</span>,</span>
 <span>      <span class="op">)</span></span>
