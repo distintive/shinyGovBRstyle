@@ -28,8 +28,8 @@ if (interactive()) {
       secondary_text = "User Examples",
       logo="shinyGovBRstyle/images/dev_logo.png"),
     shinyGovBRstyle::gov_layout(size = "two-thirds",
-      shinyGovBRstyle::tag_Input("tag1", "COMPLETE"),
-      shinyGovBRstyle::tag_Input("tag2", "INCOMPLETE", "red")),
+      shinyGovBRstyle::tag_Input("tag1", "Complete"),
+      shinyGovBRstyle::tag_Input("tag2", "Incomplete", "red")),
     shinyGovBRstyle::footer(full = TRUE)
   )
 
