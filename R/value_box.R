@@ -26,8 +26,8 @@
 #' }
 value_box <- function(inputId, value = "your value goes here", text = NA, colour = "blue") {
 
-  # Use the govuk-tag--<colour> class for coloring
-  class_colour <- paste0("govuk-tag--", colour)
+  # Use the govbr-tag--<colour> class for coloring
+  class_colour <- paste0("govbr-tag--", colour)
 
   # Conditional rendering of text only if it's provided
   text_tag <- if (!is.na(text)) {

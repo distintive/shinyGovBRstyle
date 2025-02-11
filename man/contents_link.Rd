@@ -31,7 +31,7 @@ if (interactive()) {
        banner(
          "banner",
          "Beta",
-         'This is a new service \u002D your <a class="govuk-link" href="#">
+         'This is a new service \u002D your <a class="govbr-link" href="#">
              feedback</a> will help us to improve it.'),
 
        #Need this to make the error and word count work
@@ -52,8 +52,8 @@ if (interactive()) {
 
            # Contents box
            shiny::tags$div(
-             id = "govuk-contents-box", #DO NOT REMOVE ID
-             class = "govuk-contents-box",  #DO NOT REMOVE CLASS
+             id = "govbr-contents-box", #DO NOT REMOVE ID
+             class = "govbr-contents-box",  #DO NOT REMOVE CLASS
 
              shiny::tags$h2("Contents"),
 

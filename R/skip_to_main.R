@@ -24,8 +24,8 @@
 #'
 #'    # Contents box
 #'      shiny::tags$div(
-#'        id = "govuk-contents-box", #DO NOT REMOVE ID
-#'        class = "govuk-contents-box",  #DO NOT REMOVE CLASS
+#'        id = "govbr-contents-box", #DO NOT REMOVE ID
+#'        class = "govbr-contents-box",  #DO NOT REMOVE CLASS
 #'        shiny::tags$h2("Contents"),
 #'        p("Your contents links go here"),
 #'      )
@@ -72,7 +72,7 @@
 skip_to_main <- function(){
   shiny::tags$a(
     href = "#main_col",
-    class = "govuk-skip govuk-link",
+    class = "govbr-skip govbr-link",
     "Skip to main content"
   )
 }

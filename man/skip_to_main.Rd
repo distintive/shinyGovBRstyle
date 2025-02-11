@@ -33,8 +33,8 @@ Important: your main column will need an id of "main_col" for this to work
 
    # Contents box
      shiny::tags$div(
-       id = "govuk-contents-box", #DO NOT REMOVE ID
-       class = "govuk-contents-box",  #DO NOT REMOVE CLASS
+       id = "govbr-contents-box", #DO NOT REMOVE ID
+       class = "govbr-contents-box",  #DO NOT REMOVE CLASS
        shiny::tags$h2("Contents"),
        p("Your contents links go here"),
      )

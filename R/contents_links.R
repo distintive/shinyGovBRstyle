@@ -53,7 +53,7 @@ subcontents_links <- function(subcontents_text_list,
 
     shiny::tags$li(
       "\u2014 ",
-      shiny::tags$a(class = "govuk-link--no-visited-state", link_text, href = stringr::str_c("\u0023", link_id))
+      shiny::tags$a(class = "govbr-link--no-visited-state", link_text, href = stringr::str_c("\u0023", link_id))
     )
   }
 
@@ -63,7 +63,7 @@ subcontents_links <- function(subcontents_text_list,
 
 
   # return <ol> output
-  shiny::tags$ol(class = "govuk-subcontents", list_tags)
+  shiny::tags$ol(class = "govbr-subcontents", list_tags)
 }
 
 
@@ -86,7 +86,7 @@ subcontents_links <- function(subcontents_text_list,
 #'        banner(
 #'          "banner",
 #'          "Beta",
-#'          'This is a new service \u002D your <a class="govuk-link" href="#">
+#'          'This is a new service \u002D your <a class="govbr-link" href="#">
 #'              feedback</a> will help us to improve it.'),
 #'
 #'        #Need this to make the error and word count work
@@ -107,8 +107,8 @@ subcontents_links <- function(subcontents_text_list,
 #'
 #'            # Contents box
 #'            shiny::tags$div(
-#'              id = "govuk-contents-box", #DO NOT REMOVE ID
-#'              class = "govuk-contents-box",  #DO NOT REMOVE CLASS
+#'              id = "govbr-contents-box", #DO NOT REMOVE ID
+#'              class = "govbr-contents-box",  #DO NOT REMOVE CLASS
 #'
 #'              shiny::tags$h2("Contents"),
 #'
@@ -268,9 +268,9 @@ contents_link <- function(link_text,
   }
 
   contents_div <- shiny::tags$div(
-    class = "govuk-contents",
+    class = "govbr-contents",
     shiny::actionLink(
-      class = "govuk-contents__link govuk-link--no-visited-state",
+      class = "govbr-contents__link govbr-link--no-visited-state",
       inputId = input_id,
       label = link_text
     ),

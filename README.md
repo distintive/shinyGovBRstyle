@@ -139,7 +139,7 @@ Add a banner to the header to state in beta or alpha : <br>
 ```r
 ui <- fluidPage(
   shinyGovBRstyle::header("Justice", "Prototype", logo="shinyGovBRstyle/images/moj_logo.png"),
-  banner("banner", "beta", 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'),
+  banner("banner", "beta", 'This is a new service – your <a class="govbr-link" href="#">feedback</a> will help us to improve it.'),
   gov_layout(size = "full",
         tags$br(),
         tags$br(),
@@ -173,8 +173,8 @@ shiny::fluidpage(
       width = 3,
       id = "nav", # DO NOT REMOVE ID
       shiny::tags$div(
-        id = "govuk-contents-box", # DO NOT REMOVE ID 
-       class = "govuk-contents-box",  # DO NOT REMOVE CLASS
+        id = "govbr-contents-box", # DO NOT REMOVE ID 
+       class = "govbr-contents-box",  # DO NOT REMOVE CLASS
         shiny::tags$h2("contents"), 
         
         # CONTENTS LINKS GO HERE
@@ -682,8 +682,8 @@ ui <- fluidPage(
       
       # Contents box
       shiny::tags$div(
-        id = "govuk-contents-box", #DO NOT REMOVE ID
-        class = "govuk-contents-box",  #DO NOT REMOVE CLASS
+        id = "govbr-contents-box", #DO NOT REMOVE ID
+        class = "govbr-contents-box",  #DO NOT REMOVE CLASS
         shiny::tags$h2("Contents"),
         p("Your contents links go here"),
       )

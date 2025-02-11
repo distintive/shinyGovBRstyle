@@ -1,6 +1,6 @@
 These the things needed when updating the gov.uk css to make it work.
 
-* add to `.govuk-back-link` for backlink
+* add to `.govbr-back-link` for backlink
 ```
 border: none;
 background: white;
@@ -9,30 +9,30 @@ color: #0b0c0c;
 
 * Move fonts css to the font css
 
-* Add `font-size: 16px;` to root at top of file underneath `--govuk-frontend-version: VERSION NUMBER;`
+* Add `font-size: 16px;` to root at top of file underneath `--govbr-frontend-version: VERSION NUMBER;`
 
 
 * Change url links
 
 * For accordion need to fix the css by:
 
- Finding and replacing all `.govuk-frontend-supported .govuk-accordion` with `.js-enabled .govuk-accordion`
+ Finding and replacing all `.govbr-frontend-supported .govbr-accordion` with `.js-enabled .govbr-accordion`
  
  and adding this chunk to the accordion section of css:
  
 ```
-.js-enabled .govuk-accordion__section-toggle {
+.js-enabled .govbr-accordion__section-toggle {
   pointer-events: none;
 }
 ```
 
 * Change filepaths for crown copyright logo:
 ```
-.govuk-footer__copyright-logo {
+.govbr-footer__copyright-logo {
     display: inline-block;
     min-width: 125px;
     padding-top: 112px;
-    background-image: url(../images/govuk-crest.png);
+    background-image: url(../images/govbr-crest.png);
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: 125px 102px;
@@ -43,15 +43,15 @@ color: #0b0c0c;
 @media only screen and (-webkit-min-device-pixel-ratio:2),
 only screen and (min-resolution:192dpi),
 only screen and (min-resolution:2dppx) {
-    .govuk-footer__copyright-logo {
-        background-image: url(../images/govuk-crest-2x.png)
+    .govbr-footer__copyright-logo {
+        background-image: url(../images/govbr-crest-2x.png)
     }
 }
 ```
 
 * Fix alignment on the radio button item labels
 ```
-.govuk-radios__input {
+.govbr-radios__input {
     z-index: 1;
     width: 44px;
     height: 44px;
@@ -61,7 +61,7 @@ only screen and (min-resolution:2dppx) {
     cursor: pointer
 }
 
-.govuk-radios__label {
+.govbr-radios__label {
     align-self: center;
     max-width: calc(100% - 74px);
     display: inline-block;
@@ -73,7 +73,7 @@ only screen and (min-resolution:2dppx) {
 
 * Fix selected tab panel border gap
 ```
-.govuk-frontend-supported .govuk-tabs__list-item--selected {
+.govbr-frontend-supported .govbr-tabs__list-item--selected {
     position: relative;
     margin-top: -5px;
     margin-bottom: -2px;
@@ -87,7 +87,7 @@ only screen and (min-resolution:2dppx) {
 * govTable caption colour:
 
 ```
-.govuk-table__caption {
+.govbr-table__caption {
     font-weight: 700;
     display: table-caption;
     text-align: left;
@@ -100,7 +100,7 @@ only screen and (min-resolution:2dppx) {
 ```
 /*Match margin in main-wrapper so "Contents" is level*/
 @media (max-width:40.0625em) {
-    .govuk-contents-box {
+    .govbr-contents-box {
     margin-right: 30px;
     margin-left: 30px
 
@@ -109,7 +109,7 @@ only screen and (min-resolution:2dppx) {
 
 /*Match margin in main-wrapper so "Contents" is level*/
 @media (min-width:40.0625em) and (max-width:48.0625em) {
-    .govuk-contents-box {
+    .govbr-contents-box {
     margin-right: 45px;
     margin-left: 45px
 
@@ -119,7 +119,7 @@ only screen and (min-resolution:2dppx) {
 
 /*Match margin in main-wrapper so "Contents" is level*/
 @media (min-width:40.0625em) {
-    .govuk-contents-box {
+    .govbr-contents-box {
          margin-top: 40px;
 
     }
@@ -128,7 +128,7 @@ only screen and (min-resolution:2dppx) {
 
 /*Do not apply stickyness on smaller screen*/
 @media (min-width:48.0625em) {
-.govuk-contents-box_sticky {
+.govbr-contents-box_sticky {
   position: fixed;
   /*Guess? - probably could put exact pixels to make smooth*/
   top: 26px;
@@ -140,32 +140,32 @@ only screen and (min-resolution:2dppx) {
 
 
 /*Contents link formatting*/
-.govuk-contents {
+.govbr-contents {
  top: 0.5rem;
  padding: 0.25rem;
 }
 
-.govuk-contents__link {
+.govbr-contents__link {
   padding-left: 0;
   font-size: 1rem;
 }
 
-.govuk-subcontents {
+.govbr-subcontents {
   list-style-type: none;
   padding-left: 0;
   font-size: 1rem;
 }
 
 /*Only display subcontents for first one - on load*/
-.govuk-contents ~ .govuk-contents  > .govuk-subcontents {
+.govbr-contents ~ .govbr-contents  > .govbr-subcontents {
   display: none;
 }
 ```
 
-* Updated govuk-link--no-visited-state to still have a clear focus highlight (copied from the govuk-link formatting)
+* Updated govbr-link--no-visited-state to still have a clear focus highlight (copied from the govbr-link formatting)
 
 ```
-.govuk-link--no-visited-state:active, .govuk-link--no-visited-state:focus {
+.govbr-link--no-visited-state:active, .govbr-link--no-visited-state:focus {
     outline: 3px solid transparent;
     background-color: #fd0;
     box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
@@ -174,7 +174,7 @@ only screen and (min-resolution:2dppx) {
     box-decoration-break: clone
 }
 
-.govuk-link--no-visited-state:hover {
+.govbr-link--no-visited-state:hover {
     text-decoration-thickness: max(3px, .1875rem, .12em);
     -webkit-text-decoration-skip-ink: none;
     text-decoration-skip-ink: none;
@@ -187,7 +187,7 @@ only screen and (min-resolution:2dppx) {
 * skip link
 ```
 /*Skip link*/
-.govuk-skip {
+.govbr-skip {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -197,7 +197,7 @@ only screen and (min-resolution:2dppx) {
 }
 
 
-.govuk-skip:focus {
+.govbr-skip:focus {
   position: static;
   width: auto;
   height: auto;
