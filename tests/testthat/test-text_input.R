@@ -14,7 +14,7 @@ test_that("text width change", {
 
   expect_identical(
     text_check$children[[4]]$attribs$class,
-    "govuk-input govuk-input--width-30"
+    "govbr-input govbr-input--width-30"
   )
 
 })
@@ -29,7 +29,7 @@ test_that("text box error works", {
 
   expect_identical(paste(text_check$children[[3]]$attribs$class,
                          text_check$children[[3]]$attribs[3]$class),
-                   "govuk-error-message shinyjs-hide")
+                   "govbr-error-message shinyjs-hide")
 
 })
 

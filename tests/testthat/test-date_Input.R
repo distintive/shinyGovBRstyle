@@ -6,7 +6,7 @@ test_that("date default works", {
 
   expect_identical(
     date_check$children[[1]]$children[[4]]$attribs$class,
-    "govuk-date-input"
+    "govbr-date-input"
   )
 
 })
@@ -21,7 +21,7 @@ test_that("date error works", {
   expect_identical(
     paste(date_check$children[[1]]$children[[2]]$attribs$class,
           date_check$children[[1]]$children[[2]]$attribs[3]$class),
-    "govuk-error-message shinyjs-hide"
+    "govbr-error-message shinyjs-hide"
   )
 
   expect_identical(

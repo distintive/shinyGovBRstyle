@@ -15,12 +15,12 @@ test_that("tabs works", {
 
   expect_identical(
     tab_check$children[[3]][[1]][[1]][[1]][[2]][[2]]$class,
-    "govuk-tabs__panel"
+    "govbr-tabs__panel"
   )
 
   expect_identical(
     tab_check$children[[3]][[1]][[1]][[2]][[2]]$class,
-    "govuk-tabs__panel govuk-tabs__panel--hidden"
+    "govbr-tabs__panel govbr-tabs__panel--hidden"
   )
 
 })

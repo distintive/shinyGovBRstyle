@@ -8,7 +8,7 @@ test_that("tag works", {
 
   expect_identical(
     tag_check$attribs$class,
-    "govuk-tag"
+    "govbr-tag"
   )
 
 })
@@ -20,7 +20,7 @@ test_that("tag colour works", {
 
   expect_identical(
     tag_check2$attribs$class,
-    "govuk-tag govuk-tag--yellow"
+    "govbr-tag govbr-tag--yellow"
   )
 
 })

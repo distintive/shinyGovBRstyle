@@ -11,7 +11,7 @@ test_that("field works", {
   expect_identical(
     paste(field_check$children[[2]]$`Field 1`$children[[2]]$attribs$class,
           field_check$children[[2]]$`Field 1`$children[[2]]$attribs[3]$class),
-    "govuk-error-message shinyjs-hide"
+    "govbr-error-message shinyjs-hide"
   )
 
 })

@@ -3,7 +3,7 @@ test_that("value_box color class works", {
   box_yellow <- value_box("testId2", "Test Value", colour = "yellow")
 
   # Check that the container class includes both "value-box-container" and the color
-  expect_identical(box_yellow$attribs$class, "value-box-container govuk-tag--yellow")
+  expect_identical(box_yellow$attribs$class, "value-box-container govbr-tag--yellow")
 })
 
 # Test default values (when no text is provided)
@@ -17,5 +17,5 @@ test_that("value_box default values work", {
   expect_null(box_default$children[[2]])
 
   # Check default color class
-  expect_identical(box_default$attribs$class, "value-box-container govuk-tag--blue")
+  expect_identical(box_default$attribs$class, "value-box-container govbr-tag--blue")
 })

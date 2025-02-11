@@ -41,7 +41,7 @@ test_that("Error", {
 
   err_class <- paste(rtag$children[[1]]$children[[3]]$attribs$class,
                      rtag$children[[1]]$children[[3]]$attribs[3]$class)
-  expect_identical(err_class, "govuk-error-message shinyjs-hide")
+  expect_identical(err_class, "govbr-error-message shinyjs-hide")
 })
 
 test_that("Small", {
@@ -63,7 +63,7 @@ test_that("Small", {
   expect_equal(which(checked), 1)
 
   small_class <- rtag$children[[1]]$children[[4]]$attribs$class
-  expect_identical(small_class, "govuk-radios govuk-radios--small")
+  expect_identical(small_class, "govbr-radios govbr-radios--small")
 
 })
 
@@ -86,6 +86,6 @@ test_that("Inline", {
   expect_equal(which(checked), 1)
 
   inline_class <- rtag$children[[1]]$children[[4]]$attribs$class
-  expect_identical(inline_class, "govuk-radios govuk-radios--inline")
+  expect_identical(inline_class, "govbr-radios govbr-radios--inline")
 
 })

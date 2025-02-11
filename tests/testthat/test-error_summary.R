@@ -13,13 +13,13 @@ test_that("error_summary works", {
   # Check class
   expect_identical(
     error_summary$attribs$class,
-    "govuk-error-summary"
+    "govbr-error-summary"
   )
 
   # Check error_title class
   expect_identical(
     error_summary$children[[1]]$attribs$class,
-    "govuk-error-summary__title"
+    "govbr-error-summary__title"
   )
 
   # Check error_title value
@@ -31,13 +31,13 @@ test_that("error_summary works", {
   # Check error_summary body class
   expect_identical(
     error_summary$children[[2]]$attribs$class,
-    "govuk-error-summary__body"
+    "govbr-error-summary__body"
   )
 
   # Check error_list class
   expect_identical(
     error_summary$children[[2]]$children[[1]]$attribs$class,
-    "govuk-list govuk-error-summary__list"
+    "govbr-list govbr-error-summary__list"
   )
 
   # Check error_list values

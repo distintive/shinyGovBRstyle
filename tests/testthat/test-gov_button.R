@@ -13,7 +13,7 @@ test_that("button works", {
 
   expect_identical(
     button$attribs$class,
-    "govuk-button action-button"
+    "govbr-button action-button"
   )
 
   expect_identical(
@@ -33,7 +33,7 @@ test_that("start_button works", {
 
   expect_identical(
     button$attribs$class,
-    "govuk-button govuk-button--start action-button"
+    "govbr-button govbr-button--start action-button"
   )
 
   expect_identical(
@@ -53,7 +53,7 @@ test_that("secondary_button works", {
 
   expect_identical(
     button$attribs$class,
-    "govuk-button govuk-button--secondary action-button"
+    "govbr-button govbr-button--secondary action-button"
   )
 
   expect_identical(
@@ -73,7 +73,7 @@ test_that("warning_button works", {
 
   expect_identical(
     button$attribs$class,
-    "govuk-button govuk-button--warning action-button"
+    "govbr-button govbr-button--warning action-button"
   )
 
   expect_identical(

@@ -9,12 +9,12 @@ test_that("default works", {
 
   expect_identical(
     layout_test$attribs$class,
-    "govuk-width-container  govuk-main-wrapper"
+    "govbr-width-container  govbr-main-wrapper"
   )
 
   expect_identical(
     layout_test$children[[1]]$attribs$class,
-    "govuk-grid-column-full"
+    "govbr-grid-column-full"
   )
 
 })

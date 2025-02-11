@@ -33,7 +33,7 @@ test_that("text area error works", {
   expect_identical(
     paste(text_area_check$children[[3]]$attribs$class,
           text_area_check$children[[3]]$attribs[3]$class),
-    "govuk-error-message shinyjs-hide"
+    "govbr-error-message shinyjs-hide"
   )
 
   expect_identical(
@@ -57,7 +57,7 @@ test_that("text area word works", {
 
   expect_identical(
     text_area_check$children[[5]]$attribs$class,
-    "govuk-hint govuk-character-count__message"
+    "govbr-hint govbr-character-count__message"
   )
 
 

@@ -11,7 +11,7 @@ test_that("select works", {
 
   expect_identical(
     select_test$children[[2]]$attribs$class,
-    "govuk-select"
+    "govbr-select"
   )
 
 })

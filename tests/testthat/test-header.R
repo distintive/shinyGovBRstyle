@@ -3,7 +3,7 @@ test_that("multiplication works", {
 
   expect_identical(
     header_check$children[[2]]$attribs$class,
-    "govuk-header__container govuk-width-container"
+    "govbr-header__container govbr-width-container"
   )
 })
 

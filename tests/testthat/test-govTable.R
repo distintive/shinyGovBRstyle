@@ -13,12 +13,12 @@ test_that("table works", {
 
   expect_identical(
     table_check$children[[2]]$children[[1]][[3]][[1]][[1]]$attribs$class,
-    "govuk-table__header govuk-!-width-one-half"
+    "govbr-table__header govbr-!-width-one-half"
   )
 
   expect_identical(
     table_check$children[[2]]$children[[1]][[3]][[1]][[2]]$attribs$class,
-    "govuk-table__header govuk-table__header--numeric govuk-!-width-one-quarter"
+    "govbr-table__header govbr-table__header--numeric govbr-!-width-one-quarter"
   )
 
   expect_equal(
@@ -33,12 +33,12 @@ test_that("table works", {
 
   expect_identical(
     table_check2$children[[2]]$children[[1]][[3]][[1]][[1]]$attribs$class,
-    "govuk-table__header"
+    "govbr-table__header"
   )
 
   expect_identical(
     table_check2$children[[2]]$children[[1]][[3]][[1]][[2]]$attribs$class,
-    "govuk-table__header govuk-table__header--numeric"
+    "govbr-table__header govbr-table__header--numeric"
   )
 
   expect_equal(
@@ -53,12 +53,12 @@ test_that("table works", {
 
   expect_identical(
     table_check3$children[[2]]$children[[1]][[3]][[1]][[1]]$attribs$class,
-    "govuk-table__header"
+    "govbr-table__header"
   )
 
   expect_identical(
     table_check3$children[[2]]$children[[1]][[3]][[1]][[2]]$attribs$class,
-    "govuk-table__header govuk-table__header--numeric"
+    "govbr-table__header govbr-table__header--numeric"
   )
 
   expect_equal(

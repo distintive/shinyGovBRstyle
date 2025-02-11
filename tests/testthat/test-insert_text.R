@@ -9,7 +9,7 @@ test_that("multiplication works", {
 
   expect_identical(
     insert_text$attribs$class,
-    "govuk-inset-text"
+    "govbr-inset-text"
   )
 
   expect_identical(

@@ -6,7 +6,7 @@ test_that("default", {
 
   expect_identical(
     head_text$attribs$class,
-    "govuk-heading-xl"
+    "govbr-heading-xl"
   )
 
   expect_identical(
@@ -22,7 +22,7 @@ test_that("medium_works", {
 
   expect_identical(
     head_text$attribs$class,
-    "govuk-heading-m"
+    "govbr-heading-m"
   )
 
   expect_identical(

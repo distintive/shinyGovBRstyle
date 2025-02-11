@@ -3,7 +3,7 @@ test_that("test default footer", {
 
   expect_identical(
     footer_check$attribs$class,
-    "govuk-footer "
+    "govbr-footer "
   )
 })
 
@@ -12,7 +12,7 @@ test_that("test default footer", {
 
   expect_identical(
     footer_check$attribs$class,
-    "govuk-footer "
+    "govbr-footer "
   )
 })
 
@@ -22,13 +22,13 @@ test_that("footer links add correctly", {
   ) |>
     paste0()
 
-  expected_html <- '<a class=\"action-button govuk-link govuk-footer__link\" href=\"#\" id=\"accessibility_statement\">Accessibility Statement</a>'
+  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"accessibility_statement\">Accessibility Statement</a>'
   expect_true(grepl(expected_html, footer_with_links, fixed = TRUE))
 
-  expected_html <- '<a class=\"action-button govuk-link govuk-footer__link\" href=\"#\" id=\"cookies\">Cookies</a>'
+  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"cookies\">Cookies</a>'
   expect_true(grepl(expected_html, footer_with_links, fixed = TRUE))
 
-  expected_html <- '<h2 class=\"govuk-visually-hidden\">Support links</h2>\n          <ul class=\"govuk-footer__inline-list\">\n            <li class=\"govuk-footer__inline-list-item\">'
+  expected_html <- '<h2 class=\"govbr-visually-hidden\">Support links</h2>\n          <ul class=\"govbr-footer__inline-list\">\n            <li class=\"govbr-footer__inline-list-item\">'
   expect_true(grepl(expected_html, footer_with_links, fixed = TRUE))
 
   full_footer_with_links <- footer(
@@ -37,12 +37,12 @@ test_that("footer links add correctly", {
   ) |>
     paste0()
 
-  expected_html <- '<a class=\"action-button govuk-link govuk-footer__link\" href=\"#\" id=\"privacy_notice\">Privacy Notice</a>'
+  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"privacy_notice\">Privacy Notice</a>'
   expect_true(grepl(expected_html, full_footer_with_links, fixed = TRUE))
 
-  expected_html <- '<a class=\"action-button govuk-link govuk-footer__link\" href=\"#\" id=\"cookies\">Cookies</a>'
+  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"cookies\">Cookies</a>'
   expect_true(grepl(expected_html, full_footer_with_links, fixed = TRUE))
 
-  expected_html <- '<h2 class=\"govuk-visually-hidden\">Support links</h2>\n          <ul class=\"govuk-footer__inline-list\">\n            <li class=\"govuk-footer__inline-list-item\">'
+  expected_html <- '<h2 class=\"govbr-visually-hidden\">Support links</h2>\n          <ul class=\"govbr-footer__inline-list\">\n            <li class=\"govbr-footer__inline-list-item\">'
   expect_true(grepl(expected_html, full_footer_with_links, fixed = TRUE))
 })

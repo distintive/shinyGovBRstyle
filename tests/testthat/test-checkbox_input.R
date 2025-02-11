@@ -43,7 +43,7 @@ test_that("Error", {
   err_class <- paste(
     cbtag$children[[1]]$children[[1]]$children[[3]]$attribs[1]$class,
     cbtag$children[[1]]$children[[1]]$children[[3]]$attribs[3]$class)
-  expect_identical(err_class, "govuk-error-message shinyjs-hide")
+  expect_identical(err_class, "govbr-error-message shinyjs-hide")
 })
 
 
@@ -66,6 +66,6 @@ test_that("Small", {
   expect_true(all(!checked))
 
   small_check <- cbtag$children[[1]]$children[[1]]$children[[4]]$attribs$class
-  expect_identical(small_check, "govuk-checkboxes govuk-checkboxes--small")
+  expect_identical(small_check, "govbr-checkboxes govbr-checkboxes--small")
 
 })
