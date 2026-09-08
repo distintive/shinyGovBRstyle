@@ -1,0 +1,71 @@
+# Error on Function
+
+This function turns on the the error o the component. Can be used to
+validate inputs.
+
+## Usage
+
+``` r
+error_on(inputId, error_message = NULL)
+```
+
+## Arguments
+
+- inputId:
+
+  The input id that you to to turn the error on for.
+
+- error_message:
+
+  if you want to add an additional error message. Defaults to NULL,
+  showing the original designed error message
+
+## Value
+
+no return value. This toggles on error css
+
+## Examples
+
+``` r
+## Only run examples in interactive R sessions
+if (interactive()) {
+
+  ui <- fluidPage(
+    # Required for error handling function
+    shinyjs::useShinyjs(),
+    shinyGovBRstyle::header(
+      main_text = "Example",
+      secondary_text = "User Examples",
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::banner(
+      inputId = "banner", type = "beta", 'This is a new service'),
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+      # Error text box
+      shinyGovBRstyle::text_Input(
+        inputId = "eventId",
+        label = "Event Name",
+        error = TRUE),
+      # Button to trigger error
+      shinyGovBRstyle::button_Input(inputId = "submit", label = "Submit")
+    ),
+    shinyGovBRstyle::footer(full = TRUE)
+  )
+
+
+  server <- function(input, output, session) {
+    #Trigger error on blank submit of eventId2
+    observeEvent(input$submit, {
+      if (input$eventId != ""){
+        shinyGovBRstyle::error_off(inputId = "eventId")
+      } else {
+        shinyGovBRstyle::error_on(
+          inputId = "eventId",
+          error_message = "Please complete")
+      }
+    })
+  }
+
+  # Run the application
+  shinyApp(ui = ui, server = server)
+}
+```

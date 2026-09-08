@@ -1,0 +1,48 @@
+# Insert Text Function
+
+This function loads the insert text component to display additional
+information in a special format.
+
+## Usage
+
+``` r
+insert_text(inputId, text)
+```
+
+## Arguments
+
+- inputId:
+
+  The input slot that will be used to access the value.
+
+- text:
+
+  Text that you want to display on the insert
+
+## Value
+
+a insert text html shiny object
+
+## Examples
+
+``` r
+if (interactive()) {
+  ui <- fluidPage(
+    shinyGovBRstyle::header(
+      main_text = "Example",
+      secondary_text = "User Examples",
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+      shinyGovBRstyle::insert_text(
+        inputId = "note",
+        text = "It can take up to 8 weeks to register a lasting power of
+                attorney if there are no mistakes in the application."
+      )
+    ),
+    shinyGovBRstyle::footer(full = TRUE)
+  )
+
+  server <- function(input, output, session) {}
+  shinyApp(ui = ui, server = server)
+}
+```

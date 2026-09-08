@@ -1,0 +1,45 @@
+# Warning Text Function
+
+This function create warning text
+
+## Usage
+
+``` r
+warning_text(inputId, text)
+```
+
+## Arguments
+
+- inputId:
+
+  The input slot that will be used to access the value.
+
+- text:
+
+  Text that goes in the main
+
+## Value
+
+a warning box html shiny object
+
+## Examples
+
+``` r
+if (interactive()) {
+  ui <- fluidPage(
+    shinyGovBRstyle::header(
+      main_text = "Example",
+      secondary_text = "User Examples",
+      logo="shinyGovBRstyle/images/dev_logo.png"),
+    shinyGovBRstyle::gov_layout(size = "two-thirds",
+      shinyGovBRstyle::warning_text(
+        inputId = "warn1",
+        text = "You can be fined up to £5,000 if you do not register.")
+    ),
+    shinyGovBRstyle::footer(full = TRUE)
+  )
+
+  server <- function(input, output, session) {}
+  shinyApp(ui = ui, server = server)
+}
+```
