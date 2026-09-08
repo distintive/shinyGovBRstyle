@@ -8,4 +8,7 @@
 ^\.github$
 ^LICENSE\.md$
 ^data-raw$
+^AGENTS\.md$
+^ROADMAP\.md$
+^\.crush$
 _\.new\.png$

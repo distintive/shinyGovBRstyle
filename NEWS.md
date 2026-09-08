@@ -1,5 +1,23 @@
 # shinyGovBRstyle (development version)
 
+# shinyGovBRstyle 0.2.0
+
+* Nova família de componentes `br_*` construída com os assets oficiais do
+  Design System GovBR v3.7.0 (`core.min.css`/`core.min.js`), classes reais
+  `br-*` e bindings nativos do Shiny: `use_govbr()`, `br_header()`,
+  `br_footer()`, `br_layout()`, `br_button()`, `br_text_input()`,
+  `br_textarea_input()`, `br_date_input()`, `br_select_input()`,
+  `br_checkbox_input()`, `br_radio_input()`, `br_message()`, `br_tag()`,
+  `br_divider()` e `br_skiplink()`.
+* Assets do GovBR DS e Font Awesome 5.11.2 agora são servidos localmente
+  (funciona offline; sem dependência de CDN).
+* Fonte Rawline registrada com caminhos corrigidos (`rawline.css`).
+* Componentes JS do GovBR são re-inicializados automaticamente quando o
+  Shiny renderiza UI dinâmica (`govbr-shiny.js`).
+* As funções antigas herdadas do GOV.UK continuam disponíveis, mas devem
+  ser consideradas obsoletas; a migração para a família `br_*` está
+  documentada no ROADMAP.md.
+
 # shinyGovBRstyle 0.1.0
 
 * Update the css to v5.4.0 and made fixes associated with that.
