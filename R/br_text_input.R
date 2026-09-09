@@ -45,9 +45,12 @@ br_text_input <- function(inputId,
       type = "text",
       placeholder = placeholder,
       value = value,
+      `aria-describedby` = if (!is.null(hint)) paste0(inputId, "-hint"),
       disabled = if (isTRUE(disabled)) NA
     ),
-    if (!is.null(hint)) shiny::tags$p(hint)
+    if (!is.null(hint)) {
+      shiny::tags$p(id = paste0(inputId, "-hint"), hint)
+    }
   )
 
   use_govbr(input_tag)

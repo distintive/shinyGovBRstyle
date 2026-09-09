@@ -34,6 +34,15 @@ CI (`.github/workflows/R-CMD-check.yaml`) checks a matrix of macOS/Windows/Ubunt
 
 **Legacy family**: functions in `R/*.R` (e.g. `button_Input()`) finish with `attachDependency()` (`R/attachDependency.R`), which serves `css/govbr-frontend-test.css` (rawline font classes + CDN import) and optional per-widget JS from `inst/www/js/`.
 
+## Upstream policy (cherry-pick only)
+
+The upstream origin is `dfe-analytical-services/shinyGovstyle` (add it
+with `git remote add upstream https://github.com/dfe-analytical-services/shinyGovstyle.git`).
+Never merge or sync from it: the core here is the native GovBR DS, while
+upstream remains GOV.UK. Review new upstream commits for **ideas worth
+porting** (accessibility fixes, UX patterns, generic Shiny utilities such
+as `br_update_page_title()`) and reimplement them in the `br_*` family.
+
 ## Gotchas
 
 - **Stylesheet wiring is not obvious**: `attachDependency.R` serves `govbr-frontend-test.css`, which is currently a small file of rawline font classes plus a CDN `@import`. The large vendored stylesheet `inst/www/css/govbr-frontend-5.7.1.min.css` is *not referenced by any R code*. Do not assume editing the `.min.css` affects apps.

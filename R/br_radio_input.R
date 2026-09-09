@@ -45,7 +45,9 @@ br_radio_input <- function(inputId,
     class = "shiny-input-radiogroup",
     id = inputId,
     shiny::tags$p(class = "label mb-0", label),
-    if (!is.null(hint)) shiny::tags$p(class = "help-text", hint),
+    if (!is.null(hint)) {
+      shiny::tags$p(id = paste0(inputId, "-hint"), class = "help-text", hint)
+    },
     purrr::pmap(
       list(choice_data$value, choice_data$label, seq_along(choice_data$value)),
       function(value, choice_label, i) {
@@ -56,6 +58,7 @@ br_radio_input <- function(inputId,
             type = "radio",
             name = inputId,
             value = value,
+            `aria-describedby` = if (!is.null(hint)) paste0(inputId, "-hint"),
             checked = if (!is.null(selected) && value == selected) NA
           ),
           shiny::tags$label(`for` = paste0(inputId, "-", i), choice_label)

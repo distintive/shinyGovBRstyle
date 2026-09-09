@@ -43,10 +43,11 @@ br_textarea_input <- function(inputId,
       id = inputId,
       placeholder = placeholder,
       rows = rows,
+      `aria-describedby` = if (!is.null(hint)) paste0(inputId, "-hint"),
       value
     ),
     if (!is.null(hint)) {
-      shiny::tags$p(class = "text-base mt-1", hint)
+      shiny::tags$p(id = paste0(inputId, "-hint"), class = "text-base mt-1", hint)
     }
   )
 

@@ -45,6 +45,7 @@ br_date_input <- function(inputId,
         id = paste0(inputId, "-text"),
         type = "text",
         placeholder = placeholder,
+        `aria-describedby` = if (!is.null(hint)) paste0(inputId, "-hint"),
         `data-input` = "data-input"
       ),
       shiny::tags$button(
@@ -58,7 +59,9 @@ br_date_input <- function(inputId,
         shiny::tags$i(class = "fas fa-calendar-alt", `aria-hidden` = "true")
       )
     ),
-    if (!is.null(hint)) shiny::tags$p(hint)
+    if (!is.null(hint)) {
+      shiny::tags$p(id = paste0(inputId, "-hint"), hint)
+    }
   )
 
   use_govbr(date_tag)

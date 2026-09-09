@@ -57,7 +57,9 @@ br_checkbox_input <- function(inputId,
     class = "shiny-input-checkboxgroup",
     id = inputId,
     shiny::tags$p(class = "label mb-0", label),
-    if (!is.null(hint)) shiny::tags$p(class = "text-down-01", hint),
+    if (!is.null(hint)) {
+      shiny::tags$p(id = paste0(inputId, "-hint"), class = "text-down-01", hint)
+    },
     purrr::pmap(
       list(choice_data$value, choice_data$label, seq_along(choice_data$value)),
       function(value, choice_label, i) {
@@ -68,6 +70,7 @@ br_checkbox_input <- function(inputId,
             type = "checkbox",
             name = inputId,
             value = value,
+            `aria-describedby` = if (!is.null(hint)) paste0(inputId, "-hint"),
             checked = if (!is.null(selected) && value %in% selected) NA
           ),
           shiny::tags$label(`for` = paste0(inputId, "-", i), choice_label)
@@ -86,10 +89,13 @@ govbr_checkbox_single <- function(inputId, label, value, hint) {
     shiny::tags$input(
       id = inputId,
       type = "checkbox",
+      `aria-describedby` = if (!is.null(hint)) paste0(inputId, "-hint"),
       checked = if (isTRUE(value)) NA
     ),
     shiny::tags$label(`for` = inputId, label),
-    if (!is.null(hint)) shiny::tags$p(class = "help-text", hint)
+    if (!is.null(hint)) {
+      shiny::tags$p(id = paste0(inputId, "-hint"), class = "help-text", hint)
+    }
   )
 
   use_govbr(checkbox_tag)

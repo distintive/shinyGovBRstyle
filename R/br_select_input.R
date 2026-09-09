@@ -61,7 +61,8 @@ br_select_input <- function(inputId,
       shiny::tags$input(
         id = paste0(inputId, "-filter"),
         type = "text",
-        placeholder = placeholder
+        placeholder = placeholder,
+        `aria-describedby` = if (!is.null(hint)) paste0(inputId, "-hint")
       ),
       shiny::tags$button(
         class = "br-button", type = "button",
@@ -101,6 +102,7 @@ br_select_input <- function(inputId,
     ),
     if (!is.null(hint)) {
       shiny::tags$span(
+        id = paste0(inputId, "-hint"),
         class = "feedback warning",
         role = "alert",
         shiny::tags$i(

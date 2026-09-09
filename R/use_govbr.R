@@ -57,6 +57,6 @@ govbr_js_dependency <- function() {
     name = "govbr-core-js",
     version = "3.7.0",
     src = c(href = "shinyGovBRstyle/govbr"),
-    script = c("core.min.js", "govbr-shiny.js")
+    script = c("core.min.js", "govbr-shiny.js", "govbr-page-title.js")
   )
 }
