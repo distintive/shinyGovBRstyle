@@ -5,7 +5,7 @@
 R package `shinyGovBRstyle`: Shiny UI components for the official Brazilian gov.br design system (GovBR DS). It started as a fork of the UK `shinyGovstyle` package (GOV.UK Frontend). Two component families now coexist:
 
 - **`br_*` family (current)**: built on the real GovBR DS v3.7.0 assets (`inst/www/govbr/core.min.css|js`, classes `br-*`), using native Shiny input bindings.
-- **Legacy family (derived from GOV.UK, classes renamed `govbr-`)**: still exported, slated for deprecation/removal (see `ROADMAP.md`).
+- **Legacy family (derived from GOV.UK, classes renamed `govbr-`)**: 18 deprecated functions kept for migration (each has a `br_*` equivalent); the 24 without a GovBR counterpart were removed in 0.4.0. Full removal planned for v1.0.0 (see `ROADMAP.md`).
 
 ## Essential commands
 

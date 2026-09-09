@@ -68,6 +68,10 @@ data por `id`, botão via `action-button`).
 
 - [x] Marcar funções antigas (derivadas do GOV.UK) como obsoletas: aviso
       uma vez por sessão via `govbr_deprecated()` + nota nos `.Rd`.
+- [x] Remover as 24 funções sem transposição para o GovBR (0.4.0) e os
+      assets órfãos do GOV.UK (CSS/JS grandes, logos, capturas).
+- [ ] Remover as 18 funções legadas restantes (têm equivalente `br_*`)
+      e o stylesheet legado `govbr-frontend-test.css` na v1.0.0.
 - [ ] Remover assets do GOV.UK (`govbr-frontend-5.7.1.min.css`,
       `govbr-frontend-5.4.0.min.js`, fontes GOV.UK, `govbr-frontend-test.css`)
       quando as funções antigas forem removidas (meta: v1.0.0).
@@ -85,9 +89,16 @@ data por `id`, botão via `action-button`).
 - [x] ~~Definir os segredos `SHINYAPPS_NAME/TOKEN/SECRET`~~ workflow de
       deploy removido: o app de demonstração será hospedado em
       instância Shiny própria (sem dependência de shinyapps.io).
-- [ ] Publicar o app de exemplo na instância Shiny própria e incluir o
-      link no README.
-- [ ] Atualizar `cran-comments.md` e submeter via `devtools::release()`.
+- [x] Publicar o app de exemplo na instância Shiny própria e incluir o
+      link no README (https://shinygovbr.distintive.com.br/).
+- [x] Correções pós-deploy: `br_select_input()` múltiplo com
+      `multiple="multiple"` (lista permanece aberta, seleção por clique
+      simples); `br_table()` reescrito com a estrutura oficial
+      (`.table-header`/`.table-title` + `data-th`) para sobreviver ao JS
+      do componente; `govbr-compat.css` neutraliza conflitos de
+      especificidade com o Bootstrap do `fluidPage()`.
+- [x] Atualizar `cran-comments.md` (submissão via `devtools::release()`
+      ainda pendente — ação do mantenedor).
 
 ## Convenções da nova família `br_*`
 

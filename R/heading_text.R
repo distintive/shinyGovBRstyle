@@ -6,7 +6,7 @@
 #' @param id Custom header id
 #' @return a heading text html shiny object
 #' @keywords heading
-#' @export
+#' @noRd
 #' @section Deprecated:
 #' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
 #' compatibility and scheduled for removal. See the `br_*` family.
@@ -16,7 +16,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'       logo="shinyGovBRstyle/images/govbr-logo.png"),
 #'     shinyGovBRstyle::gov_layout(size = "two-thirds",
 #'       shinyGovBRstyle::heading_text("This is great text", "m")
 #'     ),
@@ -28,7 +28,6 @@
 #' }
 
 heading_text <- function(text_input, size = "xl", id){
-  govbr_deprecated("heading_text")
 
    if(missing(id)){
      id <- clean_heading_text(text_input)

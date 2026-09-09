@@ -1,4 +1,84 @@
-url: ~
+url: https://distintivelab.github.io/shinyGovBRstyle/
+
 template:
   bootstrap: 5
 
+reference:
+- title: Dependências do Design System
+  contents:
+  - use_govbr
+
+- title: Estrutura da página
+  contents:
+  - br_header
+  - br_footer
+  - br_layout
+  - br_skiplink
+  - br_breadcrumb
+
+- title: Entradas
+  contents:
+  - br_text_input
+  - br_textarea_input
+  - br_date_input
+  - br_select_input
+  - br_radio_input
+  - br_checkbox_input
+  - br_upload
+
+- title: Ações e feedback
+  contents:
+  - br_button
+  - br_magic_button
+  - br_signin
+  - br_message
+  - br_notification
+  - br_loading
+  - br_tooltip
+  - br_modal
+
+- title: Conteúdo e navegação
+  contents:
+  - br_tabs
+  - br_accordion
+  - br_card
+  - br_table
+  - br_step
+  - br_pagination
+  - br_tag
+  - br_divider
+
+- title: Atualização server-side
+  contents:
+  - starts_with("update_br_")
+  - br_update_page_title
+
+- title: Funções legadas (depreciadas)
+  subtitle: >
+    Herdadas do GOV.UK <code>shinyGovstyle</code>; emitem aviso de
+    depreciação e serão removidas em versão futura. Migre para a família
+    <code>br_*</code>.
+  contents:
+  - accordion
+  - button_Input
+  - checkbox_Input
+  - date_Input
+  - file_Input
+  - footer
+  - gov_layout
+  - govTable
+  - govTabs
+  - header
+  - noti_banner
+  - radio_button_Input
+  - select_Input
+  - skip_to_main
+  - tag_Input
+  - text_Input
+  - text_area_Input
+  - warning_text
+
+- title: Utilitários
+  contents:
+  - run_example
+  - "%>%"

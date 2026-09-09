@@ -4,23 +4,24 @@
 \alias{br_table}
 \title{GovBR table}
 \usage{
-br_table(data, caption = NULL, ...)
+br_table(data, title = NULL, ...)
 }
 \arguments{
 \item{data}{A \code{data.frame} or \code{matrix}.}
 
-\item{caption}{Optional table caption.}
+\item{title}{Table title shown in the table header bar.}
 
-\item{...}{Additional UI elements to place inside the table wrapper
-(e.g. toolbar buttons).}
+\item{...}{Additional UI elements to place inside the table wrapper.}
 }
 \value{
 A \code{shiny.tag} with the table markup and GovBR dependencies
   attached.
 }
 \description{
-Creates a \code{br-table} from a data frame or matrix. Column names
-become the table headers.
+Creates a \code{br-table} from a data frame or matrix, following the
+official GovBR table markup: a header area with the table title and a
+plain table whose cells carry \code{data-th} attributes (used by the
+responsive/collapse behaviour).
 }
 \examples{
 if (interactive()) {
@@ -29,7 +30,7 @@ if (interactive()) {
     shinyGovBRstyle::br_layout(
       shinyGovBRstyle::br_table(
         data = mtcars[1:5, ],
-        caption = "Tabela de carros"
+        title = "Tabela de carros"
       )
     )
   )

@@ -27,7 +27,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovBRstyle/images/dev_logo.png",
+#'       logo="shinyGovBRstyle/images/govbr-logo.png",
 #'       logo_alt_text = "Logo do MIDR"
 #'     )
 #'   )

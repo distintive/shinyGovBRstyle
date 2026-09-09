@@ -32,9 +32,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovBRstyle/images/dev_logo.png"),
-#'     shinyGovBRstyle::banner(
-#'     inputId = "banner", type = "beta", 'This is a new service'),
+#'       logo="shinyGovBRstyle/images/govbr-logo.png"),
 #'     shinyGovBRstyle::gov_layout(size = "two-thirds",
 #'       # Simple file input
 #'       shinyGovBRstyle::file_Input(inputId = "file1", label = "Upload a file"),
@@ -53,10 +51,7 @@
 #'     #'Trigger error on blank submit of file2
 #'     observeEvent(input$submit, {
 #'       if (is.null(input$file2)){
-#'         shinyGovBRstyle::error_on(inputId = "file2")
 #'       } else {
-#'         shinyGovBRstyle::error_off(
-#'           inputId = "file2")
 #'       }
 #'     })
 #'   }

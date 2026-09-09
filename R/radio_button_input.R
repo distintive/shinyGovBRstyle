@@ -38,9 +38,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovBRstyle/images/dev_logo.png"),
-#'     shinyGovBRstyle::banner(
-#'       inputId = "banner", type = "beta", 'This is a new service'),
+#'       logo="shinyGovBRstyle/images/govbr-logo.png"),
 #'     shinyGovBRstyle::gov_layout(size = "two-thirds",
 #'       #Simple radio
 #'       shinyGovBRstyle::radio_button_Input(
@@ -66,10 +64,7 @@
 #'     #Trigger error on blank submit of eventId2
 #'     observeEvent(input$submit, {
 #'       if (is.null(input$radio2)){
-#'         shinyGovBRstyle::error_on(inputId = "radio2")
 #'       } else {
-#'         shinyGovBRstyle::error_off(
-#'           inputId = "radio2")
 #'       }
 #'     })
 #'   }

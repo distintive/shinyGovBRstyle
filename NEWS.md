@@ -1,3 +1,19 @@
+# shinyGovBRstyle 0.4.0
+
+* Removidas as funções herdadas do GOV.UK que não possuem transposição
+  para o GovBR (24 funções, entre elas `banner()`, `error_on()`/`error_off()`,
+  `cookieBanner()`, `contents_link()`, `word_count()`, `value_box()` e
+  `font()`), junto de seus testes e da documentação. As 18 funções
+  legadas com equivalente `br_*` permanecem disponíveis e depreciadas.
+* Removidos assets órfãos do GOV.UK: `govbr-frontend-5.7.1.min.css`,
+  `govbr-frontend-5.4.0.min.js`, `sr-only.css`, `contents_link.js`,
+  logos (`moj_logo*`, `dev_logo*`, `govuk-*`) e as capturas de tela
+  antigas usadas no site.
+* `heading_text()` e `clean_heading_text()` deixam de ser exportadas:
+  agora são auxiliares internos das funções legadas mantidas.
+* Site (pkgdown/gh-pages) reestruturado: URL oficial, referência
+  organizada por categoria (`br_*` e legados) e logo original mantido.
+
 # shinyGovBRstyle 0.3.0
 
 * Nova função `br_update_page_title()`: atualiza o título da aba do

@@ -19,7 +19,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovBRstyle/images/dev_logo.png"),
+#'       logo="shinyGovBRstyle/images/govbr-logo.png"),
 #'     shinyGovBRstyle::noti_banner(
 #'       inputId = "banner", title_txt = "Important", body_txt = "Example text")
 #'   )
