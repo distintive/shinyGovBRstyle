@@ -1,7 +1,22 @@
 # Changelog
 
-## shinyGovBRstyle (development version)
+## shinyGovBRstyle 0.3.0
 
+- Nova função
+  [`br_update_page_title()`](../reference/br_update_page_title.md):
+  atualiza o título da aba do navegador a partir do servidor (ideia do
+  upstream, cherry-pick).
+- Acessibilidade: textos auxiliares (`hint`) agora associados aos inputs
+  via `aria-describedby` em
+  [`br_text_input()`](../reference/br_text_input.md),
+  [`br_textarea_input()`](../reference/br_textarea_input.md),
+  [`br_date_input()`](../reference/br_date_input.md),
+  [`br_radio_input()`](../reference/br_radio_input.md),
+  [`br_checkbox_input()`](../reference/br_checkbox_input.md) e
+  [`br_select_input()`](../reference/br_select_input.md) (cherry-pick do
+  upstream).
+- Estratégia upstream definida: cherry-pick de ideias pontuais, sem
+  merge (o core do pacote agora é o GovBR DS nativo).
 - Novos componentes: [`br_accordion()`](../reference/br_accordion.md),
   [`br_tabs()`](../reference/br_tabs.md),
   [`br_card()`](../reference/br_card.md),

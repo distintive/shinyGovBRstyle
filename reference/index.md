@@ -33,6 +33,8 @@
 - [`br_text_input()`](br_text_input.md) : GovBR text input
 - [`br_textarea_input()`](br_textarea_input.md) : GovBR textarea input
 - [`br_tooltip()`](br_tooltip.md) : GovBR tooltip
+- [`br_update_page_title()`](br_update_page_title.md) : Update the
+  browser tab title
 - [`br_upload()`](br_upload.md) : GovBR upload input
 - [`button_Input()`](button_Input.md) : Button Function
 - [`checkbox_Input()`](checkbox_Input.md) : Checkbox Function

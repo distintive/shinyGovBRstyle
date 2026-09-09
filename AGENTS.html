@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">shinyGovBRstyle</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,6 +63,10 @@
 <li>CRITICAL htmltools gotcha: <code>c(list_of_deps, single_dep)</code> strips the S3 class of <code>htmlDependency</code> — always wrap in <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code> before <code>attachDependencies()</code>.</li>
 <li>CRITICAL CSS gotcha: GovBR checkbox/radio CSS uses sibling selectors (<code>input:checked+label</code>), so <code>&lt;label for=...&gt;</code> must immediately follow <code>&lt;input&gt;</code>; wrapping the input in the label breaks the visuals.</li>
 </ul><p><strong>Legacy family</strong>: functions in <code>R/*.R</code> (e.g. <code><a href="reference/button_Input.html">button_Input()</a></code>) finish with <code>attachDependency()</code> (<code>R/attachDependency.R</code>), which serves <code>css/govbr-frontend-test.css</code> (rawline font classes + CDN import) and optional per-widget JS from <code>inst/www/js/</code>.</p>
+</div>
+<div class="section level2">
+<h2 id="upstream-policy-cherry-pick-only">Upstream policy (cherry-pick only)<a class="anchor" aria-label="anchor" href="#upstream-policy-cherry-pick-only"></a></h2>
+<p>The upstream origin is <code>dfe-analytical-services/shinyGovstyle</code> (add it with <code>git remote add upstream https://github.com/dfe-analytical-services/shinyGovstyle.git</code>). Never merge or sync from it: the core here is the native GovBR DS, while upstream remains GOV.UK. Review new upstream commits for <strong>ideas worth porting</strong> (accessibility fixes, UX patterns, generic Shiny utilities such as <code><a href="reference/br_update_page_title.html">br_update_page_title()</a></code>) and reimplement them in the <code>br_*</code> family.</p>
 </div>
 <div class="section level2">
 <h2 id="gotchas">Gotchas<a class="anchor" aria-label="anchor" href="#gotchas"></a></h2>

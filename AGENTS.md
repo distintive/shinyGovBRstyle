@@ -68,6 +68,17 @@ e.g. [`br_header()`](reference/br_header.md),
 `css/govbr-frontend-test.css` (rawline font classes + CDN import) and
 optional per-widget JS from `inst/www/js/`.
 
+## Upstream policy (cherry-pick only)
+
+The upstream origin is `dfe-analytical-services/shinyGovstyle` (add it
+with
+`git remote add upstream https://github.com/dfe-analytical-services/shinyGovstyle.git`).
+Never merge or sync from it: the core here is the native GovBR DS, while
+upstream remains GOV.UK. Review new upstream commits for **ideas worth
+porting** (accessibility fixes, UX patterns, generic Shiny utilities
+such as [`br_update_page_title()`](reference/br_update_page_title.md))
+and reimplement them in the `br_*` family.
+
 ## Gotchas
 
 - **Stylesheet wiring is not obvious**: `attachDependency.R` serves
