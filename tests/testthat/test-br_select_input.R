@@ -18,8 +18,14 @@ test_that("br_select_input single binds as radiogroup", {
 test_that("br_select_input multiple binds as checkboxgroup", {
   select <- br_select_input("uf", "Estado", choices = c("a", "b"), multiple = TRUE)
   expect_match(select$attribs$class, "shiny-input-checkboxgroup")
+  expect_identical(select$attribs$multiple, "multiple")
   html <- as.character(select)
   expect_match(html, 'type="checkbox"')
+})
+
+test_that("br_select_input single has no multiple attribute", {
+  select <- br_select_input("uf", "Estado", choices = "a")
+  expect_null(select$attribs$multiple)
 })
 
 test_that("br_select_input selected marks option", {

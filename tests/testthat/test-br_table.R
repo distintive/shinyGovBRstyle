@@ -10,7 +10,8 @@ test_that("br_table markup from data.frame", {
 
 test_that("br_table caption and matrix input", {
   m <- matrix(1:4, ncol = 2, dimnames = list(NULL, c("c1", "c2")))
-  html <- as.character(br_table(m, caption = "Legend"))
+  html <- as.character(br_table(m, title = "Legend"))
+  expect_match(html, 'class="table-title">Legend</div>')
   expect_match(html, "<caption>Legend</caption>")
   expect_match(html, ">c1</th>")
 })

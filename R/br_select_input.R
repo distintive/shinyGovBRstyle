@@ -55,6 +55,7 @@ br_select_input <- function(inputId,
   select_tag <- shiny::tags$div(
     class = container_class,
     id = inputId,
+    multiple = if (multiple) "multiple",
     shiny::tags$div(
       class = "br-input",
       shiny::tags$label(`for` = paste0(inputId, "-filter"), label),

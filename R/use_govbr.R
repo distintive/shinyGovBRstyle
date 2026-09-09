@@ -46,7 +46,7 @@ govbr_css_dependency <- function() {
       name = "govbr-core-css",
       version = "3.7.0",
       src = c(href = "shinyGovBRstyle/govbr"),
-      stylesheet = "core.min.css"
+      stylesheet = c("core.min.css", "govbr-compat.css")
     )
   )
 }

@@ -1,0 +1,11 @@
+/* Compatibilidade com o Bootstrap carregado pelo shiny::fluidPage().
+   O bootstrap.min.css carrega DEPOIS do core.min.css do GovBR, entao
+   regras com especificidade igual perdem no empate. As regras abaixo
+   reafirmam os resets do GovBR com especificidade maior. */
+
+.br-checkbox input[type="checkbox"],
+.br-radio input[type="radio"],
+.br-select .br-item input[type="checkbox"],
+.br-select .br-item input[type="radio"] {
+  margin: 0;
+}

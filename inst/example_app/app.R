@@ -155,7 +155,7 @@ shiny::shinyApp(
               title = "Frota de ve\u00edculos",
               shinyGovBRstyle::br_table(
                 data = dados_frota,
-                caption = "Quilometragem e consumo por ve\u00edculo"
+                title = "Quilometragem e consumo por ve\u00edculo"
               )
             ),
             shiny::tags$hr(),

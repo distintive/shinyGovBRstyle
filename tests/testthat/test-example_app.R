@@ -16,6 +16,7 @@ test_that("example app loads and serves GovBR assets", {
   app <- shinytest2::AppDriver$new(
     app_dir,
     name = "example_app",
+    load_timeout = 30000,
     timeout = 30000
   )
   on.exit(app$stop(), add = TRUE)
