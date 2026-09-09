@@ -2,8 +2,9 @@
 
 Changes the browser tab title from server code, optionally composing it
 with a service name (e.g. `"Relat\u00f3rio | Meu Sistema"`). Requires
-the GovBR dependencies ([`use_govbr()`](use_govbr.md) or any `br_*`
-component).
+the GovBR dependencies
+([`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md)
+or any `br_*` component).
 
 ## Usage
 

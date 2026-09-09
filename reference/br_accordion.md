@@ -1,7 +1,8 @@
 # GovBR accordion
 
 Creates a `br-accordion` of expandable items. Requires the GovBR
-JavaScript (initialised automatically by [`use_govbr()`](use_govbr.md)).
+JavaScript (initialised automatically by
+[`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md)).
 
 ## Usage
 

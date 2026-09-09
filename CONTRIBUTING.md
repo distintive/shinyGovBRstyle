@@ -49,7 +49,7 @@ Os assets são cópias estáticas da distribuição do `@govbr-ds/core`
 4.  Confira os templates de referência em `data-raw/govbr-templates/`
     (baixe os novos se necessário) e valide os markups dos componentes.
 5.  Rode `devtools::check()` e teste o app de exemplo com
-    [`shinyGovBRstyle::run_example()`](reference/run_example.md).
+    [`shinyGovBRstyle::run_example()`](https://distintivelab.github.io/shinyGovBRstyle/reference/run_example.md).
 
 Se inseguro sobre a aparência esperada, consulte a documentação oficial
 dos componentes em <https://www.gov.br/ds/components>.
@@ -57,5 +57,5 @@ dos componentes em <https://www.gov.br/ds/components>.
 ## Código de Conduta
 
 Este projeto é distribuído com um [Código de Conduta do
-Colaborador](CODE_OF_CONDUCT.md). Ao contribuir, você concorda com seus
-termos.
+Colaborador](https://distintivelab.github.io/shinyGovBRstyle/CODE_OF_CONDUCT.md).
+Ao contribuir, você concorda com seus termos.

@@ -3,7 +3,8 @@
 Creates a `br-tab` navigation with content panels. The GovBR JavaScript
 handles switching panels; the first tab is active initially.
 `input$<inputId>` returns the index (1-based) of the active tab; use
-[`update_br_tabs()`](update_br_inputs.md) to change it from the server.
+[`update_br_tabs()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md)
+to change it from the server.
 
 ## Usage
 

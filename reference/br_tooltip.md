@@ -1,7 +1,8 @@
 # GovBR tooltip
 
 Wraps a UI element with a `br-tooltip`. Requires the GovBR JavaScript
-(initialised automatically by [`use_govbr()`](use_govbr.md)).
+(initialised automatically by
+[`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md)).
 
 ## Usage
 
@@ -19,7 +20,8 @@ br_tooltip(
 
 - ...:
 
-  The trigger element (e.g. a [`br_button()`](br_button.md)).
+  The trigger element (e.g. a
+  [`br_button()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_button.md)).
 
 - text:
 

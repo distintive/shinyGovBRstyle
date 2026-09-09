@@ -7,7 +7,7 @@ Firefox and Chrome"><meta property="og:description" content="This function creat
 shiny fileInput function, but restyles the label and adds error onto it.
 It doesn't look like the www.gov.uk/ style one, although this www.gov.uk/
 doesn't seem to have a settle style as, for example it changes between
-Firefox and Chrome"><meta property="og:image" content="/logo.png"></head><body>
+Firefox and Chrome"><meta property="og:image" content="https://distintivelab.github.io/shinyGovBRstyle/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -15,7 +15,7 @@ Firefox and Chrome"><meta property="og:image" content="/logo.png"></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">shinyGovBRstyle</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,9 +128,7 @@ compatibility and scheduled for removal. See the `br_*` family.</p>
 <span class="r-in"><span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="header.html">header</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>      main_text <span class="op">=</span> <span class="st">"Example"</span>,</span></span>
 <span class="r-in"><span>      secondary_text <span class="op">=</span> <span class="st">"User Examples"</span>,</span></span>
-<span class="r-in"><span>      logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/dev_logo.png"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="banner.html">banner</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    inputId <span class="op">=</span> <span class="st">"banner"</span>, type <span class="op">=</span> <span class="st">"beta"</span>, <span class="st">'This is a new service'</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/govbr-logo.png"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>    <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="gov_layout.html">gov_layout</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"two-thirds"</span>,</span></span>
 <span class="r-in"><span>      <span class="co"># Simple file input</span></span></span>
 <span class="r-in"><span>      <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu">file_Input</span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"file1"</span>, label <span class="op">=</span> <span class="st">"Upload a file"</span><span class="op">)</span>,</span></span>
@@ -149,10 +147,7 @@ compatibility and scheduled for removal. See the `br_*` family.</p>
 <span class="r-in"><span>    <span class="co">#'Trigger error on blank submit of file2</span></span></span>
 <span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html" class="external-link">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">submit</span>, <span class="op">{</span></span></span>
 <span class="r-in"><span>      <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">file2</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span></span>
-<span class="r-in"><span>        <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="error_on.html">error_on</a></span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"file2"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>      <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>        <span class="fu">shinyGovBRstyle</span><span class="fu">::</span><span class="fu"><a href="error_off.html">error_off</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>          inputId <span class="op">=</span> <span class="st">"file2"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>      <span class="op">}</span></span></span>
 <span class="r-in"><span>    <span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span></span></span>

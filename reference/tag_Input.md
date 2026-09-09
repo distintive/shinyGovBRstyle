@@ -40,7 +40,7 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovBRstyle/images/dev_logo.png"),
+      logo="shinyGovBRstyle/images/govbr-logo.png"),
     shinyGovBRstyle::gov_layout(size = "two-thirds",
       shinyGovBRstyle::tag_Input("tag1", "Complete"),
       shinyGovBRstyle::tag_Input("tag2", "Incomplete", "red")),

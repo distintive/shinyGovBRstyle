@@ -32,8 +32,8 @@ Font Awesome 5.11.2 local (`inst/www/fontawesome/`) — exigido pelos
 `shiny:value`/ `shiny:bound` (UI dinâmica). Inclui binding próprio para
 grupos de checkbox (`data-govbr-checkbox-group`).
 
-[`use_govbr()`](reference/use_govbr.md): anexa todas as dependências de
-uma vez no UI.
+[`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md):
+anexa todas as dependências de uma vez no UI.
 
 Templates oficiais de referência salvos em `data-raw/govbr-templates/`
 (não entram no build).
@@ -47,68 +47,80 @@ data por `id`, botão via `action-button`).
 
 **Concluídos nesta iteração:**
 
-[`br_header()`](reference/br_header.md) — cabeçalho completo (logo,
-assinatura, título, subtítulo, busca opcional)
+[`br_header()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_header.md)
+— cabeçalho completo (logo, assinatura, título, subtítulo, busca
+opcional)
 
-[`br_footer()`](reference/br_footer.md) — rodapé com categorias de links
-opcionais
+[`br_footer()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_footer.md)
+— rodapé com categorias de links opcionais
 
-[`br_button()`](reference/br_button.md) — tipos
-primary/secondary/success/warning/danger, block, círculo, densidades
+[`br_button()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_button.md)
+— tipos primary/secondary/success/warning/danger, block, círculo,
+densidades
 
-[`br_text_input()`](reference/br_text_input.md),
-[`br_textarea_input()`](reference/br_textarea_input.md),
-[`br_date_input()`](reference/br_date_input.md)
+[`br_text_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_text_input.md),
+[`br_textarea_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_textarea_input.md),
+[`br_date_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_date_input.md)
 
-[`br_select_input()`](reference/br_select_input.md) — simples e múltiplo
-(br-select + br-list)
+[`br_select_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_select_input.md)
+— simples e múltiplo (br-select + br-list)
 
-[`br_checkbox_input()`](reference/br_checkbox_input.md) — simples
-(TRUE/FALSE) e grupo (vetor)
+[`br_checkbox_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_checkbox_input.md)
+— simples (TRUE/FALSE) e grupo (vetor)
 
-[`br_radio_input()`](reference/br_radio_input.md)
+[`br_radio_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_radio_input.md)
 
-[`br_message()`](reference/br_message.md) — info/success/warning/danger
+[`br_message()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_message.md)
+— info/success/warning/danger
 
-[`br_tag()`](reference/br_tag.md),
-[`br_divider()`](reference/br_divider.md),
-[`br_skiplink()`](reference/br_skiplink.md)
+[`br_tag()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_tag.md),
+[`br_divider()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_divider.md),
+[`br_skiplink()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_skiplink.md)
 
-[`br_layout()`](reference/br_layout.md) — containers do GovBR
-(container-lg/md/sm/full)
+[`br_layout()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_layout.md)
+— containers do GovBR (container-lg/md/sm/full)
 
 **Pendentes (próximas iterações):**
 
-[`br_accordion()`](reference/br_accordion.md),
-[`br_tabs()`](reference/br_tabs.md),
-[`br_table()`](reference/br_table.md) ( GovBR Table com JS)
+[`br_accordion()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_accordion.md),
+[`br_tabs()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_tabs.md),
+[`br_table()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_table.md)
+( GovBR Table com JS)
 
-[`br_breadcrumb()`](reference/br_breadcrumb.md),
-[`br_card()`](reference/br_card.md),
-[`br_modal()`](reference/br_modal.md),
-[`br_notification()`](reference/br_notification.md)
+[`br_breadcrumb()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_breadcrumb.md),
+[`br_card()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_card.md),
+[`br_modal()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_modal.md),
+[`br_notification()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_notification.md)
 
-[`br_upload()`](reference/br_upload.md),
-[`br_magic_button()`](reference/br_magic_button.md),
-[`br_loading()`](reference/br_loading.md),
-[`br_tooltip()`](reference/br_tooltip.md)
+[`br_upload()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_upload.md),
+[`br_magic_button()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_magic_button.md),
+[`br_loading()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_loading.md),
+[`br_tooltip()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_tooltip.md)
 
-[`br_pagination()`](reference/br_pagination.md),
-[`br_step()`](reference/br_step.md),
-[`br_signin()`](reference/br_signin.md)
+[`br_pagination()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_pagination.md),
+[`br_step()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_step.md),
+[`br_signin()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_signin.md)
 
-Bindings mais ricos: [`br_date_input()`](reference/br_date_input.md)
+Bindings mais ricos:
+[`br_date_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_date_input.md)
 retornando `Date`,
-[`br_tabs()`](reference/br_tabs.md)/[`br_pagination()`](reference/br_pagination.md)/[`br_step()`](reference/br_step.md)
+[`br_tabs()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_tabs.md)/[`br_pagination()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_pagination.md)/[`br_step()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_step.md)
 como inputs e update functions (`update_br_*`)
 
-App de exemplo ([`run_example()`](reference/run_example.md)) migrado
-para a família `br_*`
+App de exemplo
+([`run_example()`](https://distintivelab.github.io/shinyGovBRstyle/reference/run_example.md))
+migrado para a família `br_*`
 
 ## Fase 3 — Limpeza e deprecação
 
 Marcar funções antigas (derivadas do GOV.UK) como obsoletas: aviso uma
 vez por sessão via `govbr_deprecated()` + nota nos `.Rd`.
+
+Remover as 24 funções sem transposição para o GovBR (0.4.0) e os assets
+órfãos do GOV.UK (CSS/JS grandes, logos, capturas).
+
+Remover as 18 funções legadas restantes (têm equivalente `br_*`) e o
+stylesheet legado `govbr-frontend-test.css` na v1.0.0.
 
 Remover assets do GOV.UK (`govbr-frontend-5.7.1.min.css`,
 `govbr-frontend-5.4.0.min.js`, fontes GOV.UK, `govbr-frontend-test.css`)
@@ -135,18 +147,30 @@ removido: o app de demonstração será hospedado em instância Shiny
 própria (sem dependência de shinyapps.io).
 
 Publicar o app de exemplo na instância Shiny própria e incluir o link no
-README.
+README (<https://shinygovbr.distintive.com.br/>).
 
-Atualizar `cran-comments.md` e submeter via `devtools::release()`.
+Correções pós-deploy:
+[`br_select_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_select_input.md)
+múltiplo com `multiple="multiple"` (lista permanece aberta, seleção por
+clique simples);
+[`br_table()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_table.md)
+reescrito com a estrutura oficial (`.table-header`/`.table-title` +
+`data-th`) para sobreviver ao JS do componente; `govbr-compat.css`
+neutraliza conflitos de especificidade com o Bootstrap do `fluidPage()`.
+
+Atualizar `cran-comments.md` (submissão via `devtools::release()` ainda
+pendente — ação do mantenedor).
 
 ## Convenções da nova família `br_*`
 
 - Arquivo por função em `R/br_<componente>.R`, teste espelhado em
   `tests/testthat/test-br_<componente>.R`.
-- Sempre terminar com [`use_govbr()`](reference/use_govbr.md) implícito:
-  cada componente anexa as dependências via
+- Sempre terminar com
+  [`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md)
+  implícito: cada componente anexa as dependências via
   [`htmltools::attachDependencies()`](https://rstudio.github.io/htmltools/reference/htmlDependencies.html)
-  (o usuário também pode chamar [`use_govbr()`](reference/use_govbr.md)
+  (o usuário também pode chamar
+  [`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md)
   explicitamente no topo do UI).
 - Shiny bindings nativos: radios/checkbox-group usam `name = inputId`;
   inputs de texto/data usam `id = inputId`; botões usam

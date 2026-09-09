@@ -29,7 +29,7 @@ br_modal(
 - footer:
 
   Optional UI element for the modal footer (e.g.
-  [`br_button()`](br_button.md)).
+  [`br_button()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_button.md)).
 
 - size:
 

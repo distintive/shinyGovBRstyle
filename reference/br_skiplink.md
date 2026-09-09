@@ -16,8 +16,9 @@ br_skiplink(links)
   Named character vector of link destinations and labels, e.g.
   `c("main-content" = "Ir para o conteúdo")`. Names must match element
   ids in the page (built-in ids: `main-content` is created by
-  [`br_layout()`](br_layout.md), `footer` by
-  [`br_footer()`](br_footer.md)).
+  [`br_layout()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_layout.md),
+  `footer` by
+  [`br_footer()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_footer.md)).
 
 ## Value
 

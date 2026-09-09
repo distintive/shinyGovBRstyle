@@ -71,9 +71,7 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovBRstyle/images/dev_logo.png"),
-    shinyGovBRstyle::banner(
-      inputId = "banner", type = "beta", 'This is a new service'),
+      logo="shinyGovBRstyle/images/govbr-logo.png"),
     shinyGovBRstyle::gov_layout(size = "two-thirds",
        # Simple date input
       shinyGovBRstyle::date_Input(
@@ -95,10 +93,7 @@ if (interactive()) {
     #'Trigger error on blank submit of dob_input2
     observeEvent(input$submit, {
       if (input$dob_input2 == "//"){
-        shinyGovBRstyle::error_on(inputId = "dob_input2")
       } else {
-        shinyGovBRstyle::error_off(
-          inputId = "dob_input2")
       }
     })
   }

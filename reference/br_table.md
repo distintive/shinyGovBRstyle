@@ -1,12 +1,14 @@
 # GovBR table
 
-Creates a `br-table` from a data frame or matrix. Column names become
-the table headers.
+Creates a `br-table` from a data frame or matrix, following the official
+GovBR table markup: a header area with the table title and a plain table
+whose cells carry `data-th` attributes (used by the responsive/collapse
+behaviour).
 
 ## Usage
 
 ``` r
-br_table(data, caption = NULL, ...)
+br_table(data, title = NULL, ...)
 ```
 
 ## Arguments
@@ -15,14 +17,13 @@ br_table(data, caption = NULL, ...)
 
   A `data.frame` or `matrix`.
 
-- caption:
+- title:
 
-  Optional table caption.
+  Table title shown in the table header bar.
 
 - ...:
 
-  Additional UI elements to place inside the table wrapper (e.g. toolbar
-  buttons).
+  Additional UI elements to place inside the table wrapper.
 
 ## Value
 
@@ -37,7 +38,7 @@ if (interactive()) {
     shinyGovBRstyle::br_layout(
       shinyGovBRstyle::br_table(
         data = mtcars[1:5, ],
-        caption = "Tabela de carros"
+        title = "Tabela de carros"
       )
     )
   )

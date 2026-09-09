@@ -42,13 +42,8 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovBRstyle/images/dev_logo.png"),
+      logo="shinyGovBRstyle/images/govbr-logo.png"),
     shinyGovBRstyle::gov_layout(size = "full",
-      shinyGovBRstyle::panel_output(
-        inputId = "panel1",
-        main_text = "Application Complete",
-        sub_text = "Thank you for submitting your application.
-        Your reference is xvsiq")
     ),
     shinyGovBRstyle::footer(full = TRUE)
   )

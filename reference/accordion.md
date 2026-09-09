@@ -40,9 +40,7 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovBRstyle/images/dev_logo.png"),
-    shinyGovBRstyle::banner(
-      inputId = "banner", type = "beta", 'This is a new service'),
+      logo="shinyGovBRstyle/images/govbr-logo.png"),
     shinyGovBRstyle::gov_layout(size = "two-thirds",
     accordion(
       "acc1",

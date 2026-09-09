@@ -70,67 +70,70 @@ O mesmo app também está disponível online em
 
 | Função | Componente GovBR | Observações |
 |----|----|----|
-| [`use_govbr()`](reference/use_govbr.md) | — | CSS/JS/fontes, chame uma vez no UI |
-| [`br_header()`](reference/br_header.md) | Header | logo, assinatura, título, busca opcional |
-| [`br_footer()`](reference/br_footer.md) | Footer | categorias de links opcionais |
-| [`br_layout()`](reference/br_layout.md) | Grid | `container-lg/md/sm/fluid` |
-| [`br_skiplink()`](reference/br_skiplink.md) | Skiplink | acessibilidade (tecla Tab) |
-| [`br_breadcrumb()`](reference/br_breadcrumb.md) | Breadcrumb | trilha de navegação |
+| [`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md) | — | CSS/JS/fontes, chame uma vez no UI |
+| [`br_header()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_header.md) | Header | logo, assinatura, título, busca opcional |
+| [`br_footer()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_footer.md) | Footer | categorias de links opcionais |
+| [`br_layout()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_layout.md) | Grid | `container-lg/md/sm/fluid` |
+| [`br_skiplink()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_skiplink.md) | Skiplink | acessibilidade (tecla Tab) |
+| [`br_breadcrumb()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_breadcrumb.md) | Breadcrumb | trilha de navegação |
 
 ### Entradas
 
 | Função | Valor em `input$` |
 |----|----|
-| [`br_text_input()`](reference/br_text_input.md) | texto |
-| [`br_textarea_input()`](reference/br_textarea_input.md) | texto |
-| [`br_date_input()`](reference/br_date_input.md) | `Date` |
-| [`br_select_input()`](reference/br_select_input.md) | valor (simples) ou vetor (múltiplo) |
-| [`br_radio_input()`](reference/br_radio_input.md) | valor |
-| [`br_checkbox_input()`](reference/br_checkbox_input.md) | `TRUE/FALSE` (simples) ou vetor (grupo) |
-| [`br_upload()`](reference/br_upload.md) | data frame de arquivos (como `fileInput`) |
+| [`br_text_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_text_input.md) | texto |
+| [`br_textarea_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_textarea_input.md) | texto |
+| [`br_date_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_date_input.md) | `Date` |
+| [`br_select_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_select_input.md) | valor (simples) ou vetor (múltiplo) |
+| [`br_radio_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_radio_input.md) | valor |
+| [`br_checkbox_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_checkbox_input.md) | `TRUE/FALSE` (simples) ou vetor (grupo) |
+| [`br_upload()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_upload.md) | data frame de arquivos (como `fileInput`) |
 
 ### Ações e feedback
 
 | Função | Uso |
 |----|----|
-| [`br_button()`](reference/br_button.md) | botão de ação (5 tipos, ícone, bloco, círculo) |
-| [`br_magic_button()`](reference/br_magic_button.md) | botão flutuante |
-| [`br_signin()`](reference/br_signin.md) | botão “Entrar” |
-| [`br_message()`](reference/br_message.md) | alerta info/success/warning/danger |
-| [`br_notification()`](reference/br_notification.md) | painel de notificações |
-| [`br_loading()`](reference/br_loading.md) | spinner ou barra de progresso |
-| [`br_tooltip()`](reference/br_tooltip.md) | dica contextual |
-| [`br_modal()`](reference/br_modal.md) | diálogo modal |
+| [`br_button()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_button.md) | botão de ação (5 tipos, ícone, bloco, círculo) |
+| [`br_magic_button()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_magic_button.md) | botão flutuante |
+| [`br_signin()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_signin.md) | botão “Entrar” |
+| [`br_message()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_message.md) | alerta info/success/warning/danger |
+| [`br_notification()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_notification.md) | painel de notificações |
+| [`br_loading()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_loading.md) | spinner ou barra de progresso |
+| [`br_tooltip()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_tooltip.md) | dica contextual |
+| [`br_modal()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_modal.md) | diálogo modal |
 
 ### Conteúdo e navegação
 
 | Função | Uso |
 |----|----|
-| [`br_tabs()`](reference/br_tabs.md) | abas (índice ativo em `input$`, [`update_br_tabs()`](reference/update_br_inputs.md)) |
-| [`br_accordion()`](reference/br_accordion.md) | acordeões expansíveis |
-| [`br_card()`](reference/br_card.md) | cartões com cabeçalho/rodapé opcionais |
-| [`br_table()`](reference/br_table.md) | tabelas a partir de data frame/matriz |
-| [`br_step()`](reference/br_step.md) | indicador de etapas |
-| [`br_pagination()`](reference/br_pagination.md) | paginação (página atual em `input$`) |
-| [`br_tag()`](reference/br_tag.md) | etiquetas |
-| [`br_divider()`](reference/br_divider.md) | separadores |
+| [`br_tabs()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_tabs.md) | abas (índice ativo em `input$`, [`update_br_tabs()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md)) |
+| [`br_accordion()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_accordion.md) | acordeões expansíveis |
+| [`br_card()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_card.md) | cartões com cabeçalho/rodapé opcionais |
+| [`br_table()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_table.md) | tabelas a partir de data frame/matriz |
+| [`br_step()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_step.md) | indicador de etapas |
+| [`br_pagination()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_pagination.md) | paginação (página atual em `input$`) |
+| [`br_tag()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_tag.md) | etiquetas |
+| [`br_divider()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_divider.md) | separadores |
 
 ### Atualização server-side
 
-[`update_br_text_input()`](reference/update_br_inputs.md),
-[`update_br_textarea_input()`](reference/update_br_inputs.md),
-[`update_br_radio_input()`](reference/update_br_inputs.md),
-[`update_br_checkbox_input()`](reference/update_br_inputs.md),
-[`update_br_select_input()`](reference/update_br_inputs.md),
-[`update_br_date_input()`](reference/update_br_inputs.md),
-[`update_br_tabs()`](reference/update_br_inputs.md),
-[`update_br_pagination()`](reference/update_br_inputs.md),
-[`update_br_step()`](reference/update_br_inputs.md).
+[`update_br_text_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_textarea_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_radio_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_checkbox_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_select_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_date_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_tabs()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_pagination()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md),
+[`update_br_step()`](https://distintivelab.github.io/shinyGovBRstyle/reference/update_br_inputs.md).
 
 ## Contribuindo
 
 Sugestões e bugs: [abra uma
 issue](https://github.com/DistintiveLab/shinyGovBRstyle/issues).
-Detalhes de desenvolvimento em [CONTRIBUTING.md](CONTRIBUTING.md) e no
-[ROADMAP.md](ROADMAP.md). Código de Conduta do colaborador em
-[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Detalhes de desenvolvimento em
+[CONTRIBUTING.md](https://distintivelab.github.io/shinyGovBRstyle/CONTRIBUTING.md)
+e no
+[ROADMAP.md](https://distintivelab.github.io/shinyGovBRstyle/ROADMAP.md).
+Código de Conduta do colaborador em
+[CODE_OF_CONDUCT.md](https://distintivelab.github.io/shinyGovBRstyle/CODE_OF_CONDUCT.md).
