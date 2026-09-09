@@ -20,7 +20,7 @@ test_that("br_checkbox_input group binds as shiny checkboxgroup", {
     selected = "tec"
   )
 
-  expect_identical(checkbox$attribs$class, "shiny-input-checkboxgroup")
+  expect_identical(checkbox$attribs$class, "br-fieldset shiny-input-checkboxgroup")
   expect_identical(checkbox$attribs$id, "temas")
 
   html <- as.character(checkbox)

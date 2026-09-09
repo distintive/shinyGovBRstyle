@@ -10,7 +10,8 @@ br_radio_input(
   choices = NULL,
   selected = NULL,
   hint = NULL,
-  inline = FALSE
+  inline = FALSE,
+  heading_level = NULL
 )
 }
 \arguments{
@@ -26,6 +27,9 @@ different from the values.}
 \item{hint}{Auxiliary help text shown below the label.}
 
 \item{inline}{If \code{TRUE}, options are laid out horizontally.}
+
+\item{heading_level}{Optional heading level ("2"-"6") for the group
+legend (screen readers announce it as the group label).}
 }
 \value{
 A \code{shiny.tag} with the radio group markup and GovBR

@@ -20,8 +20,8 @@ nativos do Shiny (radios/checkbox por `name`, texto/data por `id`,
 botões como `action-button`).
 
 > Histórico: este pacote começou como um fork do `shinyGovstyle`
-> (GOV.UK). As funções antigas herdadas continuam disponíveis, porém
-> **depreciadas**, e serão removidas em versão futura.
+> (GOV.UK). As funções herdadas do GOV.UK foram deprecadas na 0.2.0 e
+> **removidas na 1.0.0**; o pacote agora contém apenas a família `br_*`.
 
 ## Instalação
 

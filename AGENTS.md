@@ -5,7 +5,7 @@
 R package `shinyGovBRstyle`: Shiny UI components for the official Brazilian gov.br design system (GovBR DS). It started as a fork of the UK `shinyGovstyle` package (GOV.UK Frontend). Two component families now coexist:
 
 - **`br_*` family (current)**: built on the real GovBR DS v3.7.0 assets (`inst/www/govbr/core.min.css|js`, classes `br-*`), using native Shiny input bindings.
-- **Legacy family (derived from GOV.UK, classes renamed `govbr-`)**: 18 deprecated functions kept for migration (each has a `br_*` equivalent); the 24 without a GovBR counterpart were removed in 0.4.0. Full removal planned for v1.0.0 (see `ROADMAP.md`).
+- **Legacy family**: fully removed in 1.0.0 (deprecated since 0.2.0). The package exports only the `br_*` family plus `use_govbr()` and `run_example()`.
 
 ## Essential commands
 
@@ -32,7 +32,6 @@ CI (`.github/workflows/R-CMD-check.yaml`) checks a matrix of macOS/Windows/Ubunt
 - CRITICAL htmltools gotcha: `c(list_of_deps, single_dep)` strips the S3 class of `htmlDependency` — always wrap in `list()` before `attachDependencies()`.
 - CRITICAL CSS gotcha: GovBR checkbox/radio CSS uses sibling selectors (`input:checked+label`), so `<label for=...>` must immediately follow `<input>`; wrapping the input in the label breaks the visuals.
 
-**Legacy family**: functions in `R/*.R` (e.g. `button_Input()`) finish with `attachDependency()` (`R/attachDependency.R`), which serves `css/govbr-frontend-test.css` (rawline font classes + CDN import) and optional per-widget JS from `inst/www/js/`.
 
 ## Upstream policy (cherry-pick only)
 
@@ -45,7 +44,6 @@ as `br_update_page_title()`) and reimplement them in the `br_*` family.
 
 ## Gotchas
 
-- **Stylesheet wiring is not obvious**: `attachDependency.R` serves `govbr-frontend-test.css`, which is currently a small file of rawline font classes plus a CDN `@import`. The large vendored stylesheet `inst/www/css/govbr-frontend-5.7.1.min.css` is *not referenced by any R code*. Do not assume editing the `.min.css` affects apps.
 - **CSS overrides are logged, not versioned in code**: manual CSS tweaks needed when updating the vendored design-system CSS are recorded in `css_changes.md` (Rbuildignored) and must be reapplied by hand on each update. Always append changes there.
 - **Demo hosting**: the example app has no automated deploy; it is meant to be hosted on a self-managed Shiny instance (the shinyapps.io workflow inherited from upstream was removed). The app ships in the package and runs via `run_example()`.
 - **Naming is inconsistent by design/history**: file names are lowercase snake_case (`R/checkbox_input.R`, `R/select_input.R`) but the functions inside use a capitalized `Input` suffix (`checkbox_Input()`, `select_Input()`, `button_Input()`, `text_area_Input()`). Test file names don't always match function names (e.g. `test-gov_button.R` tests `button_Input()`; `test-subcontents_links.R` tests `contents_link()`). Match the existing file you are editing rather than "fixing" naming globally.

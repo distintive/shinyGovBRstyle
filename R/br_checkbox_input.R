@@ -14,6 +14,8 @@
 #'   (single).
 #' @param hint Auxiliary help text shown below the label.
 #' @param inline If \code{TRUE}, group options are laid out horizontally.
+#' @param heading_level Optional heading level ("2"-"6") for the group
+#'   legend (screen readers announce it as the group label).
 #'
 #' @return A \code{shiny.tag} with the checkbox markup and GovBR
 #'   dependencies attached.
@@ -43,7 +45,8 @@ br_checkbox_input <- function(inputId,
                               choices = NULL,
                               selected = NULL,
                               hint = NULL,
-                              inline = FALSE) {
+                              inline = FALSE,
+                              heading_level = NULL) {
 
   if (is.null(choices)) {
     return(govbr_checkbox_single(inputId, label, selected, hint))
@@ -53,14 +56,13 @@ br_checkbox_input <- function(inputId,
   option_class <- "br-checkbox"
   if (inline) option_class <- paste(option_class, "d-inline-block")
 
-  checkbox_tag <- shiny::tags$div(
-    class = "shiny-input-checkboxgroup",
-    id = inputId,
-    shiny::tags$p(class = "label mb-0", label),
-    if (!is.null(hint)) {
-      shiny::tags$p(id = paste0(inputId, "-hint"), class = "text-down-01", hint)
-    },
-    purrr::pmap(
+  checkbox_tag <- govbr_fieldset(
+    inputId = inputId,
+    group_class = "shiny-input-checkboxgroup",
+    label = label,
+    hint = hint,
+    heading_level = heading_level,
+    options = purrr::pmap(
       list(choice_data$value, choice_data$label, seq_along(choice_data$value)),
       function(value, choice_label, i) {
         shiny::tags$div(

@@ -9,3 +9,22 @@
 .br-select .br-item input[type="radio"] {
   margin: 0;
 }
+
+/* Fieldset/legend semantico dos grupos de radio/checkbox: remove o
+   estilo padrao de fieldset/legend do navegador e do Bootstrap para
+   manter o visual GovBR. */
+fieldset.br-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+fieldset.br-fieldset legend {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  float: none;
+  font-size: inherit;
+  line-height: inherit;
+}

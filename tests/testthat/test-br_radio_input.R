@@ -6,7 +6,7 @@ test_that("br_radio_input binds as shiny radiogroup", {
     selected = "SP"
   )
 
-  expect_identical(radio$attribs$class, "shiny-input-radiogroup")
+  expect_identical(radio$attribs$class, "br-fieldset shiny-input-radiogroup")
   expect_identical(radio$attribs$id, "uf")
 
   html <- as.character(radio)

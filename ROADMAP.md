@@ -70,8 +70,8 @@ data por `id`, botão via `action-button`).
       uma vez por sessão via `govbr_deprecated()` + nota nos `.Rd`.
 - [x] Remover as 24 funções sem transposição para o GovBR (0.4.0) e os
       assets órfãos do GOV.UK (CSS/JS grandes, logos, capturas).
-- [ ] Remover as 18 funções legadas restantes (têm equivalente `br_*`)
-      e o stylesheet legado `govbr-frontend-test.css` na v1.0.0.
+- [x] Remover as 18 funções legadas restantes e todos os assets UK
+      (concluído na 1.0.0).
 - [ ] Remover assets do GOV.UK (`govbr-frontend-5.7.1.min.css`,
       `govbr-frontend-5.4.0.min.js`, fontes GOV.UK, `govbr-frontend-test.css`)
       quando as funções antigas forem removidas (meta: v1.0.0).

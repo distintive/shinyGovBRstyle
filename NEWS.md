@@ -1,3 +1,18 @@
+# shinyGovBRstyle 1.0.0
+
+* Todas as 18 funções herdadas do GOV.UK foram removidas (estavam
+  deprecadas desde a 0.2.0); o pacote contém exclusivamente a família
+  `br_*` sobre o Design System GovBR.
+* Grupos de `br_radio_input()` e `br_checkbox_input()` agora usam
+  `fieldset`/`legend` semânticos (com `heading_level` opcional),
+  anunciados corretamente por leitores de tela (cherry-pick do PR #225
+  do upstream).
+* Assets legados removidos: `govbr-frontend-test.css`, `font.css`,
+  bindings JS antigos (`radio_button_input_binding.js`,
+  `date_input_binding.js`, `accordion.js`, `govTab.js`) e
+  `css_changes.md`.
+* Dependências reduzidas para `htmltools`, `purrr` e `shiny`.
+
 # shinyGovBRstyle 0.4.0
 
 * Removidas as funções herdadas do GOV.UK que não possuem transposição
