@@ -8,6 +8,9 @@
 #' @return a select input html shiny object
 #' @keywords select
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -34,6 +37,7 @@
 #' }
 
 select_Input <- function(inputId, label, select_text, select_value){
+  govbr_deprecated("select_Input")
   govSelect <- shiny::tags$div(class="govbr-form-group",
     shiny::tags$label(shiny::HTML(label), class="govbr-label"),
     shiny::tags$select(id = inputId, class="govbr-select",

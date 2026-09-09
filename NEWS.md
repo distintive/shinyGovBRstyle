@@ -1,5 +1,32 @@
 # shinyGovBRstyle (development version)
 
+* Novos componentes: `br_accordion()`, `br_tabs()`, `br_card()`,
+  `br_table()`, `br_modal()`, `br_notification()`, `br_loading()`,
+  `br_magic_button()`, `br_breadcrumb()`, `br_tooltip()`, `br_upload()`
+  (input de arquivo com binding nativo do Shiny), `br_pagination()`,
+  `br_step()` e `br_signin()`.
+* `br_date_input()` agora retorna `Date` no servidor (binding próprio com
+  tipo `shiny.date`); `br_tabs()` expõe o índice do tab ativo em
+  `input$` e `br_pagination()`/`br_step()` também são inputs.
+* Funções de atualização server-side: `update_br_text_input()`,
+  `update_br_textarea_input()`, `update_br_radio_input()`,
+  `update_br_checkbox_input()`, `update_br_select_input()`,
+  `update_br_date_input()`, `update_br_tabs()`,
+  `update_br_pagination()` e `update_br_step()`.
+* Header corrigido para incluir o gatilho de menu exigido pelo
+  JavaScript oficial do GovBR (`menuTrigger`); a inicialização JS é
+  isolada por componente para que um markup incompleto não impeça os
+  demais.
+* Todas as 42 funções herdadas do GOV.UK foram marcadas como obsoletas:
+  emitem aviso (uma vez por sessão) apontando para a família `br_*` e
+  serão removidas em versão futura.
+* App de exemplo (`run_example()`) reescrito usando exclusivamente a
+  família `br_*`.
+* Workflow de deploy do app de exemplo corrigido (instalava o pacote
+  upstream) e CONTRIBUTING.md reescrito para o fluxo GovBR.
+* README e DESCRIPTION reescritos para a família `br_*`; URLs
+  atualizadas para a organização DistintiveLab.
+
 # shinyGovBRstyle 0.2.0
 
 * Nova família de componentes `br_*` construída com os assets oficiais do

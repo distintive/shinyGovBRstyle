@@ -26,6 +26,9 @@
 #' @return radio buttons html shiny object
 #' @keywords radiobuttons
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -35,7 +38,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo="shinyGovBRstyle/images/moj_logo.png"),
+#'       logo="shinyGovBRstyle/images/dev_logo.png"),
 #'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", 'This is a new service'),
 #'     shinyGovBRstyle::gov_layout(size = "two-thirds",
@@ -78,6 +81,7 @@ radio_button_Input <- function (inputId, label, choices = NULL,
                                 choiceNames = NULL, choiceValues = NULL,
                                 hint_label = NULL, error = FALSE,
                                 error_message = NULL, custom_class = ""){
+  govbr_deprecated("radio_button_Input")
   args <- normalizeChoicesArgs2(choices, choiceNames, choiceValues)
   selected <- shiny::restoreInput(id = inputId, default = selected)
   # selected <- if (is.null(selected))

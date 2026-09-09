@@ -12,6 +12,9 @@
 #' @return a input field of html as a shiny object
 #' @keywords input field
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -54,6 +57,7 @@
 
 input_field <- function(legend, labels, inputIds, widths=NULL, types = "text",
                         error = FALSE, error_message = NULL){
+  govbr_deprecated("input_field")
   if (is.null(widths)){
     widths <- rep_len(0,length(inputIds))
   }

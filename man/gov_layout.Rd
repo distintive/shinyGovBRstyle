@@ -23,6 +23,12 @@ This function loads the page layout, This doesn't work as well as
 the `gov_main_layout` and associated functions.  This is being kept for now
 as a simpler version where grids are not needed.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
   ui <- fluidPage(

@@ -12,6 +12,9 @@
 #' @return a text area box html shiny object
 #' @keywords text area
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' text_area_Input("taId", "Can you provide more detail?",
 #' "Do not include personal or financial information, like your
@@ -20,6 +23,7 @@
 text_area_Input <- function(inputId, label, hint_label=NULL, row_no=5,
                             error = FALSE, error_message = NULL,
                             word_limit=NULL){
+  govbr_deprecated("text_area_Input")
   govTextarea <- shiny::tags$div(class="govbr-form-group govbr-character-count",
                                  id=paste0(inputId,"div"),
     shiny::tags$label(shiny::HTML(label), class="govbr-label"),

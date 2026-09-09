@@ -26,6 +26,7 @@
 #' }
 
 banner <-function(inputId, type, label){
+  govbr_deprecated("banner")
   govBanner <- shiny::tags$div(
     class="govbr-phase-banner govbr-width-container govbr-main-wrapper",
     id = inputId,

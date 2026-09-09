@@ -14,6 +14,9 @@
 #' @return a summary list table html shiny object.
 #' @keywords summary list
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -42,6 +45,7 @@
 
 
 gov_summary <- function(inputId, headers, info, action = FALSE, border = TRUE){
+  govbr_deprecated("gov_summary")
 
   if (border){
     border_class = "govbr-summary-list"

@@ -6,6 +6,9 @@
 #' @return a backlink html shiny object
 #' @keywords backlink
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -44,6 +47,7 @@
 #' }
 
 backlink_Input <- function(inputId, label = "Voltar") {
+  govbr_deprecated("backlink_Input")
 
   value <- shiny::restoreInput(id = inputId, default = NULL)
   govBacklink <- shiny::actionLink(label = label,

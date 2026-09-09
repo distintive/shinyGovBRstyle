@@ -1,571 +1,202 @@
-# Deployed at https://department-for-education.shinyapps.io/shinygovstyle-example-app/
-
+library(shiny)
 library(shinyGovBRstyle)
 
-Months <- c("January", "February", "March")
-Bikes <- c(85, 75, 165)
-Cars <- c(95, 55, 125)
-example_data <- data.frame(Months, Bikes, Cars)
-tabs <- c(
-  rep("Past Day", 3),
-  rep("Past Week", 3),
-  rep("Past Month", 3),
-  rep("Past Year", 3)
+dados_frota <- data.frame(
+  Veiculo = c("Fiat Strada", "VW Polo", "Chevrolet Onix", "Hyundai HB20",
+              "Toyota Corolla", "Jeep Renegade", "Renault Kwid", "Peugeot 208"),
+  Ano = c(2021, 2022, 2020, 2023, 2019, 2022, 2021, 2020),
+  Consumo = c(13.5, 14.2, 13.9, 14.0, 11.8, 11.2, 15.7, 13.1),
+  Quilometragem = c(38200, 21400, 56700, 12800, 78300, 27500, 44100, 61900)
 )
-Case_manager <- rep(c("David Francis", "Paul Farmer", "Rita Patel"), 4)
-Cases_open <- c(3, 1, 2, 24, 16, 24, 98, 122, 126, 1380, 1129, 1539)
-Cases_closed <- c(0, 0, 0, 18, 20, 27, 95, 131, 142, 1472, 1083, 1265)
-data <- data.frame(tabs, Case_manager, Cases_open, Cases_closed)
 
 shiny::shinyApp(
   ui = shiny::fluidPage(
     title = "ShinyGovBRstyle",
-    shinyGovBRstyle::cookieBanner("shinyGovBRstyle showcase"),
-    shinyGovBRstyle::skip_to_main(),
-    shinyGovBRstyle::header("MoJ", "shinyGovBRstyle showcase",
-      logo = "shinyGovBRstyle/images/moj_logo-1.png", logo_width = 66,
-      logo_alt_text = "Ministry of Justice logo"
-    ),
-    banner(
-      "banner",
-      "Beta",
-      'This is a new service \u002D your <a class="govbr-link" href="https://github.com/dfe-analytical-services/shinyGovBRstyle/issues/new/choose">
-        feedback</a> will help us to improve it.'
-    ),
-
-    # Need this to make the error and word count work
-    shinyjs::useShinyjs(),
-
-    # Notice at top of page ----
-    br(),
-    shinyGovBRstyle::gov_row(
-      shinyGovBRstyle::gov_box(
-        size = "full",
-        shinyGovBRstyle::gov_text(
-          style = "margin-bottom: -10px;",
-          "This example app showcases the components available in the latest development version of the shinyGovBRstyle
-                    package. The source code for the app can be found on the ",
-          shinyGovBRstyle::external_link(
-            href = "https://github.com/dfe-analytical-services/shinyGovBRstyle/blob/master/inst/example_app/app.R",
-            link_text = "master GitHub branch"
-          ),
-          "."
-        )
+    shiny::tags$head(
+      shiny::tags$link(
+        rel = "icon",
+        type = "image/x-icon",
+        href = "shinyGovBRstyle/govbr/favicon.ico"
       )
     ),
+    shinyGovBRstyle::use_govbr(),
+    shinyGovBRstyle::br_skiplink(c(
+      "main-content" = "Ir para o conte\u00fado",
+      "footer" = "Ir para o rodap\u00e9"
+    )),
+    shinyGovBRstyle::br_header(
+      title = "shinyGovBRstyle",
+      subtitle = "Demonstra\u00e7\u00e3o dos componentes GovBR",
+      signature = "GovBR",
+      logo = "govbr",
+      logo_alt = "Logotipo GovBR",
+      search_id = "busca"
+    ),
+    shinyGovBRstyle::br_layout(
+      size = "medium",
 
-    # Main navigation ----
-    gov_row(
-      # Nav columns
-      shiny::column(
-        width = 3,
-        id = "nav", # DO NOT REMOVE ID
-
-        # Contents box
-        shiny::tags$div(
-          id = "govbr-contents-box", # DO NOT REMOVE ID
-          class = "govbr-contents-box", # DO NOT REMOVE CLASS
-
-          shiny::tags$h2("Contents"),
-
-          # Select Types tab
-          contents_link(
-            "Select Types",
-            "select_types_button",
-            subcontents_text_list =
-              c(
-                "radio_button_Input (inline)",
-                "radio_button_Input (stacked)",
-                "checkbox_Input",
-                "select_Input",
-                "file_Input",
-                "button_Input"
-              )
-          ),
-
-          # Text types tab
-          contents_link(
-            "Text Types",
-            "text_types_button",
-            subcontents_text_list = c(
-              "date_Input",
-              "text_Input",
-              "text_area_Input",
-              "button_Input",
-              "external_link",
-              "download_link"
-            ),
-            subcontents_id_list = c(
-              NA,
-              NA,
-              NA,
-              "button_input_text_types",
-              NA,
-              NA
-            )
-          ),
-
-          # Tables tabs and accordions tab
-          contents_link(
-            "Tables, tabs and accordions",
-            "tables_tabs_and_accordions_button",
-            subcontents_text_list = c("govTable", "govTabs", "button_Input", "accordions"),
-            subcontents_id_list = c(NA, NA, "button_input_tables_tabs_accordions", NA)
-          ),
-
-          # Feedback types tab
-          contents_link(
-            "Feedback types",
-            "feedback_types_button",
-            subcontents_text_list = c(
-              "tag_Input",
-              "details",
-              "insert_text",
-              "warning_text",
-              "value_box",
-              "panel_output",
-              "noti_banner",
-              "gov_summary"
-            )
-          ),
-          contents_link(
-            "Cookies",
-            "cookies_button"
-          ),
-        )
+      # Mensagens ------------------------------------------------------
+      shinyGovBRstyle::br_message(
+        title = "Informa\u00e7\u00e3o.",
+        body = "Este app demonstra os componentes da fam\u00edlia br_*.",
+        type = "info"
       ),
-      shiny::column(
-        width = 9,
-        id = "main_col", # DO NOT REMOVE ID
+      shiny::tags$br(),
 
-        shiny::tags$br(),
+      # Navega\u00e7\u00e3o b\u00e1sica ----------------------------------------------
+      shinyGovBRstyle::br_breadcrumb(
+        c("In\u00edcio" = "#", "Demonstra\u00e7\u00e3o" = "#")
+      ),
+      shiny::tags$hr(),
 
-        # Set up a nav panel so everything not on single page
-        shiny::tabsetPanel(
-          type = "hidden",
-          id = "tab-container", # DO NOT REMOVE ID
+      # Abas -----------------------------------------------------------
+      shinyGovBRstyle::br_tabs(
+        inputId = "abas",
+        titles = c("Entradas", "Componentes", "Tabelas"),
+        icons = c("fas fa-keyboard", "fas fa-puzzle-piece", "fas fa-table"),
+        panels = list(
 
-          ##################### Create first panel################################
-          shiny::tabPanel(
-            "Select Types",
-            value = "select_types",
-            gov_layout(
-              size = "two-thirds",
-              heading_text("Select Types", size = "l"),
-              label_hint("label1", "These are some examples of the types of user
-                   select type inputs that you can use"),
-              heading_text("radio_button_Input (inline)", size = "s"),
-              radio_button_Input(
-                inputId = "name_changed", label = "Have you changed your name?",
-                choices = c("Yes", "No"), inline = TRUE,
-                hint_label = "This includes changing your last name or spelling
-                            your name differently."
+          # --- Painel 1: entradas ------------------------------------
+          shiny::tags$div(
+            class = "row",
+            shiny::tags$div(
+              class = "col-md-6",
+              shinyGovBRstyle::br_text_input(
+                "nome", "Nome",
+                placeholder = "Digite seu nome",
+                hint = "Texto auxiliar para prevenir erros"
               ),
-              heading_text("radio_button_Input (stacked)", size = "s"),
-              radio_button_Input(
-                inputId = "name_changed_stacked", label = "Have you changed your name?",
-                choices = c("Yes", "No"), inline = FALSE,
-                hint_label = "This includes changing your last name or spelling
-                            your name differently."
+              shinyGovBRstyle::br_textarea_input(
+                "obs", "Observa\u00e7\u00f5es",
+                placeholder = "Digite suas observa\u00e7\u00f5es"
               ),
-              heading_text("checkbox_Input", size = "s"),
-              checkbox_Input(
-                inputId = "checkID",
-                cb_labels = c(
-                  "Waste from animal carcasses",
-                  "Waste from mines or quarries",
-                  "Farm or agricultural waste"
-                ),
-                checkboxIds = c("op1", "op2", "op3"),
-                label = "Which types of waste do you transport?",
-                hint_label = "Select all that apply."
-              ),
-              heading_text("select_Input", size = "s"),
-              select_Input(
-                inputId = "sorter",
-                label = "Sort by",
-                select_text = c(
-                  "Recently published",
-                  "Recently updated",
-                  "Most views",
-                  "Most comments"
-                ),
-                select_value = c("published", "updated", "view", "comments")
-              ),
-              heading_text("file_Input", size = "s"),
-              file_Input(inputId = "file1", label = "Upload a file"),
-              heading_text("button_Input", size = "s"),
-              button_Input("btn1", "Go to next page")
-            )
-          ),
-
-          ##################### Create second panel################################
-          shiny::tabPanel(
-            "Text Types",
-            value = "text_types",
-            gov_layout(
-              size = "two-thirds",
-              backlink_Input("back1"),
-              heading_text("Page 2", size = "l"),
-              label_hint("label2", "These are some examples of the types of user
-                   text inputs that you can use"),
-              heading_text("date_Input", size = "s"),
-              date_Input(
-                inputId = "date1",
-                label = "What is your date of birth?",
-                hint_label = "For example, 31 3 1980"
-              ),
-              heading_text("text_Input", size = "s"),
-              text_Input(inputId = "txt1", label = "Event name"),
-              heading_text("text_area_Input", size = "s"),
-              text_area_Input(
-                inputId = "text_area1",
-                label = "Can you provide more detail?",
-                hint_label = "Do not include personal or financial information,
-          like your National Insurance number or credit card details."
-              ),
-              text_area_Input(
-                inputId = "text_area2",
-                label = "How are you today?",
-                hint_label = "Leave blank to trigger error",
-                error = T,
-                error_message = "Please do not leave blank",
-                word_limit = 300
-              ),
-              heading_text("button_Input", size = "s", id = "button_input_text_types"),
-              button_Input("btn_error", "Check for errors", type = "warning"),
-              heading_text("external_link", size = "s"),
-              gov_text(
-                "You can add external links with automatic formatting such as to our ",
-                shinyGovBRstyle::external_link(
-                  href = "https://github.com/dfe-analytical-services/shinyGovBRstyle",
-                  link_text = "GitHub repository",
-                ),
-                "."
-              ),
-              shinyGovBRstyle::gov_text(
-                "You can also add external links that don't have the warning in brackets
-                but do have the warning for screen readers, such as this link to our ",
-                shinyGovBRstyle::external_link(
-                  href = "https://dfe-analytical-services.github.io/shinyGovBRstyle/",
-                  link_text = "package documentation site",
-                  add_warning = FALSE
-                ),
-                "."
-              ),
-              heading_text("download_link", size = "s"),
-              shinyGovBRstyle::gov_text(
-                shinyGovBRstyle::download_link(
-                  "download_data",
-                  "Download a demo data set",
-                  file_type = "CSV",
-                  file_size = "1 KB"
+              shinyGovBRstyle::br_date_input("data", "Data de nascimento"),
+              shinyGovBRstyle::br_select_input(
+                "uf", "Estado",
+                choices = c(
+                  "Distrito Federal" = "DF",
+                  "S\u00e3o Paulo" = "SP",
+                  "Minas Gerais" = "MG"
                 )
+              ),
+              shinyGovBRstyle::br_select_input(
+                "temas", "Temas (m\u00faltipla escolha)",
+                choices = c("Tecnologia" = "tec", "Sa\u00fade" = "sau"),
+                multiple = TRUE,
+                hint = "Segure Ctrl para escolher v\u00e1rios"
               )
             ),
-          ),
-
-          ##################### Create third panel################################
-          shiny::tabPanel(
-            "Tables, tabs and accordions",
-            value = "tables_tabs_and_accordions",
-            gov_layout(
-              size = "two-thirds",
-              backlink_Input("back2"),
-              heading_text("Page 3", size = "l"),
-              label_hint("label3", "These are some examples of using tabs and
-                       tables"),
-              heading_text("govTable", size = "s"),
-              shinyGovBRstyle::govTable(
-                "tab1", example_data, "Test", "l",
-                num_col = c(2, 3),
-                width_overwrite = c("one-half", "one-quarter", "one-quarter")
+            shiny::tags$div(
+              class = "col-md-6",
+              shinyGovBRstyle::br_radio_input(
+                "tipo", "Tipo de usu\u00e1rio",
+                choices = c("Pessoa f\u00edsica" = "pf", "Pessoa jur\u00eddica" = "pj")
               ),
-              heading_text("govTabs", size = "s"),
-              shinyGovBRstyle::govTabs("tabsID", data, "tabs"),
-              shiny::tags$br(),
-              shiny::tags$br(),
-              heading_text("accordions", size = "s"),
-              shinyGovBRstyle::accordion(
-                "acc1",
-                c(
-                  "Writing well for the web",
-                  "Writing well for specialists",
-                  "Know your audience",
-                  "How people read"
-                ),
-                c(
-                  "This is the content for Writing well for the web.",
-                  "This is the content for Writing well for specialists.",
-                  "This is the content for Know your audience.",
-                  "This is the content for How people read."
-                )
+              shinyGovBRstyle::br_checkbox_input("aceite", "Aceito os termos"),
+              shinyGovBRstyle::br_checkbox_input(
+                "canais", "Canais de contato",
+                choices = c("E-mail" = "email", "Telefone" = "tel")
               ),
+              shinyGovBRstyle::br_upload("arquivo", "Envio de arquivo"),
+              shinyGovBRstyle::br_button(
+                "enviar", "Enviar",
+                icon = "fas fa-paper-plane"
+              ),
+              shinyGovBRstyle::br_magic_button(
+                "novo", "Adicionar",
+                icon = "fas fa-cart-plus",
+                size = "small"
+              ),
+              shinyGovBRstyle::br_signin("entrar", "Entrar")
             )
           ),
 
-          ##################### Create feedback panel################################
-          shiny::tabPanel(
-            "Feedback Types",
-            value = "feedback_types",
-            gov_layout(
-              size = "two-thirds",
-              backlink_Input("back3"),
-              heading_text("Feedback page", size = "l"),
-              label_hint("label-feedback", "These are some examples of the types of user
-                   feedback inputs that you can use"),
-              heading_text("tag_Input", size = "s"),
-              shinyGovBRstyle::tag_Input("tag1", "Default"),
-              shinyGovBRstyle::tag_Input("tag2", "Grey", "grey"),
-              shinyGovBRstyle::tag_Input("tag3", "Green", "green"),
-              shinyGovBRstyle::tag_Input("tag4", "Turquoise", "turquoise"),
-              shinyGovBRstyle::tag_Input("tag5", "Blue", "blue"),
-              shinyGovBRstyle::tag_Input("tag6", "Light-blue", "light-blue"),
-              shinyGovBRstyle::tag_Input("tag7", "Purple", "purple"),
-              shinyGovBRstyle::tag_Input("tag8", "Pink", "pink"),
-              shinyGovBRstyle::tag_Input("tag9", "Red", "red"),
-              shinyGovBRstyle::tag_Input("tag10", "Orange", "orange"),
-              shinyGovBRstyle::tag_Input("tag11", "Yellow", "yellow"),
-              shiny::tags$br(), shiny::tags$br(),
-              heading_text("details", size = "s"),
-              details(
-                inputId = "detID",
-                label = "Help with nationality",
-                help_text = "We need to know your nationality so we can work out
-              which elections you\u0027re entitled to vote in. If you cannot provide
-              your nationality\u002C you\u0027ll have to send copies of identity
-              documents through the post."
-              ),
-              heading_text("insert_text", size = "s"),
-              insert_text(
-                inputId = "insertId",
-                text = "It can take up to 8 weeks to register a lasting
-                        power of attorney if there are no mistakes in the
-                        application."
-              ),
-              heading_text("warning_text", size = "s"),
-              warning_text(
-                inputId = "warn",
-                text = "You can be fined up to \u00A35\u002C000 if you do
-              not register."
-              ),
-              heading_text("value_box", size = "s"),
-              value_box(
-                inputId = "value1",
-                value = "Default (no description included)"
-              ),
-              value_box(
-                inputId = "value2",
-                value = "1,000,000",
-                text = "This is an example value box in purple.",
-                colour = "purple"
-              ),
-              value_box(
-                inputId = "value3",
-                value = "58.3%",
-                text = "This is another example value box in red. More colours are available.",
-                colour = "red"
-              ),
-              heading_text("panel_output", size = "s"),
-              panel_output(
-                inputId = "panId",
-                main_text = "Application complete",
-                sub_text = "Your reference number <br> <strong>HDJ2123F</strong>"
-              ),
-              heading_text("noti_banner", size = "s"),
-              noti_banner(
-                "notId",
-                title_txt = "Important",
-                body_txt = "You have 7 days left to send your application.",
-                type = "standard"
-              ),
-              heading_text("gov_summary", size = "s"),
-              shinyGovBRstyle::gov_summary(
-                "sumID",
-                c("Name", "Date of birth", "Contact information", "Contact details"),
-                c(
-                  "Sarah Philips",
-                  "5 January 1978",
-                  "72 Guild Street <br> London <br> SE23 6FH",
-                  "07700 900457 <br> sarah.phillips@example.com"
-                ),
-                action = FALSE
-              ),
+          # --- Painel 2: componentes ----------------------------------
+          shiny::tags$div(
+            shinyGovBRstyle::br_loading(progress = 60),
+            shiny::tags$hr(),
+            shinyGovBRstyle::br_accordion(
+              "faq",
+              list(
+                "Assuntos" = shiny::p("Conte\u00fado do acorde\u00e3o de assuntos."),
+                "Servi\u00e7os" = shiny::p("Conte\u00fado do acorde\u00e3o de servi\u00e7os.")
+              )
+            ),
+            shiny::tags$hr(),
+            shinyGovBRstyle::br_step(
+              "etapas",
+              c("Identifica\u00e7\u00e3o", "Dados", "Confirma\u00e7\u00e3o"),
+              initial = 2
+            ),
+            shiny::tags$hr(),
+            shinyGovBRstyle::br_notification(
+              title = "Avisos",
+              items = c("Alerta um", "Alerta dois"),
+              icons = c("fas fa-bell", "fas fa-envelope")
+            ),
+            shiny::tags$hr(),
+            shinyGovBRstyle::br_tooltip(
+              shinyGovBRstyle::br_button("dica", "Passo o mouse"),
+              text = "Texto de ajuda",
+              subtext = "Informa\u00e7\u00f5es adicionais",
+              place = "right"
+            ),
+            shiny::tags$hr(),
+            shinyGovBRstyle::br_modal(
+              title = "Confirmar a\u00e7\u00e3o",
+              shiny::p("Deseja realmente enviar os dados?"),
+              footer = shinyGovBRstyle::br_button("okmodal", "Sim")
             )
           ),
 
-          ##################### Create cookie panel################################
-          shiny::tabPanel(
-            "Cookies",
-            value = "panel-cookies",
-            gov_layout(
-              size = "two-thirds",
-              heading_text("Cookie page", size = "l"),
-              label_hint("label-cookies", "This an example cookie page that could be
-                       expanded")
-            )
+          # --- Painel 3: tabelas --------------------------------------
+          shiny::tags$div(
+            shinyGovBRstyle::br_card(
+              title = "Frota de ve\u00edculos",
+              shinyGovBRstyle::br_table(
+                data = dados_frota,
+                caption = "Quilometragem e consumo por ve\u00edculo"
+              )
+            ),
+            shiny::tags$hr(),
+            shinyGovBRstyle::br_pagination("pag", total = 4, current = 1)
           )
         )
-      )
-    ), # end of gov row
+      ),
 
-    shinyGovBRstyle::footer(TRUE, links = c("Cookies"))
-  ), # end of fluid page
+      # Valores das entradas ------------------------------------------
+      shiny::tags$h2("Valores das entradas"),
+      shiny::verbatimTextOutput("valores")
+    ),
+    shinyGovBRstyle::br_footer(
+      categories = list(
+        "Ajuda" = c("Documenta\u00e7\u00e3o", "Suporte"),
+        "Sobre" = c("GovBR DS", "Licen\u00e7a")
+      )
+    )
+  ),
 
   server = function(input, output, session) {
-    # Cookies link from banner
-    shiny::observeEvent(input$cookieLink, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "panel-cookies")
-    })
-
-    # Tab nav
-    shiny::observeEvent(input$select_types_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "select_types")
-    })
-
-    shiny::observeEvent(input$text_types_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "text_types")
-    })
-
-    shiny::observeEvent(input$tables_tabs_and_accordions_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "tables_tabs_and_accordions")
-    })
-
-    shiny::observeEvent(input$feedback_types_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "feedback_types")
-    })
-
-    shiny::observeEvent(input$cookies_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "panel-cookies")
-    })
-
-
-    # Back buttons
-    shiny::observeEvent(input$back1, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "select_types")
-    })
-
-    # Next page buttons
-    shiny::observeEvent(input$btn1, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "text_types")
-    })
-
-    # Need this to use live update the word counter
-    shiny::observeEvent(
-      input$text_area2,
-      word_count("text_area2", input$text_area2)
-    )
-
-    # Trigger error if text_are2 is blank
-    shiny::observeEvent(input$btn_error, {
-      if (input$text_area2 == "") {
-        error_on("text_area2")
-      } else {
-        error_off("text_area2")
-      }
-    })
-
-    ##################### Cookie Banner events ################################
-    shiny::observeEvent(input$cookieAccept, {
-      shinyjs::show(id = "cookieAcceptDiv")
-      shinyjs::hide(id = "cookieMain")
-    })
-
-    shiny::observeEvent(input$cookieReject, {
-      shinyjs::show(id = "cookieRejectDiv")
-      shinyjs::hide(id = "cookieMain")
-    })
-
-    shiny::observeEvent(input$text_types_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "text_types")
-    })
-
-    shiny::observeEvent(input$tables_tabs_and_accordions_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "tables_tabs_and_accordions")
-    })
-
-    shiny::observeEvent(input$feedback_types_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "feedback_types")
-    })
-
-    shiny::observeEvent(input$cookies_button, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "panel-cookies")
-    })
-
-    shiny::observeEvent(input$cookies, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "panel-cookies")
-    })
-
-    # Back buttons
-    shiny::observeEvent(input$back1, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "select_types")
-    })
-
-    shiny::observeEvent(input$back2, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "text_types")
-    })
-
-    shiny::observeEvent(input$back3, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "tables_tabs_and_accordions")
-    })
-
-
-    # Next page buttons
-    shiny::observeEvent(input$btn1, {
-      shiny::updateTabsetPanel(session, "tab-container", selected = "text_types")
-    })
-
-
-    # Need this to use live update the word counter
-    shiny::observeEvent(
-      input$text_area2,
-      word_count("text_area2", input$text_area2)
-    )
-
-    # Trigger error if text_are2 is blank
-    shiny::observeEvent(input$btn3, {
-      if (input$text_area2 == "") {
-        error_on("text_area2")
-      } else {
-        error_off("text_area2")
-      }
-    })
-
-    ##################### Cookie Banner events ################################
-    shiny::observeEvent(input$cookieAccept, {
-      shinyjs::show(id = "cookieAcceptDiv")
-      shinyjs::hide(id = "cookieMain")
-    })
-
-    shiny::observeEvent(input$cookieReject, {
-      shinyjs::show(id = "cookieRejectDiv")
-      shinyjs::hide(id = "cookieMain")
-    })
-
-    shiny::observeEvent(input$hideAccept, {
-      shinyjs::toggle(id = "cookieDiv")
-    })
-
-    shiny::observeEvent(input$hideReject, {
-      shinyjs::toggle(id = "cookieDiv")
-    })
-
-    shiny::observeEvent(input$cookieLink, {
-      shiny::updateTabsetPanel(session, "nav",
-        selected = "panel4"
+    output$valores <- shiny::renderPrint({
+      list(
+        busca = input$busca,
+        aba_ativa = input$abas,
+        nome = input$nome,
+        data = input$data,
+        uf = input$uf,
+        temas = input$temas,
+        tipo = input$tipo,
+        aceite = input$aceite,
+        canais = input$canais,
+        arquivo = if (!is.null(input$arquivo)) input$arquivo$name,
+        etapa = input$etapas,
+        pagina = input$pag,
+        cliques_enviar = input$enviar
       )
     })
 
-    output$download_data <- downloadHandler(
-      filename = "demo_data.csv",
-      content = function(file) {
-        # Write the dataset to the `file` that will be downloaded
-        data <- data.frame(
-          x = 1:10,
-          y = 101:110
-        )
-        write.csv(data, file)
-      }
-    )
+    shiny::observeEvent(input$novo, {
+      shiny::showNotification("Bot\u00e3o m\u00e1gico clicado!")
+    })
   }
 )

@@ -39,6 +39,12 @@ they're able to deal with once it is downloaded. If the exact file size is
 not easily determined, then it may be acceptable to provide an estimate or an
 upper limit.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
   ui <- shiny::fluidPage(

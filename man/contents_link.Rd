@@ -21,13 +21,19 @@ an action button html shiny object
 \description{
 This function creates an action link to nav between tabs and optionally link to subcontents headers.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
      ui <- shiny::fluidPage(
-     title="ShinyGovstyle",
+     title="shinyGovBRstyle",
        cookieBanner("Run Example"),
-       header("MOJ", "ShinyGovstyle Example",
-              logo="shinyGovBRstyle/images/moj_logo-1.png", logo_width = 66),
+       header("GovBR", "shinyGovBRstyle Example",
+              logo="shinyGovBRstyle/images/dev_logo.png", logo_width = 66),
        banner(
          "banner",
          "Beta",

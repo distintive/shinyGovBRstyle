@@ -16,6 +16,12 @@ no return value.  This toggles off error css
 This function turns off the the error o the component, once issues have
 been sorted.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 ## Only run examples in interactive R sessions
 if (interactive()) {

@@ -21,6 +21,12 @@ no value returned. Updates the word count in a shiny app
 This function create tracks the word count and should be used with the
 text area function
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
 

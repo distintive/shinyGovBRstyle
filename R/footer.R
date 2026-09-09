@@ -21,6 +21,9 @@
 #' @return a footer html shiny object
 #' @keywords footer
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -50,7 +53,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo = "shinyGovBRstyle/images/moj_logo.png"
+#'       logo = "shinyGovBRstyle/images/dev_logo.png"
 #'     ),
 #'     shinyGovBRstyle::banner(
 #'       inputId = "banner", type = "beta", "This is a new service"
@@ -84,6 +87,7 @@
 #'   shinyApp(ui = ui, server = server)
 #' }
 footer <- function(full = FALSE, links = NULL) {
+  govbr_deprecated("footer")
   # Validation on the links input
   if (!is.null(links)) {
     if (!is.vector(links)) {

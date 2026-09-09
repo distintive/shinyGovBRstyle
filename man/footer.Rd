@@ -32,6 +32,12 @@ statistics code of practice.
 Generally when using footer links you will be controlling a hidden tabset
 so to the end user it looks like it is a new page.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
   ui <- fluidPage(
@@ -61,7 +67,7 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo = "shinyGovBRstyle/images/moj_logo.png"
+      logo = "shinyGovBRstyle/images/dev_logo.png"
     ),
     shinyGovBRstyle::banner(
       inputId = "banner", type = "beta", "This is a new service"

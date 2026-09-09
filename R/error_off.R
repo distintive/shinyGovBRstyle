@@ -6,6 +6,9 @@
 #' @return no return value.  This toggles off error css
 #' @keywords error
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' ## Only run examples in interactive R sessions
 #' if (interactive()) {
@@ -50,6 +53,7 @@
 #' }
 
 error_off <- function(inputId){
+  govbr_deprecated("error_off")
   shinyjs::removeClass(paste0(inputId, "div"), "govbr-form-group--error")
   shinyjs::hide(paste0(inputId, "error"))
   shinyjs::removeClass(selector = paste0("#", inputId,"div :input"),

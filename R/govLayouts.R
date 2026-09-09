@@ -68,7 +68,11 @@ NULL
 
 #' @rdname layouts
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 gov_main_layout <- function(..., inputID = "main") {
+  govbr_deprecated("gov_main_layout")
   govMain <- shiny::tags$div(
     id = inputID,
     class = "govbr-width-container",
@@ -83,6 +87,7 @@ gov_main_layout <- function(..., inputID = "main") {
 #' @rdname layouts
 #' @export
 gov_row <- function(...){
+  govbr_deprecated("gov_row")
   govRow <- shiny::tags$div(
     class = "govbr-grid-row",
     ...
@@ -93,6 +98,7 @@ gov_row <- function(...){
 #' @rdname layouts
 #' @export
 gov_box <- function(..., size = "full"){
+  govbr_deprecated("gov_box")
   govBox <- shiny::tags$div(
     class = paste0("govbr-grid-column-", size),
     ...
@@ -103,6 +109,7 @@ gov_box <- function(..., size = "full"){
 #' @rdname layouts
 #' @export
 gov_text <- function(...){
+  govbr_deprecated("gov_text")
   govText <- shiny::tags$p(
     class = "govbr-body",
     ...

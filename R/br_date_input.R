@@ -1,8 +1,9 @@
 #' GovBR date input
 #'
 #' Creates a GovBR date picker (\code{br-datetimepicker}). The value is
-#' available in \code{input$<inputId>} as text in the \code{dd/mm/aaaa}
-#' format.
+#' available in \code{input$<inputId>} as a \code{Date} (or \code{NULL}
+#' while empty/invalid). Use \code{update_br_date_input()} to change it
+#' from the server.
 #'
 #' @param inputId The input slot that will be used to access the value.
 #' @param label Date field label.
@@ -34,13 +35,14 @@ br_date_input <- function(inputId,
 
   date_tag <- shiny::tags$div(
     class = "br-datetimepicker",
+    id = inputId,
     `data-mode` = "single",
     `data-type` = "text",
     shiny::tags$div(
       class = "br-input has-icon",
-      shiny::tags$label(`for` = inputId, label),
+      shiny::tags$label(`for` = paste0(inputId, "-text"), label),
       shiny::tags$input(
-        id = inputId,
+        id = paste0(inputId, "-text"),
         type = "text",
         placeholder = placeholder,
         `data-input` = "data-input"

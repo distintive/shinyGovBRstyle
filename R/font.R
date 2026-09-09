@@ -6,6 +6,9 @@
 #' @keywords font
 #' @return no value returned.  This loads the font css file
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -23,6 +26,7 @@
 #' }
 
 font <- function(){
+  govbr_deprecated("font")
   version <- as.character(packageVersion("shinyGovBRstyle")[[1]])
 
   htmltools::htmlDependency(

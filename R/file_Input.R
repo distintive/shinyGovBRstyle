@@ -21,6 +21,9 @@
 #' @return a file input html shiny object
 #' @keywords file input
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -64,6 +67,7 @@ file_Input <- function(inputId, label, multiple = FALSE, accept = NULL,
                       width = NULL, buttonLabel = "Choose file",
                       placeholder = "No file chosen",
                       error = FALSE, error_message = NULL) {
+  govbr_deprecated("file_Input")
 
   restoredValue <- shiny::restoreInput(id = inputId, default = NULL)
 

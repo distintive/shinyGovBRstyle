@@ -8,6 +8,9 @@
 #' @return a label hint html shiny object
 #' @keywords label
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -29,6 +32,7 @@
 #' }
 
 label_hint <- function(inputId, label, hint_input = NULL){
+  govbr_deprecated("label_hint")
   govLabel <- shiny::tags$div(class="govbr-form-group", id = inputId,
     shiny::tags$label(shiny::HTML(label), class="govbr-label"),
     shiny::tags$div(hint_input, class="govbr-hint")

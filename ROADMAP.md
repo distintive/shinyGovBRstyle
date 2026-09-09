@@ -55,34 +55,39 @@ data por `id`, botão via `action-button`).
 
 **Pendentes (próximas iterações):**
 
-- [ ] `br_accordion()`, `br_tabs()`, `br_table()` ( GovBR Table com JS)
-- [ ] `br_breadcrumb()`, `br_card()`, `br_modal()`, `br_notification()`
-- [ ] `br_upload()`, `br_pagination()`, `br_step()`/`br_wizard()`
-- [ ] `br_magic_button()`, `br_loading()`, `br_tooltip()`
-- [ ] Bindings mais ricos: `br_date_input()` retornando `Date` (converter
-      dd/mm/aaaa), update functions (`update_br_select_input()` etc.)
-- [ ] App de exemplo (`run_example()`) migrado para a família `br_*`
+- [x] `br_accordion()`, `br_tabs()`, `br_table()` ( GovBR Table com JS)
+- [x] `br_breadcrumb()`, `br_card()`, `br_modal()`, `br_notification()`
+- [x] `br_upload()`, `br_magic_button()`, `br_loading()`, `br_tooltip()`
+- [x] `br_pagination()`, `br_step()`, `br_signin()`
+- [x] Bindings mais ricos: `br_date_input()` retornando `Date`,
+      `br_tabs()`/`br_pagination()`/`br_step()` como inputs e update
+      functions (`update_br_*`)
+- [x] App de exemplo (`run_example()`) migrado para a família `br_*`
 
 ## Fase 3 — Limpeza e deprecação
 
-- [ ] Marcar funções antigas (derivadas do GOV.UK) como obsoletas nos
-      `.Rd` (nota de migração para os equivalentes `br_*`).
+- [x] Marcar funções antigas (derivadas do GOV.UK) como obsoletas: aviso
+      uma vez por sessão via `govbr_deprecated()` + nota nos `.Rd`.
 - [ ] Remover assets do GOV.UK (`govbr-frontend-5.7.1.min.css`,
       `govbr-frontend-5.4.0.min.js`, fontes GOV.UK, `govbr-frontend-test.css`)
       quando as funções antigas forem removidas (meta: v1.0.0).
-- [ ] Corrigir o workflow `example-app-deploy.yaml` (hoje publica o pacote
+- [x] Corrigir o workflow `example-app-deploy.yaml` (hoje publica o pacote
       upstream, não este).
-- [ ] Atualizar `CONTRIBUTING.md` (ainda descreve o fluxo do GOV.UK).
+- [x] Atualizar `CONTRIBUTING.md` (ainda descreve o fluxo do GOV.UK).
 
 ## Fase 4 — Publicação no CRAN
 
-- [ ] `DESCRIPTION`: bump para 0.2.0, `Title` em title case, descrição
-      expandida, `URL`/`BugReports` já ok.
-- [ ] Todos os `@export` com `@return` e exemplo `if (interactive())`.
-- [ ] `R CMD check --as-cran` sem ERROR/WARNING/NOTE (checar tamanho do
-      tarball: assets somam ~2,5 MB; CRAN aceita, mas monitorar).
-- [ ] `README.md` reescrito (badge CRAN só após aceitação), `NEWS.md`.
-- [ ] `cran-comments.md` atualizado; submissão via `devtools::release()`.
+- [x] `DESCRIPTION`: bump para 0.2.0, descrição expandida,
+      `URL`/`BugReports` apontando para a organização DistintiveLab.
+- [x] Todos os `@export` com `@return` e exemplo `if (interactive())`.
+- [x] `R CMD check --as-cran` sem ERROR/WARNING/NOTE.
+- [x] `README.md` reescrito para a família `br_*`.
+- [x] ~~Definir os segredos `SHINYAPPS_NAME/TOKEN/SECRET`~~ workflow de
+      deploy removido: o app de demonstração será hospedado em
+      instância Shiny própria (sem dependência de shinyapps.io).
+- [ ] Publicar o app de exemplo na instância Shiny própria e incluir o
+      link no README.
+- [ ] Atualizar `cran-comments.md` e submeter via `devtools::release()`.
 
 ## Convenções da nova família `br_*`
 

@@ -13,6 +13,9 @@
 #' @return a checkbox html shiny object
 #' @keywords checkbox
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -64,6 +67,7 @@
 checkbox_Input <- function(inputId, cb_labels, checkboxIds, label,
                            hint_label = NULL, small = FALSE,
                            error = FALSE, error_message = NULL){
+  govbr_deprecated("checkbox_Input")
   if (small){
     class_build <- "govbr-checkboxes govbr-checkboxes--small"
   } else {

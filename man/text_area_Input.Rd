@@ -36,6 +36,12 @@ a text area box html shiny object
 \description{
 This function create a text area input
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 text_area_Input("taId", "Can you provide more detail?",
 "Do not include personal or financial information, like your

@@ -14,6 +14,12 @@ This function adds rge nta fonts to the app. See
 https://design-system.service.gov.uk/styles/typography/ for when they
 are allowed.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
 

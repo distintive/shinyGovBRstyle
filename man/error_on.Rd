@@ -19,6 +19,12 @@ no return value.  This toggles on error css
 This function turns on the the error o the component.  Can be used to
 validate inputs.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 ## Only run examples in interactive R sessions
 if (interactive()) {

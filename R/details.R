@@ -29,6 +29,7 @@
 #' }
 
 details <-function(inputId, label, help_text){
+  govbr_deprecated("details")
   govDetails <- shiny::tags$details(class = "govbr-details", id = inputId,
     shiny::tags$summary(class = "govbr-details__summary",
       shiny::tags$span(class = "govbr-details__summary-text",

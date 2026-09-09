@@ -7,6 +7,9 @@
 #' @return an accordion html shiny object
 #' @keywords accordion
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -40,6 +43,7 @@
 #' }
 
 accordion <- function(inputId, titles, descriptions){
+  govbr_deprecated("accordion")
 
   count_array <- seq(length(titles))
 

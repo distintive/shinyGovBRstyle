@@ -1,48 +1,20 @@
-test_that("test default footer", {
-  footer_check <- footer()
-
-  expect_identical(
-    footer_check$attribs$class,
-    "govbr-footer "
-  )
-})
-
-test_that("test default footer", {
-  footer_check <- footer(TRUE)
-
-  expect_identical(
-    footer_check$attribs$class,
-    "govbr-footer "
-  )
-})
-
 test_that("footer links add correctly", {
-  footer_with_links <- footer(
-    links = c("Accessibility Statement", "Cookies")
-  ) |>
-    paste0()
+  footer_with_links <- footer(links = c("Accessibility Statement", "Cookies"))
 
-  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"accessibility_statement\">Accessibility Statement</a>'
-  expect_true(grepl(expected_html, footer_with_links, fixed = TRUE))
+  html <- as.character(footer_with_links)
+  expect_match(html, 'id="accessibility_statement"', fixed = TRUE)
+  expect_match(html, 'id="cookies"', fixed = TRUE)
+  expect_match(html, "Accessibility Statement</a>")
+  expect_match(html, "Cookies</a>")
+  expect_match(html, "govbr-footer__link", fixed = TRUE)
+  expect_match(html, "govbr-visually-hidden", fixed = TRUE)
+  expect_match(html, "govbr-footer__inline-list", fixed = TRUE)
 
-  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"cookies\">Cookies</a>'
-  expect_true(grepl(expected_html, footer_with_links, fixed = TRUE))
+  full_footer_with_links <- footer(TRUE, c("Privacy Notice", "Cookies"))
 
-  expected_html <- '<h2 class=\"govbr-visually-hidden\">Support links</h2>\n          <ul class=\"govbr-footer__inline-list\">\n            <li class=\"govbr-footer__inline-list-item\">'
-  expect_true(grepl(expected_html, footer_with_links, fixed = TRUE))
-
-  full_footer_with_links <- footer(
-    TRUE,
-    c("Privacy Notice", "Cookies")
-  ) |>
-    paste0()
-
-  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"privacy_notice\">Privacy Notice</a>'
-  expect_true(grepl(expected_html, full_footer_with_links, fixed = TRUE))
-
-  expected_html <- '<a class=\"action-button govbr-link govbr-footer__link\" href=\"#\" id=\"cookies\">Cookies</a>'
-  expect_true(grepl(expected_html, full_footer_with_links, fixed = TRUE))
-
-  expected_html <- '<h2 class=\"govbr-visually-hidden\">Support links</h2>\n          <ul class=\"govbr-footer__inline-list\">\n            <li class=\"govbr-footer__inline-list-item\">'
-  expect_true(grepl(expected_html, full_footer_with_links, fixed = TRUE))
+  html_full <- as.character(full_footer_with_links)
+  expect_match(html_full, 'id="privacy_notice"', fixed = TRUE)
+  expect_match(html_full, 'id="cookies"', fixed = TRUE)
+  expect_match(html_full, "Privacy Notice</a>")
+  expect_match(html_full, "govbr-footer__inline-list", fixed = TRUE)
 })

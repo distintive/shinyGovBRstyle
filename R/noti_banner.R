@@ -9,6 +9,9 @@
 #' @return a notification html shiny object
 #' @keywords notification banner
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -28,6 +31,7 @@
 #'
 noti_banner <- function(inputId, title_txt = "Important", body_txt = NULL,
                         type = "standard"){
+  govbr_deprecated("noti_banner")
 
   if (type == "success") {
    type_class <- "govbr-notification-banner govbr-notification-banner--success"

@@ -8,6 +8,9 @@
 #' @return no return value.  This toggles on error css
 #' @keywords error
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' ## Only run examples in interactive R sessions
 #' if (interactive()) {
@@ -52,6 +55,7 @@
 #' }
 
 error_on <- function(inputId, error_message = NULL){
+  govbr_deprecated("error_on")
   shinyjs::addClass(paste0(inputId, "div"), "govbr-form-group--error")
   if (!is.null(error_message)){
     shinyjs::html(paste0(inputId, "error"), error_message)

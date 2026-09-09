@@ -7,6 +7,9 @@
 #' @return a heading text html shiny object
 #' @keywords heading
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -25,6 +28,7 @@
 #' }
 
 heading_text <- function(text_input, size = "xl", id){
+  govbr_deprecated("heading_text")
 
    if(missing(id)){
      id <- clean_heading_text(text_input)

@@ -43,6 +43,12 @@ a text input html shiny object
 \description{
 This function create a text area input
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 ## Only run examples in interactive R sessions
 if (interactive()) {

@@ -13,6 +13,9 @@
 #' @return a data input html shiny object
 #' @keywords date
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -59,6 +62,7 @@
 date_Input <- function(inputId, label, hint_label = NULL,
                        error = FALSE, error_message = NULL,
                        day = NULL, month = NULL, year = NULL){
+  govbr_deprecated("date_Input")
   value <- shiny::restoreInput(id = inputId, default = FALSE)
   govDate <- shiny::tags$div(class="govbr-form-group", id=paste0(inputId,"div"),
     shiny::tags$fieldset(class="govbr-fieldset",

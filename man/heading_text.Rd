@@ -19,6 +19,12 @@ a heading text html shiny object
 \description{
 This function create a heading text
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
   ui <- fluidPage(

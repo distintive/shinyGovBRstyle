@@ -54,6 +54,9 @@
 #' accessibility before removing the visual warning.
 #' @return shiny.tag object
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #'
 #' @examples
 #' external_link("https://shiny.posit.co/", "R Shiny")
@@ -100,6 +103,7 @@
 #' )
 #'
 external_link <- function(href, link_text, add_warning = TRUE) {
+  govbr_deprecated("external_link")
   if (!is.logical(add_warning)) {
     stop("add_warning must be a TRUE or FALSE value")
   }

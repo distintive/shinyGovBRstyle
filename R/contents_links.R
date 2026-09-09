@@ -10,7 +10,7 @@
 #'     shinyGovBRstyle::header(
 #'       main_text = "Example",
 #'       secondary_text = "User Examples",
-#'       logo = "shinyGovBRstyle/images/moj_logo.png"
+#'       logo = "shinyGovBRstyle/images/dev_logo.png"
 #'     ),
 #'     shiny::column(
 #'       width = 3,
@@ -76,13 +76,16 @@ subcontents_links <- function(subcontents_text_list,
 #' @param subcontents_id_list vector of link ids for subcontents. if missing automatically matches to id in shinygovBRstyle::heading_text
 #' @return an action button html shiny object
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'      ui <- shiny::fluidPage(
-#'      title="ShinyGovstyle",
+#'      title="shinyGovBRstyle",
 #'        cookieBanner("Run Example"),
-#'        header("MOJ", "ShinyGovstyle Example",
-#'               logo="shinyGovBRstyle/images/moj_logo-1.png", logo_width = 66),
+#'        header("GovBR", "shinyGovBRstyle Example",
+#'               logo="shinyGovBRstyle/images/dev_logo.png", logo_width = 66),
 #'        banner(
 #'          "banner",
 #'          "Beta",
@@ -263,6 +266,7 @@ contents_link <- function(link_text,
                            input_id,
                            subcontents_text_list,
                            subcontents_id_list) {
+  govbr_deprecated("contents_link")
   if (missing(subcontents_id_list) & !missing(subcontents_text_list)) {
     subcontents_id_list <- rep(NA, length(subcontents_text_list))
   }

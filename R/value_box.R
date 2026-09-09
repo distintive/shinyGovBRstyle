@@ -10,6 +10,9 @@
 #'
 #' @return A Shiny `div` tag representing the value box, styled according to the specified parameters.
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #'
 #' @examples
 #' if (interactive()) {
@@ -25,6 +28,7 @@
 #'   shinyApp(ui = ui, server = server)
 #' }
 value_box <- function(inputId, value = "your value goes here", text = NA, colour = "blue") {
+  govbr_deprecated("value_box")
 
   # Use the govbr-tag--<colour> class for coloring
   class_colour <- paste0("govbr-tag--", colour)

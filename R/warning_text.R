@@ -6,6 +6,9 @@
 #' @return a warning box html shiny object
 #' @keywords warning
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -26,6 +29,7 @@
 #' }
 
 warning_text <- function(inputId, text){
+  govbr_deprecated("warning_text")
   govWarning <- shiny::tags$div(class="govbr-warning-text", id = inputId,
     shiny::tags$span(
       "!", class="govbr-warning-text__icon", `aria-hidden`="true"

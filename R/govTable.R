@@ -14,6 +14,9 @@
 #' @return an table html shiny object
 #' @keywords table
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'
@@ -46,6 +49,7 @@
 
 govTable <- function(inputId, df, caption, caption_size = "l",
                      num_col = NULL, width_overwrite = NULL){
+  govbr_deprecated("govTable")
 
   #Create row by row the main bulk of table to insert later
   main_row_store <- NULL

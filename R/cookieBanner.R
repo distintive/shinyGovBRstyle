@@ -7,6 +7,9 @@
 #' @return a cookie banner html shiny object.
 #' @keywords cookie banner
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #' ui <- fluidPage(
@@ -52,6 +55,7 @@
 #' }
 
 cookieBanner <- function(service_name) {
+  govbr_deprecated("cookieBanner")
 
   value <- shiny::restoreInput(id = "cookieLink", default = NULL)
   govCookieLink <- shiny::actionLink(

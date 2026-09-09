@@ -28,6 +28,9 @@
 #'
 #' @returns shiny.tag object
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #'
 #' @examples
 #' if (interactive()) {
@@ -73,6 +76,7 @@ download_link <- function(
     link_text,
     file_type = "CSV",
     file_size = NULL) {
+  govbr_deprecated("download_link")
   # Trim white space as I don't trust humans not to accidentally include
   link_text <- stringr::str_trim(link_text)
 

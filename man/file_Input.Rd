@@ -49,6 +49,12 @@ It doesn't look like the www.gov.uk/ style one, although this www.gov.uk/
 doesn't seem to have a settle style as, for example it changes between
 Firefox and Chrome
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
   ui <- fluidPage(

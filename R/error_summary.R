@@ -47,6 +47,7 @@ error_summary <-
   function(inputId,
            error_title,
            error_list) {
+  govbr_deprecated("error_summary")
     govErrorSummary <-
       shiny::tags$div(
         id = inputId,

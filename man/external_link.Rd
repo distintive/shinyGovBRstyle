@@ -66,6 +66,12 @@ Intentionally basic wrapper for HTML anchor elements making it easier to
 create safe external links with standard and accessible behaviour. For more
 information on how the tag is generated, see \code{\link[htmltools]{tags}}.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 external_link("https://shiny.posit.co/", "R Shiny")
 

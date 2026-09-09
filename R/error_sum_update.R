@@ -8,6 +8,9 @@
 #' @return an update error summary box
 #' @keywords error_summary_update
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -43,6 +46,7 @@
 #' }
 
 error_summary_update <- function(inputId, error_list) {
+  govbr_deprecated("error_summary_update")
 
   new_err_sum <-
       shiny::tags$ul(

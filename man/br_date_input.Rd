@@ -21,8 +21,9 @@ A \code{shiny.tag} with the date picker markup and GovBR
 }
 \description{
 Creates a GovBR date picker (\code{br-datetimepicker}). The value is
-available in \code{input$<inputId>} as text in the \code{dd/mm/aaaa}
-format.
+available in \code{input$<inputId>} as a \code{Date} (or \code{NULL}
+while empty/invalid). Use \code{update_br_date_input()} to change it
+from the server.
 }
 \examples{
 if (interactive()) {

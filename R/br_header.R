@@ -94,6 +94,18 @@ br_header <- function(title,
         shiny::tags$div(
           class = "header-menu",
           shiny::tags$div(
+            class = "header-menu-trigger",
+            shiny::tags$button(
+              class = "br-button small circle",
+              type = "button",
+              `aria-label` = "Menu",
+              `data-toggle` = "menu",
+              `data-target` = "#main-navigation",
+              id = "navigation",
+              shiny::tags$i(class = "fas fa-bars", `aria-hidden` = "true")
+            )
+          ),
+          shiny::tags$div(
             class = "header-info",
             shiny::tags$div(class = "header-title", title),
             if (!is.null(subtitle)) {

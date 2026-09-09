@@ -22,6 +22,12 @@ A Shiny `div` tag representing the value box, styled according to the specified 
 This function generates a value text box with an optional description and customisable colour.
 The text box can be used in Shiny applications to display highlighted information, such as statistics or key metrics.
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
 if (interactive()) {
   ui <- fluidPage(

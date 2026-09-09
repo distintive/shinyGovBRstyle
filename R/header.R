@@ -18,6 +18,9 @@
 #' @return a header HTML shiny object
 #' @keywords header
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -44,6 +47,7 @@ header <- function(main_text,
                    secondary_alt_text = NULL,
                    logo_width = 36,
                    logo_height = 32) {
+  govbr_deprecated("header")
   # checks for alt text
   if (!is.null(logo) & is.null(logo_alt_text)) {
     warning("Please use logo_alt_text to provide alternative text for the logo you used.")

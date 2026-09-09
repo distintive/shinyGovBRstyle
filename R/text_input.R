@@ -15,6 +15,9 @@
 #' @return a text input html shiny object
 #' @keywords text input
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' ## Only run examples in interactive R sessions
 #' if (interactive()) {
@@ -64,6 +67,7 @@
 text_Input <- function(inputId, label, hint_label=NULL, type = "text",
                        width = NULL, error = FALSE, error_message = NULL,
                        prefix = NULL, suffix = NULL){
+  govbr_deprecated("text_Input")
   if (is.null(width)){
     width_class <- "govbr-input"
   }

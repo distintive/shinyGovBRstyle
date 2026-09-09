@@ -13,7 +13,7 @@ test_that("all alt text works", {
   alt_check <- header(
     main_text = "test text",
     secondary_text = "test text 2",
-    logo = "shinyGovBRstyle/images/moj_logo.png",
+    logo = "shinyGovBRstyle/images/dev_logo.png",
     main_link = "test_link.com",
     secondary_link = "test_link2.com",
     logo_alt_text = "this is a test for alt text for the logo",
@@ -53,7 +53,7 @@ test_that("only logo alt works", {
   logo_alt_check <- header(
     main_text = "test text",
     secondary_text = "test text 2",
-    logo = "shinyGovBRstyle/images/moj_logo.png",
+    logo = "shinyGovBRstyle/images/dev_logo.png",
     logo_alt_text = "this is a test for alt text for the logo"
   )
 
@@ -111,7 +111,7 @@ test_that("errors are as expected", {
     header(
       main_text = "test text",
       secondary_text = "test text 2",
-      logo = "shinyGovBRstyle/images/moj_logo.png"
+      logo = "shinyGovBRstyle/images/dev_logo.png"
     ),
     "Please use logo_alt_text to provide alternative text for the logo you used."
   )
@@ -129,7 +129,7 @@ test_that("errors are as expected", {
     header(
       main_text = "test text",
       secondary_text = "test text 2",
-      logo = "shinyGovBRstyle/images/moj_logo.png",
+      logo = "shinyGovBRstyle/images/dev_logo.png",
       secondary_link = "test_link2.com",
       logo_alt_text = "this is a test for alt text for the logo"
     ),

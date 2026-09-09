@@ -8,6 +8,9 @@
 #' @return a tag html shiny object.
 #' @keywords tag
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -26,6 +29,7 @@
 #' }
 
 tag_Input <- function(inputId, text, colour = "navy") {
+  govbr_deprecated("tag_Input")
 
 
   class_colour <- "govbr-tag"

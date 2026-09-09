@@ -7,6 +7,9 @@
 #' @return a panel html shiny object
 #' @keywords panel
 #' @export
+#' @section Deprecated:
+#' Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+#' compatibility and scheduled for removal. See the `br_*` family.
 #' @examples
 #' if (interactive()) {
 #'   ui <- fluidPage(
@@ -29,6 +32,7 @@
 #' }
 
 panel_output <- function(inputId, main_text, sub_text) {
+  govbr_deprecated("panel_output")
   govPanel <- shiny::tags$div(
     class="govbr-panel govbr-panel--confirmation",
     id = inputId,

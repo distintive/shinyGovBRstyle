@@ -15,6 +15,12 @@ typically used by keyboard-only users to bypass content and
 navigate directly to the main content of a page.
 Important: your main column will need an id of "main_col" for this to work
 }
+\section{Deprecated}{
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.
+}
+
 \examples{
  if (interactive()) {
   ui <- fluidPage(
@@ -23,7 +29,7 @@ Important: your main column will need an id of "main_col" for this to work
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovBRstyle/images/moj_logo.png"
+      logo="shinyGovBRstyle/images/dev_logo.png"
     ),
     shinyjs::useShinyjs(),  # shinyjs is needed to manage visibility of elements
     gov_row(
