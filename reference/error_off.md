@@ -19,6 +19,11 @@ error_off(inputId)
 
 no return value. This toggles off error css
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r

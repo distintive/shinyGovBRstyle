@@ -39,6 +39,11 @@ adoption of the statistics code of practice.
 Generally when using footer links you will be controlling a hidden
 tabset so to the end user it looks like it is a new page.
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r
@@ -63,6 +68,7 @@ if (interactive()) {
 
 # Add links
 footer(links = c("Accessibility statement", "Cookies"))
+#> Warning: 'footer()' is deprecated as of shinyGovBRstyle 0.2.0.
 #> <footer class="govbr-footer " role="contentinfo">
 #>   <div class="govbr-width-container ">
 #>     <div class="govbr-footer__meta">
@@ -89,7 +95,7 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo = "shinyGovBRstyle/images/moj_logo.png"
+      logo = "shinyGovBRstyle/images/dev_logo.png"
     ),
     shinyGovBRstyle::banner(
       inputId = "banner", type = "beta", "This is a new service"

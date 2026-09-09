@@ -1,7 +1,9 @@
 # GovBR date input
 
 Creates a GovBR date picker (`br-datetimepicker`). The value is
-available in `input$<inputId>` as text in the `dd/mm/aaaa` format.
+available in `input$<inputId>` as a `Date` (or `NULL` while
+empty/invalid). Use [`update_br_date_input()`](update_br_inputs.md) to
+change it from the server.
 
 ## Usage
 

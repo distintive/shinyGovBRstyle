@@ -56,6 +56,11 @@ checkbox_Input(
 
 a checkbox html shiny object
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r

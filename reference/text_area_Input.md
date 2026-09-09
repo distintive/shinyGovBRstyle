@@ -50,12 +50,18 @@ text_area_Input(
 
 a text area box html shiny object
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r
 text_area_Input("taId", "Can you provide more detail?",
 "Do not include personal or financial information, like your
 National Insurance number or credit card details.")
+#> Warning: 'text_area_Input()' is deprecated as of shinyGovBRstyle 0.2.0.
 #> <div class="govbr-form-group govbr-character-count" id="taIddiv">
 #>   <label class="govbr-label">Can you provide more detail?</label>
 #>   <div class="govbr-hint">Do not include personal or financial information, like your

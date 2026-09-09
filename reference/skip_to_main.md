@@ -15,6 +15,11 @@ skip_to_main()
 
 a skip button that skips to section with id of "main_col"
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r
@@ -25,7 +30,7 @@ a skip button that skips to section with id of "main_col"
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovBRstyle/images/moj_logo.png"
+      logo="shinyGovBRstyle/images/dev_logo.png"
     ),
     shinyjs::useShinyjs(),  # shinyjs is needed to manage visibility of elements
     gov_row(

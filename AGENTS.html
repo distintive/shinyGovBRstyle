@@ -19,7 +19,7 @@
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/distintive/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/DistintiveLab/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -28,7 +28,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="logo.png" class="logo" alt=""><h1>AGENTS.md</h1>
-      <small class="dont-index">Source: <a href="https://github.com/distintive/shinyGovBRstyle/blob/master/AGENTS.md" class="external-link"><code>AGENTS.md</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/DistintiveLab/shinyGovBRstyle/blob/master/AGENTS.md" class="external-link"><code>AGENTS.md</code></a></small>
     </div>
 
 <div id="agentsmd" class="section level1">
@@ -71,7 +71,7 @@
 <li>
 <strong>CSS overrides are logged, not versioned in code</strong>: manual CSS tweaks needed when updating the vendored design-system CSS are recorded in <code>css_changes.md</code> (Rbuildignored) and must be reapplied by hand on each update. Always append changes there.</li>
 <li>
-<strong>Upstream leftovers</strong>: <code>.github/CONTRIBUTING.md</code> and <code>.github/workflows/example-app-deploy.yaml</code> still reference the upstream repos (<code>moj-analytical-services/shinyGovstyle</code>, <code>dfe-analytical-services/shinyGovstyle</code>) and the old <code>govuk-frontend-norem.css</code> filename. The deploy workflow currently deploys the <em>upstream</em> package’s example app, not this one’s.</li>
+<strong>Demo hosting</strong>: the example app has no automated deploy; it is meant to be hosted on a self-managed Shiny instance (the shinyapps.io workflow inherited from upstream was removed). The app ships in the package and runs via <code><a href="reference/run_example.html">run_example()</a></code>.</li>
 <li>
 <strong>Naming is inconsistent by design/history</strong>: file names are lowercase snake_case (<code>R/checkbox_input.R</code>, <code>R/select_input.R</code>) but the functions inside use a capitalized <code>Input</code> suffix (<code><a href="reference/checkbox_Input.html">checkbox_Input()</a></code>, <code><a href="reference/select_Input.html">select_Input()</a></code>, <code><a href="reference/button_Input.html">button_Input()</a></code>, <code><a href="reference/text_area_Input.html">text_area_Input()</a></code>). Test file names don’t always match function names (e.g. <code>test-gov_button.R</code> tests <code><a href="reference/button_Input.html">button_Input()</a></code>; <code>test-subcontents_links.R</code> tests <code><a href="reference/contents_link.html">contents_link()</a></code>). Match the existing file you are editing rather than “fixing” naming globally.</li>
 <li>

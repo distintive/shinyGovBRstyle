@@ -2,7 +2,8 @@
 
 This function runs an example R Shiny app showcasing different parts of
 the package. Code for the app can be found in the inst/example_app
-folder in the source code.
+folder in the source code. A hosted version of the same app is available
+at https://shinygovbr.distintive.com.br/
 
 ## Usage
 
@@ -13,11 +14,6 @@ run_example()
 ## Value
 
 runs an R Shiny app with examples in
-
-## Details
-
-The app is also deployed at the following URL:
-https://department-for-education.shinyapps.io/shinygovstyle-example-app/
 
 ## Examples
 

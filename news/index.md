@@ -2,6 +2,51 @@
 
 ## shinyGovBRstyle (development version)
 
+- Novos componentes: [`br_accordion()`](../reference/br_accordion.md),
+  [`br_tabs()`](../reference/br_tabs.md),
+  [`br_card()`](../reference/br_card.md),
+  [`br_table()`](../reference/br_table.md),
+  [`br_modal()`](../reference/br_modal.md),
+  [`br_notification()`](../reference/br_notification.md),
+  [`br_loading()`](../reference/br_loading.md),
+  [`br_magic_button()`](../reference/br_magic_button.md),
+  [`br_breadcrumb()`](../reference/br_breadcrumb.md),
+  [`br_tooltip()`](../reference/br_tooltip.md),
+  [`br_upload()`](../reference/br_upload.md) (input de arquivo com
+  binding nativo do Shiny),
+  [`br_pagination()`](../reference/br_pagination.md),
+  [`br_step()`](../reference/br_step.md) e
+  [`br_signin()`](../reference/br_signin.md).
+- [`br_date_input()`](../reference/br_date_input.md) agora retorna
+  `Date` no servidor (binding próprio com tipo `shiny.date`);
+  [`br_tabs()`](../reference/br_tabs.md) expõe o índice do tab ativo em
+  `input$` e
+  [`br_pagination()`](../reference/br_pagination.md)/[`br_step()`](../reference/br_step.md)
+  também são inputs.
+- Funções de atualização server-side:
+  [`update_br_text_input()`](../reference/update_br_inputs.md),
+  [`update_br_textarea_input()`](../reference/update_br_inputs.md),
+  [`update_br_radio_input()`](../reference/update_br_inputs.md),
+  [`update_br_checkbox_input()`](../reference/update_br_inputs.md),
+  [`update_br_select_input()`](../reference/update_br_inputs.md),
+  [`update_br_date_input()`](../reference/update_br_inputs.md),
+  [`update_br_tabs()`](../reference/update_br_inputs.md),
+  [`update_br_pagination()`](../reference/update_br_inputs.md) e
+  [`update_br_step()`](../reference/update_br_inputs.md).
+- Header corrigido para incluir o gatilho de menu exigido pelo
+  JavaScript oficial do GovBR (`menuTrigger`); a inicialização JS é
+  isolada por componente para que um markup incompleto não impeça os
+  demais.
+- Todas as 42 funções herdadas do GOV.UK foram marcadas como obsoletas:
+  emitem aviso (uma vez por sessão) apontando para a família `br_*` e
+  serão removidas em versão futura.
+- App de exemplo ([`run_example()`](../reference/run_example.md))
+  reescrito usando exclusivamente a família `br_*`.
+- Workflow de deploy do app de exemplo corrigido (instalava o pacote
+  upstream) e CONTRIBUTING.md reescrito para o fluxo GovBR.
+- README e DESCRIPTION reescritos para a família `br_*`; URLs
+  atualizadas para a organização DistintiveLab.
+
 ## shinyGovBRstyle 0.2.0
 
 - Nova família de componentes `br_*` construída com os assets oficiais

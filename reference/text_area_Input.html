@@ -19,7 +19,7 @@
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/distintive/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/DistintiveLab/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -28,7 +28,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Text Area Input Function</h1>
-      <small class="dont-index">Source: <a href="https://github.com/distintive/shinyGovBRstyle/blob/master/R/text_area_input.R" class="external-link"><code>R/text_area_input.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/DistintiveLab/shinyGovBRstyle/blob/master/R/text_area_input.R" class="external-link"><code>R/text_area_input.R</code></a></small>
       <div class="d-none name"><code>text_area_Input.Rd</code></div>
     </div>
 
@@ -86,12 +86,20 @@ hint label.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>a text area box html shiny object</p>
     </div>
+    <div class="section level2">
+    <h2 id="deprecated">Deprecated<a class="anchor" aria-label="anchor" href="#deprecated"></a></h2>
+
+
+<p>Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">text_area_Input</span><span class="op">(</span><span class="st">"taId"</span>, <span class="st">"Can you provide more detail?"</span>,</span></span>
 <span class="r-in"><span><span class="st">"Do not include personal or financial information, like your</span></span></span>
 <span class="r-in"><span><span class="st">National Insurance number or credit card details."</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>'text_area_Input()' is deprecated as of shinyGovBRstyle 0.2.0.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="govbr-form-group govbr-character-count" id="taIddiv"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;label class="govbr-label"&gt;Can you provide more detail?&lt;/label&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div class="govbr-hint"&gt;Do not include personal or financial information, like your</span>

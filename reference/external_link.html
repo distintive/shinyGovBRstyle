@@ -69,7 +69,7 @@ https://www.w3.org/TR/WCAG20-TECHS/G200.html)"><meta property="og:image" content
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/distintive/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/DistintiveLab/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -78,7 +78,7 @@ https://www.w3.org/TR/WCAG20-TECHS/G200.html)"><meta property="og:image" content
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>External link</h1>
-      <small class="dont-index">Source: <a href="https://github.com/distintive/shinyGovBRstyle/blob/master/R/external_link.R" class="external-link"><code>R/external_link.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/DistintiveLab/shinyGovBRstyle/blob/master/R/external_link.R" class="external-link"><code>R/external_link.R</code></a></small>
       <div class="d-none name"><code>external_link.Rd</code></div>
     </div>
 
@@ -149,10 +149,18 @@ accessibility before removing the visual warning.</p></dd>
 create safe external links with standard and accessible behaviour. For more
 information on how the tag is generated, see <code><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">tags</a></code>.</p>
     </div>
+    <div class="section level2">
+    <h2 id="deprecated">Deprecated<a class="anchor" aria-label="anchor" href="#deprecated"></a></h2>
+
+
+<p>Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">external_link</span><span class="op">(</span><span class="st">"https://shiny.posit.co/"</span>, <span class="st">"R Shiny"</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>'external_link()' is deprecated as of shinyGovBRstyle 0.2.0.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;a href="https://shiny.posit.co/" class="govbr-link" target="_blank" rel="noopener noreferrer"&gt;R Shiny (opens in new tab)&lt;/a&gt;</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">external_link</span><span class="op">(</span></span></span>

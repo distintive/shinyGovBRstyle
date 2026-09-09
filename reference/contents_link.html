@@ -19,7 +19,7 @@
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/distintive/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/DistintiveLab/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -28,7 +28,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Contents link function</h1>
-      <small class="dont-index">Source: <a href="https://github.com/distintive/shinyGovBRstyle/blob/master/R/contents_links.R" class="external-link"><code>R/contents_links.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/DistintiveLab/shinyGovBRstyle/blob/master/R/contents_links.R" class="external-link"><code>R/contents_links.R</code></a></small>
       <div class="d-none name"><code>contents_link.Rd</code></div>
     </div>
 
@@ -65,15 +65,22 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>an action button html shiny object</p>
     </div>
+    <div class="section level2">
+    <h2 id="deprecated">Deprecated<a class="anchor" aria-label="anchor" href="#deprecated"></a></h2>
+
+
+<p>Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards
+compatibility and scheduled for removal. See the `br_*` family.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>     <span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html" class="external-link">fluidPage</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>     title<span class="op">=</span><span class="st">"ShinyGovstyle"</span>,</span></span>
+<span class="r-in"><span>     title<span class="op">=</span><span class="st">"shinyGovBRstyle"</span>,</span></span>
 <span class="r-in"><span>       <span class="fu"><a href="cookieBanner.html">cookieBanner</a></span><span class="op">(</span><span class="st">"Run Example"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>       <span class="fu"><a href="header.html">header</a></span><span class="op">(</span><span class="st">"MOJ"</span>, <span class="st">"ShinyGovstyle Example"</span>,</span></span>
-<span class="r-in"><span>              logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/moj_logo-1.png"</span>, logo_width <span class="op">=</span> <span class="fl">66</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>       <span class="fu"><a href="header.html">header</a></span><span class="op">(</span><span class="st">"GovBR"</span>, <span class="st">"shinyGovBRstyle Example"</span>,</span></span>
+<span class="r-in"><span>              logo<span class="op">=</span><span class="st">"shinyGovBRstyle/images/dev_logo.png"</span>, logo_width <span class="op">=</span> <span class="fl">66</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>       <span class="fu"><a href="banner.html">banner</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>         <span class="st">"banner"</span>,</span></span>
 <span class="r-in"><span>         <span class="st">"Beta"</span>,</span></span>

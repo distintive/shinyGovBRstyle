@@ -6,20 +6,34 @@
 - [`backlink_Input()`](backlink_Input.md) : Back Link Function
 - [`bad_link_text`](bad_link_text.md) : Lookup for bad link text
 - [`banner()`](banner.md) : Banner Function
+- [`br_accordion()`](br_accordion.md) : GovBR accordion
+- [`br_breadcrumb()`](br_breadcrumb.md) : GovBR breadcrumb
 - [`br_button()`](br_button.md) : GovBR button
+- [`br_card()`](br_card.md) : GovBR card
 - [`br_checkbox_input()`](br_checkbox_input.md) : GovBR checkbox input
 - [`br_date_input()`](br_date_input.md) : GovBR date input
 - [`br_divider()`](br_divider.md) : GovBR divider
 - [`br_footer()`](br_footer.md) : GovBR footer
 - [`br_header()`](br_header.md) : GovBR header
 - [`br_layout()`](br_layout.md) : GovBR page layout container
+- [`br_loading()`](br_loading.md) : GovBR loading indicator
+- [`br_magic_button()`](br_magic_button.md) : GovBR magic button
 - [`br_message()`](br_message.md) : GovBR message
+- [`br_modal()`](br_modal.md) : GovBR modal
+- [`br_notification()`](br_notification.md) : GovBR notification
+- [`br_pagination()`](br_pagination.md) : GovBR pagination
 - [`br_radio_input()`](br_radio_input.md) : GovBR radio input
 - [`br_select_input()`](br_select_input.md) : GovBR select input
+- [`br_signin()`](br_signin.md) : GovBR sign-in button
 - [`br_skiplink()`](br_skiplink.md) : GovBR skip link
+- [`br_step()`](br_step.md) : GovBR step
+- [`br_table()`](br_table.md) : GovBR table
+- [`br_tabs()`](br_tabs.md) : GovBR tabs
 - [`br_tag()`](br_tag.md) : GovBR tag
 - [`br_text_input()`](br_text_input.md) : GovBR text input
 - [`br_textarea_input()`](br_textarea_input.md) : GovBR textarea input
+- [`br_tooltip()`](br_tooltip.md) : GovBR tooltip
+- [`br_upload()`](br_upload.md) : GovBR upload input
 - [`button_Input()`](button_Input.md) : Button Function
 - [`checkbox_Input()`](checkbox_Input.md) : Checkbox Function
 - [`contents_link()`](contents_link.md) : Contents link function
@@ -58,6 +72,16 @@
 - [`tag_Input()`](tag_Input.md) : Tag Function
 - [`text_Input()`](text_Input.md) : Text Input Function
 - [`text_area_Input()`](text_area_Input.md) : Text Area Input Function
+- [`update_br_text_input()`](update_br_inputs.md)
+  [`update_br_textarea_input()`](update_br_inputs.md)
+  [`update_br_radio_input()`](update_br_inputs.md)
+  [`update_br_checkbox_input()`](update_br_inputs.md)
+  [`update_br_select_input()`](update_br_inputs.md)
+  [`update_br_date_input()`](update_br_inputs.md)
+  [`update_br_tabs()`](update_br_inputs.md)
+  [`update_br_pagination()`](update_br_inputs.md)
+  [`update_br_step()`](update_br_inputs.md) : Update GovBR inputs
+  server-side
 - [`use_govbr()`](use_govbr.md) : Attach GovBR Design System
   dependencies
 - [`value_box()`](value_box.md) : Create a value text box with optional

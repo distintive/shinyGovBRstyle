@@ -81,6 +81,11 @@ radio_button_Input(
 
 radio buttons html shiny object
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r
@@ -92,7 +97,7 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo="shinyGovBRstyle/images/moj_logo.png"),
+      logo="shinyGovBRstyle/images/dev_logo.png"),
     shinyGovBRstyle::banner(
       inputId = "banner", type = "beta", 'This is a new service'),
     shinyGovBRstyle::gov_layout(size = "two-thirds",

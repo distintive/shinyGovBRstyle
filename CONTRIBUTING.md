@@ -1,84 +1,61 @@
-# Contributing to shinyGovstyle
+# Contribuindo com o shinyGovBRstyle
 
-Ideas for shinyGovstyle should first be raised as a [GitHub
-issue](https://github.com/moj-analytical-services/shinyGovstyle/issues)
-after which anyone is free to write the code and create a pull request
-for review.
+Ideias e correções devem primeiro ser registradas como uma [issue no
+GitHub](https://github.com/DistintiveLab/shinyGovBRstyle/issues); em
+seguida qualquer pessoa pode escrever o código e abrir um pull request
+para revisão.
 
-For support and information on package development in R, we recommend
-using the [R Packages (2e) guide by Hadley Wickham and Jennifer
-Bryan](https://r-pkgs.org/), this contains a wealth of information and
-best practice for all kinds of activities around package development in
-R.
+Para apoio sobre desenvolvimento de pacotes em R, recomendamos o guia [R
+Packages (2e)](https://r-pkgs.org/).
 
-## Raising new changes
+## Estrutura do pacote
 
-New changes should be made on a branch off of the latest version of the
-master branch.
+O pacote contém duas famílias de componentes:
 
-If you don’t have access to push to the repo itself, you should start by
-creating a [fork of the
-repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository).
-You’ll then be able to make a new branch in your own repo and push your
-suggested changes to that.
+- **Família `br_*` (atual)**: construída sobre os assets oficiais do
+  Design System GovBR ([@govbr-ds/core](https://www.gov.br/ds/home)),
+  servidos localmente de `inst/www/govbr/`. Use esta família em novos
+  componentes — veja `ROADMAP.md` para as convenções.
+- **Família legada (derivada do GOV.UK)**: depreciada desde a versão
+  0.2.0 (emite aviso) e programada para remoção. Não adicione recursos a
+  ela.
 
-Once ready, you should raise [a PR in the main GitHub
-repository](https://github.com/moj-analytical-services/shinyGovstyle/compare),
-pointing at the `master` branch and one of the package maintainers will
-be able to review your changes.
+## Fluxo de trabalho
 
-Once a pull request is reviewed and ready to be merged in, all commits
-in the PR should be squashed as a part of the merge to keep the Git
-history shorter and easier to navigate.
+1.  Novas mudanças devem ser feitas em um branch a partir da versão mais
+    recente de `master`.
+2.  PRs devem apontar para `master`; ao merge, usar squash para manter o
+    histórico enxuto.
+3.  Rode `devtools::document()`, `devtools::test()` e
+    `devtools::check()` antes de abrir o PR.
+4.  Novos componentes `br_*` precisam de arquivo próprio em
+    `R/br_<componente>.R`, teste espelhado em
+    `tests/testthat/test-br_<componente>.R`, roxygen com `@export`,
+    `@return` e exemplo `if (interactive())`.
+5.  Atualize `NEWS.md` e, se o componente mudar visualmente, o
+    `README.md`.
 
-The `master` branch acts as the development version of the package for
-users, releases of stable package versions to CRAN will be made by the
-maintainers when they feel it is appropriate to do so.
+## Atualizando o Design System GovBR
 
-### Code owners
+Os assets são cópias estáticas da distribuição do `@govbr-ds/core`
+(atualmente v3.7.0). Passos para atualizar:
 
-We make use of [GitHub’s CODEOWNERS
-file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
-to set default reviewers for the repo and for specific parts of the
-code.
+1.  Localize a versão desejada no
+    [jsDelivr](https://www.jsdelivr.com/package/npm/@govbr-ds/core).
+2.  Baixe `core.min.css` e `core.min.js` para `inst/www/govbr/`,
+    sobrescrevendo os existentes.
+3.  Atualize a versão registrada em `R/use_govbr.R` (dependencies
+    `govbr-core-css`/`govbr-core-js`).
+4.  Confira os templates de referência em `data-raw/govbr-templates/`
+    (baixe os novos se necessário) e valide os markups dos componentes.
+5.  Rode `devtools::check()` e teste o app de exemplo com
+    [`shinyGovBRstyle::run_example()`](reference/run_example.md).
 
-## CSS changes
+Se inseguro sobre a aparência esperada, consulte a documentação oficial
+dos componentes em <https://www.gov.br/ds/components>.
 
-All changes made to the main `inst/www/css/govuk-frontend-norem.css`
-file should be logged in the `css_changes.md` file, this way they can
-easily be reapplied whenever the CSS assests from GOV.UK are updated.
+## Código de Conduta
 
-Alternatively, you can start a separate CSS file if your styling is
-separate to the GOV.UK styling.
-
-## Updating to latest GOV.UK Frontend version
-
-Currently we take [static precompiled exports of the GOV.UK Frontend
-files](https://frontend.design-system.service.gov.uk/install-using-precompiled-files/),
-and then store them in the `inst/` directory. Usual steps involved:
-
-1.  Locate the latest (or desired) [GOV.UK Frontend version on
-    GitHub](https://github.com/alphagov/govuk-frontend/releases)
-
-2.  Download and unzip the ZIP folder, copying the assets (including
-    fonts and images) into the `inst/www/` folder
-
-3.  Update the CSS file name in `attachDependency.R` script
-
-4.  Apply any changes from `css_changes.md` manually, to preserve
-    previous edits
-
-5.  Test all the code functions as expected using `devtools::check()`
-
-6.  Manually test the examples using `shinyGovstyle::run_example()`,
-    ensuring the styling is as expected
-
-If unsure on the styling and expected appearance, use the [GOV.UK Design
-System site](https://design-system.service.gov.uk/) to explore the
-components in more detail and official guidance for their use.
-
-## Code of Conduct
-
-Please note that the shinyGovstyle project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project you agree to abide by its terms.
+Este projeto é distribuído com um [Código de Conduta do
+Colaborador](CODE_OF_CONDUCT.md). Ao contribuir, você concorda com seus
+termos.

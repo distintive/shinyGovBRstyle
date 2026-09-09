@@ -28,6 +28,11 @@ word_count(inputId, input, word_limit = NULL)
 
 no value returned. Updates the word count in a shiny app
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r

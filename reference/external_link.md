@@ -76,10 +76,16 @@ create safe external links with standard and accessible behaviour. For
 more information on how the tag is generated, see
 [`tags`](https://rstudio.github.io/htmltools/reference/builder.html).
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r
 external_link("https://shiny.posit.co/", "R Shiny")
+#> Warning: 'external_link()' is deprecated as of shinyGovBRstyle 0.2.0.
 #> <a href="https://shiny.posit.co/" class="govbr-link" target="_blank" rel="noopener noreferrer">R Shiny (opens in new tab)</a>
 
 external_link(

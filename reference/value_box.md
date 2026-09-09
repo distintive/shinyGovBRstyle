@@ -37,6 +37,11 @@ value_box(inputId, value = "your value goes here", text = NA, colour = "blue")
 A Shiny \`div\` tag representing the value box, styled according to the
 specified parameters.
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r

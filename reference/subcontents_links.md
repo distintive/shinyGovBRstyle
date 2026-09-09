@@ -32,7 +32,7 @@ if (interactive()) {
     shinyGovBRstyle::header(
       main_text = "Example",
       secondary_text = "User Examples",
-      logo = "shinyGovBRstyle/images/moj_logo.png"
+      logo = "shinyGovBRstyle/images/dev_logo.png"
     ),
     shiny::column(
       width = 3,

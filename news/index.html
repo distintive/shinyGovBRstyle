@@ -19,7 +19,7 @@
 <li class="active nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/distintive/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/DistintiveLab/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -28,12 +28,21 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/distintive/shinyGovBRstyle/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/DistintiveLab/shinyGovBRstyle/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="shinygovbrstyle-development-version">shinyGovBRstyle (development version)<a class="anchor" aria-label="anchor" href="#shinygovbrstyle-development-version"></a></h2>
-</div>
+<ul><li>Novos componentes: <code><a href="../reference/br_accordion.html">br_accordion()</a></code>, <code><a href="../reference/br_tabs.html">br_tabs()</a></code>, <code><a href="../reference/br_card.html">br_card()</a></code>, <code><a href="../reference/br_table.html">br_table()</a></code>, <code><a href="../reference/br_modal.html">br_modal()</a></code>, <code><a href="../reference/br_notification.html">br_notification()</a></code>, <code><a href="../reference/br_loading.html">br_loading()</a></code>, <code><a href="../reference/br_magic_button.html">br_magic_button()</a></code>, <code><a href="../reference/br_breadcrumb.html">br_breadcrumb()</a></code>, <code><a href="../reference/br_tooltip.html">br_tooltip()</a></code>, <code><a href="../reference/br_upload.html">br_upload()</a></code> (input de arquivo com binding nativo do Shiny), <code><a href="../reference/br_pagination.html">br_pagination()</a></code>, <code><a href="../reference/br_step.html">br_step()</a></code> e <code><a href="../reference/br_signin.html">br_signin()</a></code>.</li>
+<li>
+<code><a href="../reference/br_date_input.html">br_date_input()</a></code> agora retorna <code>Date</code> no servidor (binding próprio com tipo <code>shiny.date</code>); <code><a href="../reference/br_tabs.html">br_tabs()</a></code> expõe o índice do tab ativo em <code>input$</code> e <code><a href="../reference/br_pagination.html">br_pagination()</a></code>/<code><a href="../reference/br_step.html">br_step()</a></code> também são inputs.</li>
+<li>Funções de atualização server-side: <code><a href="../reference/update_br_inputs.html">update_br_text_input()</a></code>, <code><a href="../reference/update_br_inputs.html">update_br_textarea_input()</a></code>, <code><a href="../reference/update_br_inputs.html">update_br_radio_input()</a></code>, <code><a href="../reference/update_br_inputs.html">update_br_checkbox_input()</a></code>, <code><a href="../reference/update_br_inputs.html">update_br_select_input()</a></code>, <code><a href="../reference/update_br_inputs.html">update_br_date_input()</a></code>, <code><a href="../reference/update_br_inputs.html">update_br_tabs()</a></code>, <code><a href="../reference/update_br_inputs.html">update_br_pagination()</a></code> e <code><a href="../reference/update_br_inputs.html">update_br_step()</a></code>.</li>
+<li>Header corrigido para incluir o gatilho de menu exigido pelo JavaScript oficial do GovBR (<code>menuTrigger</code>); a inicialização JS é isolada por componente para que um markup incompleto não impeça os demais.</li>
+<li>Todas as 42 funções herdadas do GOV.UK foram marcadas como obsoletas: emitem aviso (uma vez por sessão) apontando para a família <code>br_*</code> e serão removidas em versão futura.</li>
+<li>App de exemplo (<code><a href="../reference/run_example.html">run_example()</a></code>) reescrito usando exclusivamente a família <code>br_*</code>.</li>
+<li>Workflow de deploy do app de exemplo corrigido (instalava o pacote upstream) e CONTRIBUTING.md reescrito para o fluxo GovBR.</li>
+<li>README e DESCRIPTION reescritos para a família <code>br_*</code>; URLs atualizadas para a organização DistintiveLab.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.0" id="shinygovbrstyle-020">shinyGovBRstyle 0.2.0<a class="anchor" aria-label="anchor" href="#shinygovbrstyle-020"></a></h2>
 <ul><li>Nova família de componentes <code>br_*</code> construída com os assets oficiais do Design System GovBR v3.7.0 (<code>core.min.css</code>/<code>core.min.js</code>), classes reais <code>br-*</code> e bindings nativos do Shiny: <code><a href="../reference/use_govbr.html">use_govbr()</a></code>, <code><a href="../reference/br_header.html">br_header()</a></code>, <code><a href="../reference/br_footer.html">br_footer()</a></code>, <code><a href="../reference/br_layout.html">br_layout()</a></code>, <code><a href="../reference/br_button.html">br_button()</a></code>, <code><a href="../reference/br_text_input.html">br_text_input()</a></code>, <code><a href="../reference/br_textarea_input.html">br_textarea_input()</a></code>, <code><a href="../reference/br_date_input.html">br_date_input()</a></code>, <code><a href="../reference/br_select_input.html">br_select_input()</a></code>, <code><a href="../reference/br_checkbox_input.html">br_checkbox_input()</a></code>, <code><a href="../reference/br_radio_input.html">br_radio_input()</a></code>, <code><a href="../reference/br_message.html">br_message()</a></code>, <code><a href="../reference/br_tag.html">br_tag()</a></code>, <code><a href="../reference/br_divider.html">br_divider()</a></code> e <code><a href="../reference/br_skiplink.html">br_skiplink()</a></code>.</li>

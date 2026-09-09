@@ -19,7 +19,7 @@
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/distintive/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/DistintiveLab/shinyGovBRstyle/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -28,7 +28,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="logo.png" class="logo" alt=""><h1>Roadmap — shinyGovBRstyle</h1>
-      <small class="dont-index">Source: <a href="https://github.com/distintive/shinyGovBRstyle/blob/master/ROADMAP.md" class="external-link"><code>ROADMAP.md</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/DistintiveLab/shinyGovBRstyle/blob/master/ROADMAP.md" class="external-link"><code>ROADMAP.md</code></a></small>
     </div>
 
 <div id="roadmap--shinygovbrstyle" class="section level1">
@@ -67,27 +67,29 @@
 <li><label><input type="checkbox" checked><code><a href="reference/br_tag.html">br_tag()</a></code>, <code><a href="reference/br_divider.html">br_divider()</a></code>, <code><a href="reference/br_skiplink.html">br_skiplink()</a></code></label></li>
 <li><label><input type="checkbox" checked><code><a href="reference/br_layout.html">br_layout()</a></code> — containers do GovBR (container-lg/md/sm/full)</label></li>
 </ul><p><strong>Pendentes (próximas iterações):</strong></p>
-<ul class="task-list"><li><label><input type="checkbox"><code>br_accordion()</code>, <code>br_tabs()</code>, <code>br_table()</code> ( GovBR Table com JS)</label></li>
-<li><label><input type="checkbox"><code>br_breadcrumb()</code>, <code>br_card()</code>, <code>br_modal()</code>, <code>br_notification()</code></label></li>
-<li><label><input type="checkbox"><code>br_upload()</code>, <code>br_pagination()</code>, <code>br_step()</code>/<code>br_wizard()</code></label></li>
-<li><label><input type="checkbox"><code>br_magic_button()</code>, <code>br_loading()</code>, <code>br_tooltip()</code></label></li>
-<li><label><input type="checkbox">Bindings mais ricos: <code><a href="reference/br_date_input.html">br_date_input()</a></code> retornando <code>Date</code> (converter dd/mm/aaaa), update functions (<code>update_br_select_input()</code> etc.)</label></li>
-<li><label><input type="checkbox">App de exemplo (<code><a href="reference/run_example.html">run_example()</a></code>) migrado para a família <code>br_*</code></label></li>
+<ul class="task-list"><li><label><input type="checkbox" checked><code><a href="reference/br_accordion.html">br_accordion()</a></code>, <code><a href="reference/br_tabs.html">br_tabs()</a></code>, <code><a href="reference/br_table.html">br_table()</a></code> ( GovBR Table com JS)</label></li>
+<li><label><input type="checkbox" checked><code><a href="reference/br_breadcrumb.html">br_breadcrumb()</a></code>, <code><a href="reference/br_card.html">br_card()</a></code>, <code><a href="reference/br_modal.html">br_modal()</a></code>, <code><a href="reference/br_notification.html">br_notification()</a></code></label></li>
+<li><label><input type="checkbox" checked><code><a href="reference/br_upload.html">br_upload()</a></code>, <code><a href="reference/br_magic_button.html">br_magic_button()</a></code>, <code><a href="reference/br_loading.html">br_loading()</a></code>, <code><a href="reference/br_tooltip.html">br_tooltip()</a></code></label></li>
+<li><label><input type="checkbox" checked><code><a href="reference/br_pagination.html">br_pagination()</a></code>, <code><a href="reference/br_step.html">br_step()</a></code>, <code><a href="reference/br_signin.html">br_signin()</a></code></label></li>
+<li><label><input type="checkbox" checked>Bindings mais ricos: <code><a href="reference/br_date_input.html">br_date_input()</a></code> retornando <code>Date</code>, <code><a href="reference/br_tabs.html">br_tabs()</a></code>/<code><a href="reference/br_pagination.html">br_pagination()</a></code>/<code><a href="reference/br_step.html">br_step()</a></code> como inputs e update functions (<code>update_br_*</code>)</label></li>
+<li><label><input type="checkbox" checked>App de exemplo (<code><a href="reference/run_example.html">run_example()</a></code>) migrado para a família <code>br_*</code></label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="fase-3--limpeza-e-deprecação">Fase 3 — Limpeza e deprecação<a class="anchor" aria-label="anchor" href="#fase-3--limpeza-e-depreca%C3%A7%C3%A3o"></a></h2>
-<ul class="task-list"><li><label><input type="checkbox">Marcar funções antigas (derivadas do GOV.UK) como obsoletas nos <code>.Rd</code> (nota de migração para os equivalentes <code>br_*</code>).</label></li>
+<ul class="task-list"><li><label><input type="checkbox" checked>Marcar funções antigas (derivadas do GOV.UK) como obsoletas: aviso uma vez por sessão via <code>govbr_deprecated()</code> + nota nos <code>.Rd</code>.</label></li>
 <li><label><input type="checkbox">Remover assets do GOV.UK (<code>govbr-frontend-5.7.1.min.css</code>, <code>govbr-frontend-5.4.0.min.js</code>, fontes GOV.UK, <code>govbr-frontend-test.css</code>) quando as funções antigas forem removidas (meta: v1.0.0).</label></li>
-<li><label><input type="checkbox">Corrigir o workflow <code>example-app-deploy.yaml</code> (hoje publica o pacote upstream, não este).</label></li>
-<li><label><input type="checkbox">Atualizar <code>CONTRIBUTING.md</code> (ainda descreve o fluxo do GOV.UK).</label></li>
+<li><label><input type="checkbox" checked>Corrigir o workflow <code>example-app-deploy.yaml</code> (hoje publica o pacote upstream, não este).</label></li>
+<li><label><input type="checkbox" checked>Atualizar <code>CONTRIBUTING.md</code> (ainda descreve o fluxo do GOV.UK).</label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="fase-4--publicação-no-cran">Fase 4 — Publicação no CRAN<a class="anchor" aria-label="anchor" href="#fase-4--publica%C3%A7%C3%A3o-no-cran"></a></h2>
-<ul class="task-list"><li><label><input type="checkbox"><code>DESCRIPTION</code>: bump para 0.2.0, <code>Title</code> em title case, descrição expandida, <code>URL</code>/<code>BugReports</code> já ok.</label></li>
-<li><label><input type="checkbox">Todos os <code>@export</code> com <code>@return</code> e exemplo <code>if (interactive())</code>.</label></li>
-<li><label><input type="checkbox"><code>R CMD check --as-cran</code> sem ERROR/WARNING/NOTE (checar tamanho do tarball: assets somam ~2,5 MB; CRAN aceita, mas monitorar).</label></li>
-<li><label><input type="checkbox"><code>README.md</code> reescrito (badge CRAN só após aceitação), <code>NEWS.md</code>.</label></li>
-<li><label><input type="checkbox"><code>cran-comments.md</code> atualizado; submissão via <code>devtools::release()</code>.</label></li>
+<ul class="task-list"><li><label><input type="checkbox" checked><code>DESCRIPTION</code>: bump para 0.2.0, descrição expandida, <code>URL</code>/<code>BugReports</code> apontando para a organização DistintiveLab.</label></li>
+<li><label><input type="checkbox" checked>Todos os <code>@export</code> com <code>@return</code> e exemplo <code>if (interactive())</code>.</label></li>
+<li><label><input type="checkbox" checked><code>R CMD check --as-cran</code> sem ERROR/WARNING/NOTE.</label></li>
+<li><label><input type="checkbox" checked><code>README.md</code> reescrito para a família <code>br_*</code>.</label></li>
+<li><label><input type="checkbox" checked><del>Definir os segredos <code>SHINYAPPS_NAME/TOKEN/SECRET</code></del> workflow de deploy removido: o app de demonstração será hospedado em instância Shiny própria (sem dependência de shinyapps.io).</label></li>
+<li><label><input type="checkbox">Publicar o app de exemplo na instância Shiny própria e incluir o link no README.</label></li>
+<li><label><input type="checkbox">Atualizar <code>cran-comments.md</code> e submeter via <code>devtools::release()</code>.</label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="convenções-da-nova-família-br_">Convenções da nova família <code>br_*</code>

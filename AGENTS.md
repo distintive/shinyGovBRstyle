@@ -79,12 +79,10 @@ optional per-widget JS from `inst/www/js/`.
   needed when updating the vendored design-system CSS are recorded in
   `css_changes.md` (Rbuildignored) and must be reapplied by hand on each
   update. Always append changes there.
-- **Upstream leftovers**: `.github/CONTRIBUTING.md` and
-  `.github/workflows/example-app-deploy.yaml` still reference the
-  upstream repos (`moj-analytical-services/shinyGovstyle`,
-  `dfe-analytical-services/shinyGovstyle`) and the old
-  `govuk-frontend-norem.css` filename. The deploy workflow currently
-  deploys the *upstream* package’s example app, not this one’s.
+- **Demo hosting**: the example app has no automated deploy; it is meant
+  to be hosted on a self-managed Shiny instance (the shinyapps.io
+  workflow inherited from upstream was removed). The app ships in the
+  package and runs via [`run_example()`](reference/run_example.md).
 - **Naming is inconsistent by design/history**: file names are lowercase
   snake_case (`R/checkbox_input.R`, `R/select_input.R`) but the
   functions inside use a capitalized `Input` suffix

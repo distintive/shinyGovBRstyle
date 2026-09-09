@@ -30,6 +30,11 @@ select_Input(inputId, label, select_text, select_value)
 
 a select input html shiny object
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r

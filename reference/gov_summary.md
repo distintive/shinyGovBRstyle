@@ -37,6 +37,11 @@ gov_summary(inputId, headers, info, action = FALSE, border = TRUE)
 
 a summary list table html shiny object.
 
+## Deprecated
+
+Deprecated as of shinyGovBRstyle 0.2.0; kept for backwards compatibility
+and scheduled for removal. See the \`br\_\*\` family.
+
 ## Examples
 
 ``` r
