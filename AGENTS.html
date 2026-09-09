@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">shinyGovBRstyle</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
 <ul><li>
 <strong><code>br_*</code> family (current)</strong>: built on the real GovBR DS v3.7.0 assets (<code>inst/www/govbr/core.min.css|js</code>, classes <code>br-*</code>), using native Shiny input bindings.</li>
 <li>
-<strong>Legacy family (derived from GOV.UK, classes renamed <code>govbr-</code>)</strong>: 18 deprecated functions kept for migration (each has a <code>br_*</code> equivalent); the 24 without a GovBR counterpart were removed in 0.4.0. Full removal planned for v1.0.0 (see <code>ROADMAP.md</code>).</li>
+<strong>Legacy family</strong>: fully removed in 1.0.0 (deprecated since 0.2.0). The package exports only the <code>br_*</code> family plus <code><a href="reference/use_govbr.html">use_govbr()</a></code> and <code><a href="reference/run_example.html">run_example()</a></code>.</li>
 </ul></div>
 <div class="section level2">
 <h2 id="essential-commands">Essential commands<a class="anchor" aria-label="anchor" href="#essential-commands"></a></h2>
@@ -62,8 +62,7 @@
 <li>Shiny integration uses native bindings: radios/checkbox groups inside containers with class <code>shiny-input-radiogroup</code>/<code>shiny-input-checkboxgroup</code> and <code>name = inputId</code>; text/textarea/date inputs and single checkboxes use <code>id = inputId</code>; buttons use <code>class = "action-button"</code>. Do not give the individual checkboxes a bare id-only form that duplicates inputs.</li>
 <li>CRITICAL htmltools gotcha: <code>c(list_of_deps, single_dep)</code> strips the S3 class of <code>htmlDependency</code> — always wrap in <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code> before <code>attachDependencies()</code>.</li>
 <li>CRITICAL CSS gotcha: GovBR checkbox/radio CSS uses sibling selectors (<code>input:checked+label</code>), so <code>&lt;label for=...&gt;</code> must immediately follow <code>&lt;input&gt;</code>; wrapping the input in the label breaks the visuals.</li>
-</ul><p><strong>Legacy family</strong>: functions in <code>R/*.R</code> (e.g. <code><a href="reference/button_Input.html">button_Input()</a></code>) finish with <code>attachDependency()</code> (<code>R/attachDependency.R</code>), which serves <code>css/govbr-frontend-test.css</code> (rawline font classes + CDN import) and optional per-widget JS from <code>inst/www/js/</code>.</p>
-</div>
+</ul></div>
 <div class="section level2">
 <h2 id="upstream-policy-cherry-pick-only">Upstream policy (cherry-pick only)<a class="anchor" aria-label="anchor" href="#upstream-policy-cherry-pick-only"></a></h2>
 <p>The upstream origin is <code>dfe-analytical-services/shinyGovstyle</code> (add it with <code>git remote add upstream https://github.com/dfe-analytical-services/shinyGovstyle.git</code>). Never merge or sync from it: the core here is the native GovBR DS, while upstream remains GOV.UK. Review new upstream commits for <strong>ideas worth porting</strong> (accessibility fixes, UX patterns, generic Shiny utilities such as <code><a href="reference/br_update_page_title.html">br_update_page_title()</a></code>) and reimplement them in the <code>br_*</code> family.</p>
@@ -71,13 +70,11 @@
 <div class="section level2">
 <h2 id="gotchas">Gotchas<a class="anchor" aria-label="anchor" href="#gotchas"></a></h2>
 <ul><li>
-<strong>Stylesheet wiring is not obvious</strong>: <code>attachDependency.R</code> serves <code>govbr-frontend-test.css</code>, which is currently a small file of rawline font classes plus a CDN <code>@import</code>. The large vendored stylesheet <code>inst/www/css/govbr-frontend-5.7.1.min.css</code> is <em>not referenced by any R code</em>. Do not assume editing the <code>.min.css</code> affects apps.</li>
-<li>
 <strong>CSS overrides are logged, not versioned in code</strong>: manual CSS tweaks needed when updating the vendored design-system CSS are recorded in <code>css_changes.md</code> (Rbuildignored) and must be reapplied by hand on each update. Always append changes there.</li>
 <li>
 <strong>Demo hosting</strong>: the example app has no automated deploy; it is meant to be hosted on a self-managed Shiny instance (the shinyapps.io workflow inherited from upstream was removed). The app ships in the package and runs via <code><a href="reference/run_example.html">run_example()</a></code>.</li>
 <li>
-<strong>Naming is inconsistent by design/history</strong>: file names are lowercase snake_case (<code>R/checkbox_input.R</code>, <code>R/select_input.R</code>) but the functions inside use a capitalized <code>Input</code> suffix (<code><a href="reference/checkbox_Input.html">checkbox_Input()</a></code>, <code><a href="reference/select_Input.html">select_Input()</a></code>, <code><a href="reference/button_Input.html">button_Input()</a></code>, <code><a href="reference/text_area_Input.html">text_area_Input()</a></code>). Test file names don’t always match function names (e.g. <code>test-gov_button.R</code> tests <code><a href="reference/button_Input.html">button_Input()</a></code>; <code>test-subcontents_links.R</code> tests <code>contents_link()</code>). Match the existing file you are editing rather than “fixing” naming globally.</li>
+<strong>Naming is inconsistent by design/history</strong>: file names are lowercase snake_case (<code>R/checkbox_input.R</code>, <code>R/select_input.R</code>) but the functions inside use a capitalized <code>Input</code> suffix (<code>checkbox_Input()</code>, <code>select_Input()</code>, <code>button_Input()</code>, <code>text_area_Input()</code>). Test file names don’t always match function names (e.g. <code>test-gov_button.R</code> tests <code>button_Input()</code>; <code>test-subcontents_links.R</code> tests <code>contents_link()</code>). Match the existing file you are editing rather than “fixing” naming globally.</li>
 <li>
 <strong><code>contents_link()</code> requires fixed DOM IDs</strong> (<code>nav</code>, <code>govbr-contents-box</code> + class, <code>main-col</code>, <code>tab-container</code>) for its JS to work — documented with a template in README.md.</li>
 <li>The <code>%&gt;%</code> pipe is re-exported (<code>R/utils-pipe.R</code>, <code>export("%&gt;%")</code>); pipe chains are used in some helpers.</li>

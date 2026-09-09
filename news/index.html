@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">shinyGovBRstyle</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,11 +32,18 @@
     </div>
 
     <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.0" id="shinygovbrstyle-100">shinyGovBRstyle 1.0.0<a class="anchor" aria-label="anchor" href="#shinygovbrstyle-100"></a></h2>
+<ul><li>Todas as 18 funções herdadas do GOV.UK foram removidas (estavam deprecadas desde a 0.2.0); o pacote contém exclusivamente a família <code>br_*</code> sobre o Design System GovBR.</li>
+<li>Grupos de <code><a href="../reference/br_radio_input.html">br_radio_input()</a></code> e <code><a href="../reference/br_checkbox_input.html">br_checkbox_input()</a></code> agora usam <code>fieldset</code>/<code>legend</code> semânticos (com <code>heading_level</code> opcional), anunciados corretamente por leitores de tela (cherry-pick do PR <a href="https://github.com/DistintiveLab/shinyGovBRstyle/issues/225" class="external-link">#225</a> do upstream).</li>
+<li>Assets legados removidos: <code>govbr-frontend-test.css</code>, <code>font.css</code>, bindings JS antigos (<code>radio_button_input_binding.js</code>, <code>date_input_binding.js</code>, <code>accordion.js</code>, <code>govTab.js</code>) e <code>css_changes.md</code>.</li>
+<li>Dependências reduzidas para <code>htmltools</code>, <code>purrr</code> e <code>shiny</code>.</li>
+</ul></div>
+    <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.0" id="shinygovbrstyle-040">shinyGovBRstyle 0.4.0<a class="anchor" aria-label="anchor" href="#shinygovbrstyle-040"></a></h2>
 <ul><li>Removidas as funções herdadas do GOV.UK que não possuem transposição para o GovBR (24 funções, entre elas <code>banner()</code>, <code>error_on()</code>/<code>error_off()</code>, <code>cookieBanner()</code>, <code>contents_link()</code>, <code>word_count()</code>, <code>value_box()</code> e <code>font()</code>), junto de seus testes e da documentação. As 18 funções legadas com equivalente <code>br_*</code> permanecem disponíveis e depreciadas.</li>
 <li>Removidos assets órfãos do GOV.UK: <code>govbr-frontend-5.7.1.min.css</code>, <code>govbr-frontend-5.4.0.min.js</code>, <code>sr-only.css</code>, <code>contents_link.js</code>, logos (<code>moj_logo*</code>, <code>dev_logo*</code>, <code>govuk-*</code>) e as capturas de tela antigas usadas no site.</li>
 <li>
-<code>heading_text()</code> e <code><a href="../reference/clean_heading_text.html">clean_heading_text()</a></code> deixam de ser exportadas: agora são auxiliares internos das funções legadas mantidas.</li>
+<code>heading_text()</code> e <code>clean_heading_text()</code> deixam de ser exportadas: agora são auxiliares internos das funções legadas mantidas.</li>
 <li>Site (pkgdown/gh-pages) reestruturado: URL oficial, referência organizada por categoria (<code>br_*</code> e legados) e logo original mantido.</li>
 </ul></div>
     <div class="section level2">

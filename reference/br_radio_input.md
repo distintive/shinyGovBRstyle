@@ -12,7 +12,8 @@ br_radio_input(
   choices = NULL,
   selected = NULL,
   hint = NULL,
-  inline = FALSE
+  inline = FALSE,
+  heading_level = NULL
 )
 ```
 
@@ -42,6 +43,11 @@ br_radio_input(
 - inline:
 
   If `TRUE`, options are laid out horizontally.
+
+- heading_level:
+
+  Optional heading level ("2"-"6") for the group legend (screen readers
+  announce it as the group label).
 
 ## Value
 

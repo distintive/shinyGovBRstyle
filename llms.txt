@@ -13,8 +13,8 @@ integram-se aos bindings nativos do Shiny (radios/checkbox por `name`,
 texto/data por `id`, botões como `action-button`).
 
 > Histórico: este pacote começou como um fork do `shinyGovstyle`
-> (GOV.UK). As funções antigas herdadas continuam disponíveis, porém
-> **depreciadas**, e serão removidas em versão futura.
+> (GOV.UK). As funções herdadas do GOV.UK foram deprecadas na 0.2.0 e
+> **removidas na 1.0.0**; o pacote agora contém apenas a família `br_*`.
 
 ## Instalação
 
@@ -228,51 +228,8 @@ Código de Conduta do colaborador em
 - [`br_update_page_title()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_update_page_title.md)
   : Update the browser tab title
 
-## Funções legadas (depreciadas)
-
-### Herdadas do GOV.UK `shinyGovstyle`; emitem aviso de depreciação e serão removidas em versão futura. Migre para a família `br_*`.
-
-- [`accordion()`](https://distintivelab.github.io/shinyGovBRstyle/reference/accordion.md)
-  : Accordion Function
-- [`button_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/button_Input.md)
-  : Button Function
-- [`checkbox_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/checkbox_Input.md)
-  : Checkbox Function
-- [`date_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/date_Input.md)
-  : Date Input Function
-- [`file_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/file_Input.md)
-  : File Input Function
-- [`footer()`](https://distintivelab.github.io/shinyGovBRstyle/reference/footer.md)
-  : Footer Function
-- [`gov_layout()`](https://distintivelab.github.io/shinyGovBRstyle/reference/gov_layout.md)
-  : Page Layout Function
-- [`govTable()`](https://distintivelab.github.io/shinyGovBRstyle/reference/govTable.md)
-  : Table Function
-- [`govTabs()`](https://distintivelab.github.io/shinyGovBRstyle/reference/govTabs.md)
-  : Tabs Function
-- [`header()`](https://distintivelab.github.io/shinyGovBRstyle/reference/header.md)
-  : Header Function
-- [`noti_banner()`](https://distintivelab.github.io/shinyGovBRstyle/reference/noti_banner.md)
-  : Notification Banner Function
-- [`radio_button_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/radio_button_Input.md)
-  : Radio Button Function
-- [`select_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/select_Input.md)
-  : Select Function
-- [`skip_to_main()`](https://distintivelab.github.io/shinyGovBRstyle/reference/skip_to_main.md)
-  : Skip to main content link
-- [`tag_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/tag_Input.md)
-  : Tag Function
-- [`text_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/text_Input.md)
-  : Text Input Function
-- [`text_area_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/text_area_Input.md)
-  : Text Area Input Function
-- [`warning_text()`](https://distintivelab.github.io/shinyGovBRstyle/reference/warning_text.md)
-  : Warning Text Function
-
 ## Utilitários
 
 - [`run_example()`](https://distintivelab.github.io/shinyGovBRstyle/reference/run_example.md)
   : Run examples
-- [`` `%>%` ``](https://distintivelab.github.io/shinyGovBRstyle/reference/pipe.md)
-  : Pipe operator
 

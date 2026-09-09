@@ -10,10 +10,11 @@ coexist:
 - **`br_*` family (current)**: built on the real GovBR DS v3.7.0 assets
   (`inst/www/govbr/core.min.css|js`, classes `br-*`), using native Shiny
   input bindings.
-- **Legacy family (derived from GOV.UK, classes renamed `govbr-`)**: 18
-  deprecated functions kept for migration (each has a `br_*`
-  equivalent); the 24 without a GovBR counterpart were removed in 0.4.0.
-  Full removal planned for v1.0.0 (see `ROADMAP.md`).
+- **Legacy family**: fully removed in 1.0.0 (deprecated since 0.2.0).
+  The package exports only the `br_*` family plus
+  [`use_govbr()`](https://distintivelab.github.io/shinyGovBRstyle/reference/use_govbr.md)
+  and
+  [`run_example()`](https://distintivelab.github.io/shinyGovBRstyle/reference/run_example.md).
 
 ## Essential commands
 
@@ -64,12 +65,6 @@ e.g. [`br_header()`](https://distintivelab.github.io/shinyGovBRstyle/reference/
   (`input:checked+label`), so `<label for=...>` must immediately follow
   `<input>`; wrapping the input in the label breaks the visuals.
 
-**Legacy family**: functions in `R/*.R`
-(e.g. [`button_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/button_Input.md))
-finish with `attachDependency()` (`R/attachDependency.R`), which serves
-`css/govbr-frontend-test.css` (rawline font classes + CDN import) and
-optional per-widget JS from `inst/www/js/`.
-
 ## Upstream policy (cherry-pick only)
 
 The upstream origin is `dfe-analytical-services/shinyGovstyle` (add it
@@ -84,11 +79,6 @@ and reimplement them in the `br_*` family.
 
 ## Gotchas
 
-- **Stylesheet wiring is not obvious**: `attachDependency.R` serves
-  `govbr-frontend-test.css`, which is currently a small file of rawline
-  font classes plus a CDN `@import`. The large vendored stylesheet
-  `inst/www/css/govbr-frontend-5.7.1.min.css` is *not referenced by any
-  R code*. Do not assume editing the `.min.css` affects apps.
 - **CSS overrides are logged, not versioned in code**: manual CSS tweaks
   needed when updating the vendored design-system CSS are recorded in
   `css_changes.md` (Rbuildignored) and must be reapplied by hand on each
@@ -100,16 +90,12 @@ and reimplement them in the `br_*` family.
   [`run_example()`](https://distintivelab.github.io/shinyGovBRstyle/reference/run_example.md).
 - **Naming is inconsistent by design/history**: file names are lowercase
   snake_case (`R/checkbox_input.R`, `R/select_input.R`) but the
-  functions inside use a capitalized `Input` suffix
-  ([`checkbox_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/checkbox_Input.md),
-  [`select_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/select_Input.md),
-  [`button_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/button_Input.md),
-  [`text_area_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/text_area_Input.md)).
-  Test file names don’t always match function names
-  (e.g. `test-gov_button.R` tests
-  [`button_Input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/button_Input.md);
-  `test-subcontents_links.R` tests `contents_link()`). Match the
-  existing file you are editing rather than “fixing” naming globally.
+  functions inside use a capitalized `Input` suffix (`checkbox_Input()`,
+  `select_Input()`, `button_Input()`, `text_area_Input()`). Test file
+  names don’t always match function names (e.g. `test-gov_button.R`
+  tests `button_Input()`; `test-subcontents_links.R` tests
+  `contents_link()`). Match the existing file you are editing rather
+  than “fixing” naming globally.
 - **`contents_link()` requires fixed DOM IDs** (`nav`,
   `govbr-contents-box` + class, `main-col`, `tab-container`) for its JS
   to work — documented with a template in README.md.

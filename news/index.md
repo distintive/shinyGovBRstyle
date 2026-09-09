@@ -1,5 +1,25 @@
 # Changelog
 
+## shinyGovBRstyle 1.0.0
+
+- Todas as 18 funções herdadas do GOV.UK foram removidas (estavam
+  deprecadas desde a 0.2.0); o pacote contém exclusivamente a família
+  `br_*` sobre o Design System GovBR.
+- Grupos de
+  [`br_radio_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_radio_input.md)
+  e
+  [`br_checkbox_input()`](https://distintivelab.github.io/shinyGovBRstyle/reference/br_checkbox_input.md)
+  agora usam `fieldset`/`legend` semânticos (com `heading_level`
+  opcional), anunciados corretamente por leitores de tela (cherry-pick
+  do PR
+  [\#225](https://github.com/DistintiveLab/shinyGovBRstyle/issues/225)
+  do upstream).
+- Assets legados removidos: `govbr-frontend-test.css`, `font.css`,
+  bindings JS antigos (`radio_button_input_binding.js`,
+  `date_input_binding.js`, `accordion.js`, `govTab.js`) e
+  `css_changes.md`.
+- Dependências reduzidas para `htmltools`, `purrr` e `shiny`.
+
 ## shinyGovBRstyle 0.4.0
 
 - Removidas as funções herdadas do GOV.UK que não possuem transposição
@@ -12,10 +32,8 @@
   `govbr-frontend-5.4.0.min.js`, `sr-only.css`, `contents_link.js`,
   logos (`moj_logo*`, `dev_logo*`, `govuk-*`) e as capturas de tela
   antigas usadas no site.
-- `heading_text()` e
-  [`clean_heading_text()`](https://distintivelab.github.io/shinyGovBRstyle/reference/clean_heading_text.md)
-  deixam de ser exportadas: agora são auxiliares internos das funções
-  legadas mantidas.
+- `heading_text()` e `clean_heading_text()` deixam de ser exportadas:
+  agora são auxiliares internos das funções legadas mantidas.
 - Site (pkgdown/gh-pages) reestruturado: URL oficial, referência
   organizada por categoria (`br_*` e legados) e logo original mantido.
 

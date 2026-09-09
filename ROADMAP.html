@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="index.html">shinyGovBRstyle</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +78,7 @@
 <h2 id="fase-3--limpeza-e-deprecação">Fase 3 — Limpeza e deprecação<a class="anchor" aria-label="anchor" href="#fase-3--limpeza-e-depreca%C3%A7%C3%A3o"></a></h2>
 <ul class="task-list"><li><label><input type="checkbox" checked>Marcar funções antigas (derivadas do GOV.UK) como obsoletas: aviso uma vez por sessão via <code>govbr_deprecated()</code> + nota nos <code>.Rd</code>.</label></li>
 <li><label><input type="checkbox" checked>Remover as 24 funções sem transposição para o GovBR (0.4.0) e os assets órfãos do GOV.UK (CSS/JS grandes, logos, capturas).</label></li>
-<li><label><input type="checkbox">Remover as 18 funções legadas restantes (têm equivalente <code>br_*</code>) e o stylesheet legado <code>govbr-frontend-test.css</code> na v1.0.0.</label></li>
+<li><label><input type="checkbox" checked>Remover as 18 funções legadas restantes e todos os assets UK (concluído na 1.0.0).</label></li>
 <li><label><input type="checkbox">Remover assets do GOV.UK (<code>govbr-frontend-5.7.1.min.css</code>, <code>govbr-frontend-5.4.0.min.js</code>, fontes GOV.UK, <code>govbr-frontend-test.css</code>) quando as funções antigas forem removidas (meta: v1.0.0).</label></li>
 <li><label><input type="checkbox" checked>Corrigir o workflow <code>example-app-deploy.yaml</code> (hoje publica o pacote upstream, não este).</label></li>
 <li><label><input type="checkbox" checked>Atualizar <code>CONTRIBUTING.md</code> (ainda descreve o fluxo do GOV.UK).</label></li>
